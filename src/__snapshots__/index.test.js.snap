@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing tests should render snapshot 1`] = `
+<DemoComponent>
+  <div
+    className="red-bg"
+  >
+    Foo component
+  </div>
+</DemoComponent>
+`;
