@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
-import { ButtonGroup, Button, Icon, FormGroup } from 'patternfly-react';
+import { ButtonGroup, Button, Icon } from 'patternfly-react';
 import { composeValidators } from '../helpers';
 import ComponentType from '../renderer-context';
 
@@ -57,7 +57,7 @@ const DynamicArray = ({
   itemDefault,
 }) => (
   <ComponentType.Consumer>
-    {({ commonComponents: { Col } }) => (
+    {({ commonComponents: { Col, FormGroup } }) => (
       <FieldArray key={fieldKey} validate={validate} name={fieldKey}>
         { ({ fields: { map, remove, push }, meta: { error, dirty } }) => (
           <Fragment>

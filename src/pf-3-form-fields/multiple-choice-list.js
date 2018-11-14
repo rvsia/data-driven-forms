@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field } from 'react-final-form';
-import { Checkbox, FormGroup } from 'patternfly-react';
+import { Checkbox } from 'patternfly-react';
 import { composeValidators } from '../helpers';
 import { __ } from '../global-functions';
 import ComponentType from '../renderer-context';
@@ -20,7 +20,7 @@ const MultipleChoiceList = ({ validate, ...props }) => (
         const groupValues = rest.input.value;
         return (
           <ComponentType.Consumer>
-            {({ commonComponents: { Col } }) => (
+            {({ commonComponents: { Col, FormGroup } }) => (
               <FormGroup validationState={showError ? 'error' : null}>
                 <Col md={12} componentClass="label" className="control-label">
                   {__(label)}

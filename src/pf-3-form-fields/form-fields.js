@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
-import { FormGroup, FormControl, HelpBlock, Checkbox, Radio } from 'patternfly-react';
+import { FormControl, HelpBlock, Checkbox, Radio } from 'patternfly-react';
 import ReactSelect from 'react-select';
 import { components } from '../constants';
 import NestedForm from './sub-form';
@@ -71,7 +71,7 @@ const FinalFormField = ({
   const invalid = validationError(meta, validateOnMount);
   return (
     <ComponentType.Consumer>
-      {({commonComponents: { Col }}) => (
+      {({commonComponents: { Col, FormGroup }}) => (
         <FormGroup validationState={invalid ? 'error' : null}>
         {label && 
           <Col md={12} componentClass="label" className="control-label">
