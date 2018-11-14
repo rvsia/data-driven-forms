@@ -5,8 +5,8 @@ import { Form as Pf3Form } from 'patternfly-react';
 import { Form as Pf4Form } from '@patternfly/react-core';
 import arrayMutators from 'final-form-arrays';
 import ComponentType from './renderer-context';
-import Pf3FormControls from './pf-3-form-fields/formControls';
-import Pf4FormControls from './pf-4-form-fields/formControls';
+import Pf3FormControls from './pf-3-form-fields/form-controls';
+import Pf4FormControls from './pf-4-form-fields/form-controls';
 
 import renderForm from './render-form';
 

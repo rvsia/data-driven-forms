@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { FieldArray } from 'react-final-form-arrays';
 import { Col, ButtonGroup, Button } from 'patternfly-react';
 import { CloseIcon, PlusIcon } from '@patternfly/react-icons';
-import { Field } from 'react-final-form';
-import { composeValidators } from '../helpers';
 
 
 const ArrayItem = ({

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ComponentMapper from './componentMapper';
+import ComponentMapper from './component-mapper';
 import { dataTypeValidator } from './validators/validators';
 import validatorMapper from './validators/validator-mapper';
 

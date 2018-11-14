@@ -6,7 +6,7 @@ import ReactSelect from 'react-select';
 import { components } from '../constants';
 import NestedForm from './sub-form';
 import FormGroupWrapper from './form-group-wrapper';
-import { validationError } from '../finalFormFieldsHelper';
+import { validationError } from '../helpers';
 import { __ } from '../global-functions';
 import MultipleChoiceList from './multiple-choice-list';
 
