@@ -1,8 +1,11 @@
+/**
+ * Patternfly non-dependend
+ */
+
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
-import { Icon } from 'patternfly-react';
 import { composeValidators } from '../helpers';
 import ComponentType from '../renderer-context';
 
@@ -17,7 +20,7 @@ const ArrayItem = ({
   remove,
 }) => (
   <ComponentType.Consumer>
-    {({ commonComponents: { Col, Button, ButtonGroup } }) => (
+    {({ commonComponents: { Col, Button, ButtonGroup, Icon } }) => (
       <div className="final-form-array-group">
         <Col xs={11} className="final-form-array-item">
           { renderForm(fields.map((field) => {
@@ -57,7 +60,7 @@ const DynamicArray = ({
   itemDefault,
 }) => (
   <ComponentType.Consumer>
-    {({ commonComponents: { Col, FormGroup, Button, ButtonGroup } }) => (
+    {({ commonComponents: { Col, FormGroup, Button, ButtonGroup, Icon } }) => (
       <FieldArray key={fieldKey} validate={validate} name={fieldKey}>
         { ({ fields: { map, remove, push }, meta: { error, dirty } }) => (
           <Fragment>

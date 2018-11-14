@@ -1,3 +1,6 @@
+/**
+ * Patternfly non-dependend
+ */
 import React from 'react';
 import { Field } from 'react-final-form';
 import { composeValidators } from '../helpers';
