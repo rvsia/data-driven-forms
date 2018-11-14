@@ -1,5 +1,4 @@
 import React from 'react';
-import { ButtonGroup } from 'patternfly-react';
 import PropTypes from 'prop-types';
 import { __ } from '../global-functions';
 import ComponentType from '../renderer-context';
@@ -13,7 +12,7 @@ const FormControls = ({
   resetLabel,
 }) => (
   <ComponentType.Consumer>
-    {({ commonComponents: { Col, FormGroup, Button } }) => (
+    {({ commonComponents: { Col, FormGroup, Button, ButtonGroup } }) => (
       <Col xs={12}>
         <FormGroup>
           <ButtonGroup bsClass="pull-right">

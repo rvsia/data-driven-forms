@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
-import { ButtonGroup, Icon } from 'patternfly-react';
+import { Icon } from 'patternfly-react';
 import { composeValidators } from '../helpers';
 import ComponentType from '../renderer-context';
 
@@ -17,7 +17,7 @@ const ArrayItem = ({
   remove,
 }) => (
   <ComponentType.Consumer>
-    {({ commonComponents: { Col, Button } }) => (
+    {({ commonComponents: { Col, Button, ButtonGroup } }) => (
       <div className="final-form-array-group">
         <Col xs={11} className="final-form-array-item">
           { renderForm(fields.map((field) => {
@@ -57,7 +57,7 @@ const DynamicArray = ({
   itemDefault,
 }) => (
   <ComponentType.Consumer>
-    {({ commonComponents: { Col, FormGroup, Button } }) => (
+    {({ commonComponents: { Col, FormGroup, Button, ButtonGroup } }) => (
       <FieldArray key={fieldKey} validate={validate} name={fieldKey}>
         { ({ fields: { map, remove, push }, meta: { error, dirty } }) => (
           <Fragment>
