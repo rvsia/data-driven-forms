@@ -13,7 +13,7 @@ import renderForm from './render-form';
 import './react-select.scss';
 
 const formWrapperMapper = componentType => ({
-  pf3: ({ children, ...props }) => <Pf3Form {...props} horizontal>{children}</Pf3Form>,
+  pf3: ({ children, ...props }) => <Pf3Form {...props}>{children}</Pf3Form>,
   pf4: ({ children, ...props }) => <Pf4Form {...props}>{children}</Pf4Form>,
 })[componentType];
 

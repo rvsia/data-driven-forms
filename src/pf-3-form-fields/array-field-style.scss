@@ -1,0 +1,26 @@
+.final-form-array-group {
+  display: table;
+  position: relative;
+  width: 100%;
+
+  .final-form-group-controls {
+    position: absolute;
+    margin-bottom: 20px;
+    bottom: 0;
+    right: 0;
+  }
+
+  .final-form-array-item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/**
+* pf3 from group height fix
+*/
+.form-group {
+  display: inline-block;
+  width: 100%;
+}
+

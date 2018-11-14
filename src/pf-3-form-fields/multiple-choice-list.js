@@ -19,10 +19,10 @@ const MultipleChoiceList = ({ validate, ...props }) => (
         const groupValues = rest.input.value;
         return (
           <FormGroup validationState={showError ? 'error' : null}>
-            <Col md={2} componentClass="label" className="control-label">
+            <Col md={12} componentClass="label" className="control-label">
               {__(label)}
             </Col>
-            <Col md={10}>
+            <Col md={12}>
               { options.map(option =>
                     (<Field
                       id={`${rest.id}-${option.value}`}

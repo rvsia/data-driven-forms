@@ -71,10 +71,12 @@ const FinalFormField = ({
   const invalid = validationError(meta, validateOnMount);
   return (
     <FormGroup validationState={invalid ? 'error' : null}>
-      <Col md={2} componentClass="label" className="control-label">
-        { !hideLabel && __(label)}
-      </Col>
-      <Col md={10}>
+     {label && 
+       <Col md={12} componentClass="label" className="control-label">
+         { !hideLabel && __(label)}
+       </Col>
+     }
+      <Col md={12}>
         {selectComponent({ ...rest, invalid, label })()}
         {description && <HelpBlock style={{ color: '#767676' }}>{description}</HelpBlock>}
         {renderHelperText(invalid && meta.error, helperText)}
