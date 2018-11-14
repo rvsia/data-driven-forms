@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { Col, Row, FormGroup } from 'patternfly-react';
+import { Col, Row, FormGroup, Button } from 'patternfly-react';
 
 const ComponentType = createContext('');
 
@@ -8,7 +8,8 @@ export default ComponentType;
 const pf3Config = {
   Col,
   Row,
-  FormGroup
+  FormGroup,
+  Button
 }
 
 export const configureContext = (formType, customComponents = {}) => {
