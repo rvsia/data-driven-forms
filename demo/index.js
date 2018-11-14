@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import DemoComponent from "../src";
-// import WidgetSchema from '../src/demo-schemas/widget-schema';
+import WidgetSchema from '../src/demo-schemas/widget-schema';
 import ArraySchema from '../src/demo-schemas/array-scehma';
 import { Grid, Row } from 'patternfly-react';
 
 const App = () => (
   <Grid>
     <Row>
-      <DemoComponent schema={ArraySchema} onSubmit={console.log} />
+      <DemoComponent schema={WidgetSchema} onSubmit={console.log} />
     </Row>
   </Grid>
 )

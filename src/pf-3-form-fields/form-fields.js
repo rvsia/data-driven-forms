@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
-import { FormGroup, Col, FormControl, HelpBlock, Checkbox, Radio } from 'patternfly-react';
+import { FormGroup, FormControl, HelpBlock, Checkbox, Radio } from 'patternfly-react';
 import ReactSelect from 'react-select';
 import { components } from '../constants';
 import NestedForm from './sub-form';
@@ -9,7 +9,7 @@ import FormGroupWrapper from './form-group-wrapper';
 import { validationError } from '../helpers';
 import { __ } from '../global-functions';
 import MultipleChoiceList from './multiple-choice-list';
-
+import ComponentType from '../renderer-context';
 
 const selectValue = option =>
   option.sort((a, b) => a.label.localeCompare(b.label, 'en', { sensitivity: 'base' })).map(item => item.value);
@@ -70,18 +70,22 @@ const FinalFormField = ({
 }) => {
   const invalid = validationError(meta, validateOnMount);
   return (
-    <FormGroup validationState={invalid ? 'error' : null}>
-     {label && 
-       <Col md={12} componentClass="label" className="control-label">
-         { !hideLabel && __(label)}
-       </Col>
-     }
-      <Col md={12}>
-        {selectComponent({ ...rest, invalid, label })()}
-        {description && <HelpBlock style={{ color: '#767676' }}>{description}</HelpBlock>}
-        {renderHelperText(invalid && meta.error, helperText)}
-      </Col>
-    </FormGroup>
+    <ComponentType.Consumer>
+      {({commonComponents: { Col }}) => (
+        <FormGroup validationState={invalid ? 'error' : null}>
+        {label && 
+          <Col md={12} componentClass="label" className="control-label">
+            { !hideLabel && __(label)}
+          </Col>
+        }
+          <Col md={12}>
+            {selectComponent({ ...rest, invalid, label })()}
+            {description && <HelpBlock style={{ color: '#767676' }}>{description}</HelpBlock>}
+            {renderHelperText(invalid && meta.error, helperText)}
+          </Col>
+        </FormGroup>
+      )}
+    </ComponentType.Consumer>
   );
 };
 

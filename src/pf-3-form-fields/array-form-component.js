@@ -2,8 +2,9 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
-import { Col, ButtonGroup, Button, Icon, FormGroup } from 'patternfly-react';
+import { ButtonGroup, Button, Icon, FormGroup } from 'patternfly-react';
 import { composeValidators } from '../helpers';
+import ComponentType from '../renderer-context';
 
 import './array-field-style.scss';
 
@@ -15,22 +16,26 @@ const ArrayItem = ({
   name,
   remove,
 }) => (
-  <div className="final-form-array-group">
-    <Col xs={11} className="final-form-array-item">
-      { renderForm(fields.map((field) => {
-                  const itemName = field.name
-                      ? field.name.substring(field.name.lastIndexOf('.') + 1)
-                      : `${fieldKey}[${fieldIndex}]`;
-                  const fieldName = `${name}${itemName && itemName !== 'items' ? itemName : ''}`;
-                  return { ...field, name: fieldName, key: name };
-              })) }
-    </Col>
-    <Col xs={1} className="final-form-group-controls">
-      <ButtonGroup className="pull-right">
-        <Button type="button" bsStyle="danger" onClick={() => remove(fieldIndex)}><Icon name="close" /></Button>
-      </ButtonGroup>
-    </Col>
-  </div>
+  <ComponentType.Consumer>
+    {({ commonComponents: { Col } }) => (
+      <div className="final-form-array-group">
+        <Col xs={11} className="final-form-array-item">
+          { renderForm(fields.map((field) => {
+                      const itemName = field.name
+                          ? field.name.substring(field.name.lastIndexOf('.') + 1)
+                          : `${fieldKey}[${fieldIndex}]`;
+                      const fieldName = `${name}${itemName && itemName !== 'items' ? itemName : ''}`;
+                      return { ...field, name: fieldName, key: name };
+                  })) }
+        </Col>
+        <Col xs={1} className="final-form-group-controls">
+          <ButtonGroup className="pull-right">
+            <Button type="button" bsStyle="danger" onClick={() => remove(fieldIndex)}><Icon name="close" /></Button>
+          </ButtonGroup>
+        </Col>
+      </div>
+    )}
+  </ComponentType.Consumer>
 );
 
 ArrayItem.propTypes = {
@@ -51,34 +56,38 @@ const DynamicArray = ({
   fields,
   itemDefault,
 }) => (
-  <FieldArray key={fieldKey} validate={validate} name={fieldKey}>
-    { ({ fields: { map, remove, push }, meta: { error, dirty } }) => (
-      <Fragment>
-        { title && <Col xs={12}><h3>{ title }</h3></Col> }
-        { description && <Col xs={12}><p>{ description }</p></Col> }
-        { map((name, index) => (
-          <ArrayItem
-            key={`${name}-${index}`}
-            fields={fields}
-            name={name}
-            fieldKey={fieldKey}
-            fieldIndex={index}
-            renderForm={renderForm}
-            remove={remove}
-          />)) }
-        { dirty && error && typeof error === 'string' && <p>{ error }</p> }
-        <Col xs={12} className="final-form-array-add-container">
-          <FormGroup>
-            <ButtonGroup className="pull-right">
-              <Button type="button" variant="link" onClick={() => push(itemDefault)}>
-                <Icon type="fa" name="plus" />
-              </Button>
-            </ButtonGroup>
-          </FormGroup>
-        </Col>
-      </Fragment>
-      ) }
-  </FieldArray>
+  <ComponentType.Consumer>
+    {({ commonComponents: { Col } }) => (
+      <FieldArray key={fieldKey} validate={validate} name={fieldKey}>
+        { ({ fields: { map, remove, push }, meta: { error, dirty } }) => (
+          <Fragment>
+            { title && <Col xs={12}><h3>{ title }</h3></Col> }
+            { description && <Col xs={12}><p>{ description }</p></Col> }
+            { map((name, index) => (
+              <ArrayItem
+                key={`${name}-${index}`}
+                fields={fields}
+                name={name}
+                fieldKey={fieldKey}
+                fieldIndex={index}
+                renderForm={renderForm}
+                remove={remove}
+              />)) }
+            { dirty && error && typeof error === 'string' && <p>{ error }</p> }
+            <Col xs={12} className="final-form-array-add-container">
+              <FormGroup>
+                <ButtonGroup className="pull-right">
+                  <Button type="button" variant="link" onClick={() => push(itemDefault)}>
+                    <Icon type="fa" name="plus" />
+                  </Button>
+                </ButtonGroup>
+              </FormGroup>
+            </Col>
+          </Fragment>
+          ) }
+      </FieldArray>
+    )}
+  </ComponentType.Consumer>
 );
 
 DynamicArray.propTypes = {
@@ -93,12 +102,16 @@ DynamicArray.propTypes = {
 
 const FixedArrayField = ({ title, description, fields, renderForm, additionalItems }) => {
   return (
-      <Fragment>
-          { title && <Col xs={12}><h3>{ title }</h3></Col> }
-          { description && <Col xs={12}><p>{ description }</p></Col> }
-          { renderForm(fields) }
-          { renderForm([ additionalItems ]) }
-      </Fragment>
+      <ComponentType.Consumer>
+        {({ commonComponents: { Col } }) => (
+          <Fragment>
+            { title && <Col xs={12}><h3>{ title }</h3></Col> }
+            { description && <Col xs={12}><p>{ description }</p></Col> }
+            { renderForm(fields) }
+            { renderForm([ additionalItems ]) }
+          </Fragment>
+        )}
+      </ComponentType.Consumer>
   );
 };
 

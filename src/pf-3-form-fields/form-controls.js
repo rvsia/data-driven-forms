@@ -1,7 +1,8 @@
 import React from 'react';
-import { ButtonGroup, Button, Col, FormGroup } from 'patternfly-react';
+import { ButtonGroup, Button, FormGroup } from 'patternfly-react';
 import PropTypes from 'prop-types';
 import { __ } from '../global-functions';
+import ComponentType from '../renderer-context';
 
 const FormControls = ({
   onSubmit,
@@ -11,15 +12,19 @@ const FormControls = ({
   cancelLabel,
   resetLabel,
 }) => (
-  <Col xs={12}>
-    <FormGroup>
-      <ButtonGroup bsClass="pull-right">
-        <Button bsStyle="primary" type="button" onClick={onSubmit}>{submitLabel}</Button>
-        {onReset && <Button type="button" onClick={onReset}>{resetLabel}</Button>}
-        {onCancel && <Button type="button" onClick={onCancel}>{cancelLabel}</Button>}
-      </ButtonGroup>
-    </FormGroup>
-  </Col>
+  <ComponentType.Consumer>
+    {({ commonComponents: { Col } }) => (
+      <Col xs={12}>
+        <FormGroup>
+          <ButtonGroup bsClass="pull-right">
+            <Button bsStyle="primary" type="button" onClick={onSubmit}>{submitLabel}</Button>
+            {onReset && <Button type="button" onClick={onReset}>{resetLabel}</Button>}
+            {onCancel && <Button type="button" onClick={onCancel}>{cancelLabel}</Button>}
+          </ButtonGroup>
+        </FormGroup>
+      </Col>
+    )}
+  </ComponentType.Consumer>
 );
 
 FormControls.propTypes = {

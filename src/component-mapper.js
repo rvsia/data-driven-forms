@@ -9,7 +9,7 @@ const chooseFormMapper = formType => ({
 
 const ComponentMapper = ({ component, formOptions, componentProps }) => (
   <ComponentType.Consumer>
-    {formType => chooseFormMapper(formType)(component, formOptions)({...componentProps, name: componentProps.name || componentProps.key})}
+    {({formType}) => chooseFormMapper(formType)(component, formOptions)({...componentProps, name: componentProps.name || componentProps.key})}
   </ComponentType.Consumer>
 );
 
