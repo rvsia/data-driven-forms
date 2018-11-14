@@ -5,8 +5,7 @@ import { Form as Pf3Form } from 'patternfly-react';
 import { Form as Pf4Form } from '@patternfly/react-core';
 import arrayMutators from 'final-form-arrays';
 import ComponentType, { configureContext } from './renderer-context';
-import Pf3FormControls from './pf-3-form-fields/form-controls';
-import Pf4FormControls from './pf-4-form-fields/form-controls';
+import FormControls from './shared-components/form-controls';
 import renderForm from './render-form';
 
 import './react-select.scss';
@@ -14,11 +13,6 @@ import './react-select.scss';
 const formWrapperMapper = componentType => ({
   pf3: ({ children, ...props }) => <Pf3Form {...props}>{children}</Pf3Form>,
   pf4: ({ children, ...props }) => <Pf4Form {...props}>{children}</Pf4Form>,
-})[componentType];
-
-const formControlsMapper = componentType => ({
-  pf3: props => <Pf3FormControls {...props} />,
-  pf4: props => <Pf4FormControls {...props} />,
 })[componentType];
 
 const FormRenderer = ({
@@ -40,7 +34,7 @@ const FormRenderer = ({
               <Fragment>
                 <div>Form renderer of type: {formType}</div>
                 {renderForm(schema.fields, { push: mutators.push, change, pristine })}
-                {formControlsMapper(formType)({ onSubmit: handleSubmit, onCancel, onReset: canReset && reset })}
+                <FormControls onSubmit={handleSubmit} onCancel={onCancel} onReset={canReset && reset} />
               </Fragment>
           ),
         })

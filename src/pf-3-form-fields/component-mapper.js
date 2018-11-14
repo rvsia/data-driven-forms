@@ -1,7 +1,7 @@
 import React from 'react';
 import { components } from '../constants';
 import { TextField, TextareaField, CheckboxGroup, RadioGroup, SelectField, SubForm } from './form-fields';
-import { renderArrayField } from './array-form-component';
+import { renderArrayField } from '../shared-components/array-form-component';
 
 const componentMapper = (componentType, formOptions) => ({
   [components.TEXT_FIELD]: props => <TextField {...props} key={props.name} />,
