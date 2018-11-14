@@ -1,8 +1,7 @@
 import React from 'react';
 import { components } from '../constants';
 import { TextField, TextareaField, CheckboxGroup, RadioGroup, SelectField, SubForm } from './form-fields';
-
-const renderArrayField = props => <div key={props.key || props.name}>There will be array field</div>; // eslint-disable-line
+import { renderArrayField } from './array-form-component';
 
 const componentMapper = (componentType, formOptions) => ({
   [components.TEXT_FIELD]: props => <TextField {...props} key={props.name} />,

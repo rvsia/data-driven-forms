@@ -5,7 +5,7 @@ import { dataTypeValidator } from './validators/validators';
 import validatorMapper from './validators/validator-mapper';
 
 const renderSingleField = ({ component, ...rest }, formOptions) =>
-  <ComponentMapper key={rest.name} component={component} formOptions={formOptions} componentProps={rest} />;
+  <ComponentMapper key={rest.name || rest.key} component={component} formOptions={formOptions} componentProps={rest} />;
 
 renderSingleField.propTypes = {
   component: PropTypes.string.isRequired,

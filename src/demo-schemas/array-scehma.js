@@ -1,4 +1,4 @@
-export const arraySchemaResult = {
+export default {
   fields: [{
     title: 'A list of strings',
     key: 'listOfStrings',

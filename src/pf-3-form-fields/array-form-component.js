@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { Field } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
-import { Col, ButtonGroup, Button } from 'patternfly-react';
-import { CloseIcon, PlusIcon } from '@patternfly/react-icons';
+import { Col, ButtonGroup, Button, Icon } from 'patternfly-react';
+import { composeValidators } from '../helpers';
 
 
 const ArrayItem = ({
@@ -24,7 +25,7 @@ const ArrayItem = ({
               })) }
     </Col>
     <ButtonGroup span={1}>
-      <Button type="button" variant="danger" onClick={() => remove(fieldIndex)}><CloseIcon /></Button>
+      <Button type="button" variant="danger" onClick={() => remove(fieldIndex)}><Icon name="close" /></Button>
     </ButtonGroup>
 
   </React.Fragment>
@@ -66,10 +67,66 @@ const DynamicArray = ({
         { dirty && error && typeof error === 'string' && <p>{ error }</p> }
         <ButtonGroup>
           <Button type="button" variant="link" onClick={() => push(itemDefault)}>
-            <PlusIcon /> Add { title }
+            <Icon type="fa" name="plus" /> Add { title }
           </Button>
         </ButtonGroup>
       </Fragment>
       ) }
   </FieldArray>
 );
+
+DynamicArray.propTypes = {
+  fieldKey: PropTypes.string,
+  validate: PropTypes.func,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  renderForm: PropTypes.func.isRequired,
+  fields: PropTypes.arrayOf(PropTypes.object),
+  itemDefault: PropTypes.any
+};
+
+const FixedArrayField = ({ title, description, fields, renderForm, additionalItems }) => {
+  return (
+      <Fragment>
+          { title && <h3>{ title }</h3> }
+          { description && <p>{ description }</p> }
+          { renderForm(fields) }
+          { renderForm([ additionalItems ]) }
+      </Fragment>
+  );
+};
+
+FixedArrayField.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  renderForm: PropTypes.func.isRequired,
+  fields: PropTypes.arrayOf(PropTypes.object).isRequired,
+  additionalItems: PropTypes.object.isRequired
+};
+
+export const renderArrayField = (props, { hasFixedItems, renderForm }) => {
+  const { key, validate, ...rest } = props;
+  return (
+      <Field name={ key } key={ key } subscription={ { pristine: true, error: true } }>
+          { () => hasFixedItems ? <FixedArrayField { ...props } renderForm={ renderForm } /> : (
+              <DynamicArray
+                  renderForm={ renderForm }
+                  validate={ composeValidators(...validate || []) }
+                  fieldKey={ key }
+                  { ...rest }
+              />
+          ) }
+      </Field>
+  );
+};
+renderArrayField.propTypes = {
+  key: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  fields: PropTypes.array.isRequired,
+  validate: PropTypes.array,
+  itemDefault: PropTypes.any
+};
+renderArrayField.defaultProps = {
+  validate: []
+};
