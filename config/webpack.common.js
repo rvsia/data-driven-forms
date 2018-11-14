@@ -13,9 +13,12 @@ module.exports = {
             loader: "babel-loader",
         }
       }, {
-        test: /\.scss$/,
-        use: [ "style-loader", "css-loader", "sass-loader"]
-      }
+        test: /\.(sa|sc|c)ss$/,
+        use: [ "style-loader", "css-loader", "sass-loader", "resolve-url-loader"]
+      }, {
+        test: /\.(png|jpg|gif|svg|woff|ttf|eot)/,
+        loader: 'url-loader',
+      },
     ]
   },
 }
