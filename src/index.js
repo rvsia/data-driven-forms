@@ -1,6 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
 
-const Index = () => <div>Foo</div>;
+const DemoComponent = () => <div>Foo component</div>
 
-ReactDOM.render(<Index />, document.getElementById("index"));
+export default DemoComponent;
