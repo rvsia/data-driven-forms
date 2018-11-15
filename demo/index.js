@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import ReactDOM from "react-dom";
 import DemoComponent from "../src";
@@ -8,7 +9,7 @@ import { Grid, Row } from 'patternfly-react';
 const App = () => (
   <Grid>
     <Row>
-      <DemoComponent formType="pf3" schema={WidgetSchema} onSubmit={console.log} />
+      <DemoComponent formType="pf4" schema={WidgetSchema} onSubmit={console.log} />
     </Row>
   </Grid>
 )

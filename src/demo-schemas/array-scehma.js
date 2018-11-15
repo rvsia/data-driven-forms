@@ -12,9 +12,9 @@ export default {
       validate: [],
       initialKey: 'items',
       name: 'listOfStrings.items',
-      default: ['bazinga'],
-      autoFocus: false,
-    }],
+      default: [ 'bazinga' ],
+      autoFocus: false
+    }]
   }, {
     key: 'multipleChoicesList',
     title: 'A multiple choices list',
@@ -25,19 +25,19 @@ export default {
     validate: [],
     options: [{
       label: 'foo',
-      value: 'foo',
+      value: 'foo'
     }, {
       value: 'bar',
-      label: 'bar',
+      label: 'bar'
     }, {
       value: 'fuzz',
-      label: 'fuzz',
+      label: 'fuzz'
     }, {
       value: 'qux',
-      label: 'qux',
-    },
+      label: 'qux'
+    }
     ],
-    type: 'checkbox',
+    type: 'checkbox'
   }, {
     key: 'fixedItemsList',
     title: 'A list of fixed items',
@@ -48,7 +48,7 @@ export default {
       label: 'A string value',
       component: 'textarea-field',
       default: 'lorem ipsum',
-      validate: [],
+      validate: []
     }, {
       name: 'fixedItemsList.items.1',
       dataType: 'boolean',
@@ -57,14 +57,14 @@ export default {
       component: 'select-field',
       options: [{
         disabled: true,
-        label: 'Please Choose',
+        label: 'Please Choose'
       }, {
         label: 'Yes',
-        value: true,
+        value: true
       }, {
         label: 'No',
-        value: false,
-      }],
+        value: false
+      }]
     }],
     additionalItems: {
       key: 'fixedItemsList.additionalItems',
@@ -79,9 +79,9 @@ export default {
         validate: [],
         autoFocus: false,
         name: 'fixedItemsList.additionalItems.items',
-        title: 'Additional item',
-      }],
-    },
+        title: 'Additional item'
+      }]
+    }
   }, {
     key: 'minItemsList',
     component: 'field-array',
@@ -90,7 +90,7 @@ export default {
       type: 'required-validator'
     }, {
       type: 'min-items-validator',
-      treshold: 3,
+      treshold: 3
     }],
     fields: [{
       label: 'name',
@@ -101,11 +101,11 @@ export default {
       component: 'text-field',
       type: 'text',
       validate: [],
-      autoFocus: false,
+      autoFocus: false
     }],
     itemDefault: {
-      name: 'Default name',
-    },
+      name: 'Default name'
+    }
   }, {
     key: 'defaultsAndMinItems',
     component: 'field-array',
@@ -113,7 +113,7 @@ export default {
     itemDefault: 'unidentified',
     validate: [{
       type: 'min-items-validator',
-      treshold: 5,
+      treshold: 5
     }],
     fields: [{
       dataType: 'string',
@@ -122,9 +122,9 @@ export default {
       validate: [],
       initialKey: 'items',
       name: 'defaultsAndMinItems.items',
-      default: ['unidentified'],
-      autoFocus: false,
-    }],
+      default: [ 'unidentified' ],
+      autoFocus: false
+    }]
   }, {
     key: 'nestedList',
     name: 'nestedList',
@@ -143,9 +143,9 @@ export default {
         initialKey: 'items',
         name: 'nestedList.items',
         default: 'lorem ipsum',
-        autoFocus: false,
-      }],
-    }],
+        autoFocus: false
+      }]
+    }]
   }, {
     component: 'field-array',
     key: 'unorderable',
@@ -158,10 +158,10 @@ export default {
       validate: [],
       initialKey: 'items',
       name: 'unorderable.items',
-      default: ['lorem ipsum'],
-      autoFocus: false,
+      default: [ 'lorem ipsum' ],
+      autoFocus: false
     }],
-    itemDefault: 'lorem ipsum',
+    itemDefault: 'lorem ipsum'
   }, {
     key: 'unremovable',
     title: 'Unremovable items',
@@ -174,10 +174,10 @@ export default {
       validate: [],
       name: 'unremovable.items',
       initialKey: 'items',
-      default: ['lorem ipsum'],
-      autoFocus: false,
+      default: [ 'lorem ipsum' ],
+      autoFocus: false
     }],
-    itemDefault: 'lorem ipsum',
+    itemDefault: 'lorem ipsum'
   }, {
     key: 'noToolbar',
     title: 'No add, remove and order buttons',
@@ -190,10 +190,10 @@ export default {
       validate: [],
       name: 'noToolbar.items',
       initialKey: 'items',
-      default: ['lorem ipsum'],
-      autoFocus: false,
+      default: [ 'lorem ipsum' ],
+      autoFocus: false
     }],
-    itemDefault: 'lorem ipsum',
+    itemDefault: 'lorem ipsum'
   }, {
     key: 'fixedNoToolbar',
     title: 'Fixed array without buttons',
@@ -205,7 +205,7 @@ export default {
       default: 42,
       component: 'text-field',
       type: 'number',
-      validate: [],
+      validate: []
     }, {
       name: 'fixedNoToolbar.items.1',
       dataType: 'boolean',
@@ -213,7 +213,7 @@ export default {
       component: 'checkbox-field',
       type: 'checkbox',
       validate: [],
-      default: false,
+      default: false
     }],
     additionalItems: {
       component: 'field-array',
@@ -229,8 +229,8 @@ export default {
         autoFocus: false,
         default: 'lorem ipsum',
         type: 'text',
-        validate: [],
-      }],
-    },
-  }],
+        validate: []
+      }]
+    }
+  }]
 };

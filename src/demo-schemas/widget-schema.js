@@ -12,17 +12,17 @@ export default {
       description: 'Insert your email address',
       helperText: 'must be in email format',
       validate: [{
-        type: 'required-validator',
+        type: 'required-validator'
       }, {
         type: 'min-items-validator',
-        treshold: 3,
+        treshold: 3
       }],
       name: 'stringFormats.email',
       component: 'text-field',
       type: 'email',
       label: 'email',
       dataType: 'string',
-      autoFocus: false,
+      autoFocus: false
     }, {
       name: 'stringFormats.uri',
       label: 'uri',
@@ -31,8 +31,8 @@ export default {
       type: 'uri',
       dataType: 'string',
       validate: [],
-      autoFocus: false,
-    }],
+      autoFocus: false
+    }]
   }, {
     autoFocus: false,
     name: 'boolean',
@@ -50,7 +50,7 @@ export default {
       description: 'This is the checkbox-description',
       component: 'checkbox-field',
       type: 'checkbox',
-      dataType: 'boolean',
+      dataType: 'boolean'
     }, {
       name: 'boolean.radio',
       initialKey: 'radio',
@@ -64,11 +64,11 @@ export default {
       dataType: 'boolean',
       options: [{
         label: 'Yes',
-        value: true,
+        value: true
       }, {
         label: 'No',
-        value: false,
-      }],
+        value: false
+      }]
     }, {
       autoFocus: false,
       name: 'boolean.select',
@@ -79,20 +79,20 @@ export default {
       type: 'boolean',
       dataType: 'boolean',
       validate: [{
-        type: 'required-validator',
+        type: 'required-validator'
       }],
       isRequired: true,
       description: 'This is the select-description',
       options: [{
-        label: 'Please Choose',
+        label: 'Please Choose'
       }, {
         value: true,
-        label: 'Yes',
+        label: 'Yes'
       }, {
         value: false,
-        label: 'No',
-      }],
-    }],
+        label: 'No'
+      }]
+    }]
   }, {
     autoFocus: false,
     name: 'string',
@@ -109,7 +109,7 @@ export default {
       dataType: 'string',
       component: 'text-field',
       title: 'text input (default)',
-      label: 'text input (default)',
+      label: 'text input (default)'
     }, {
       autoFocus: false,
       validate: [],
@@ -120,7 +120,7 @@ export default {
       dataType: 'string',
       component: 'textarea-field',
       title: 'textarea',
-      label: 'textarea',
+      label: 'textarea'
     }, {
       autoFocus: false,
       validate: [],
@@ -131,15 +131,15 @@ export default {
       component: 'text-field',
       title: 'color picker',
       label: 'color picker',
-      default: '#151ce6',
-    }],
+      default: '#151ce6'
+    }]
   }, {
     autoFocus: false,
     name: 'secret',
     type: 'hidden',
     dataType: 'string',
     component: 'text-field',
-    default: 'I\'m a hidden string.',
+    default: 'I\'m a hidden string.'
   }, {
     autoFocus: false,
     validate: [],
@@ -150,7 +150,7 @@ export default {
     title: 'A disabled field',
     label: 'A disabled field',
     default: 'I am disabled.',
-    isDisabled: true,
+    isDisabled: true
   }, {
     autoFocus: false,
     validate: [],
@@ -161,7 +161,7 @@ export default {
     title: 'A readonly field',
     label: 'A readonly field',
     default: 'I am read-only.',
-    isReadOnly: true,
+    isReadOnly: true
   }, {
     autoFocus: false,
     validate: [],
@@ -171,7 +171,7 @@ export default {
     component: 'text-field',
     title: 'Custom widget with options',
     label: 'Custom widget with options',
-    default: 'I am yellow',
+    default: 'I am yellow'
   }, {
     autoFocus: false,
     validate: [],
@@ -182,13 +182,13 @@ export default {
     title: 'Custom select widget with options',
     label: 'Custom select widget with options',
     options: [{
-      label: 'Please Choose',
+      label: 'Please Choose'
     }, {
       value: 'foo',
-      label: 'Foo',
+      label: 'Foo'
     }, {
       value: 'bar',
-      label: 'Bar',
-    }],
-  }],
+      label: 'Bar'
+    }]
+  }]
 };
