@@ -51,7 +51,7 @@ export const required = memoize(({ message } = { message: 'Required' }) => value
 export const minLength = memoize(({ treshold } = { treshold: 1 }) =>
   value => (!value ? undefined : value.length >= treshold
     ? undefined
-    : `Should be atleast ${treshold} long`));
+    : `Should be at least ${treshold} long`));
 
 export const minValue = memoize(({ message = 'Should be greater or equal to:', value } = { message: 'Should be greater or equal to:' }) =>
   number => (!number ? undefined : number >= value ? undefined : `${message} ${value}`));
