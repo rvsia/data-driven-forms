@@ -60,9 +60,9 @@ const DynamicArray = ({
   itemDefault,
 }) => (
   <ComponentType.Consumer>
-    {({ commonComponents: { Col, FormGroup, Button, ButtonGroup, Icon } }) => (
+    {({ commonComponents: { Col, FormGroup, Button, ButtonGroup, Icon, HelpBlock } }) => (
       <FieldArray key={fieldKey} validate={validate} name={fieldKey}>
-        { ({ fields: { map, remove, push }, meta: { error, dirty } }) => (
+        { ({ fields: { map, remove, push }, meta: { error, dirty, submitFailed } }) => (
           <Fragment>
             { title && <Col xs={12}><h3>{ title }</h3></Col> }
             { description && <Col xs={12}><p>{ description }</p></Col> }
@@ -76,8 +76,8 @@ const DynamicArray = ({
                 renderForm={renderForm}
                 remove={remove}
               />)) }
-            { dirty && error && typeof error === 'string' && <p>{ error }</p> }
-            <Col xs={12} className="final-form-array-add-container">
+            <Col xs={11}>{ (dirty || submitFailed ) && error && typeof error === 'string' && <HelpBlock>{ error }</HelpBlock> }</Col>
+            <Col xs={1} className="final-form-array-add-container">
               <FormGroup>
                 <ButtonGroup className="pull-right">
                   <Button type="button" variant="link" onClick={() => push(itemDefault)}>

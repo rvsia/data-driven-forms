@@ -8,7 +8,7 @@ import { Grid, Row } from 'patternfly-react';
 const App = () => (
   <Grid>
     <Row>
-      <DemoComponent schema={WidgetSchema} onSubmit={console.log} />
+      <DemoComponent schema={ArraySchema} onSubmit={console.log} />
     </Row>
   </Grid>
 )

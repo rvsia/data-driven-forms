@@ -89,6 +89,8 @@ export default {
     validate: [{
       type: 'min-items-validator',
       treshold: 3,
+    }, {
+      type: 'required-validator'
     }],
     fields: [{
       label: 'name',
