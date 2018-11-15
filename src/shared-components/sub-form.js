@@ -4,6 +4,7 @@
 
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import ComponentType from '../renderer-context';
 
 const SubForm = ({
   renderForm,
@@ -11,11 +12,15 @@ const SubForm = ({
   title,
   description,
 }) => (
-  <Fragment>
-    { title && <h3>{ title }</h3> }
-    { description && <p>{ description }</p> }
-    { renderForm(fields) }
-  </Fragment>
+  <ComponentType.Consumer>
+    {({ commonComponents: { Col } }) => (
+      <Col xs={12}>
+        { title && <h3>{ title }</h3> }
+        { description && <p>{ description }</p> }
+        { renderForm(fields) }
+      </Col>
+    )}
+  </ComponentType.Consumer>
 );
 
 SubForm.propTypes = {
