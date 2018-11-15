@@ -6,7 +6,7 @@ const prodConfig = {
   mode: "production",
   entry: "./src/vendor.js",
   output: {
-      path: resolve('./dist'),
+      path: resolve('./public'),
       filename: "vendor.js"
   },
   module: {
