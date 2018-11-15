@@ -20,8 +20,8 @@ const ArrayItem = ({
   remove,
 }) => (
   <ComponentType.Consumer>
-    {({ commonComponents: { Col, Button, ButtonGroup, Icon } }) => (
-      <div className="final-form-array-group">
+    {({ commonComponents: { Col, Button, ButtonGroup, Icon, Row }, formType }) => (
+      <div className={formType === 'pf3' ? 'final-form-array-group' : 'final-form-array-grid'}>
         <Col xs={11} className="final-form-array-item">
           { renderForm(fields.map((field) => {
                       const itemName = field.name
@@ -61,7 +61,13 @@ const DynamicArray = ({
 }) => (
   <ComponentType.Consumer>
     {({ commonComponents: { Col, FormGroup, Button, ButtonGroup, Icon, HelpBlock } }) => (
-      <FieldArray key={fieldKey} validate={validate} name={fieldKey}>
+      <FieldArray key={fieldKey} validate={value => {
+        let result = validate(value ? value.length > 0 ? value : undefined : undefined)
+        if(typeof result === 'function') {
+          result = result(value)
+        }
+        return result
+        }} name={fieldKey}>
         { ({ fields: { map, remove, push }, meta: { error, dirty, submitFailed } }) => (
           <Fragment>
             { title && <Col xs={12}><h3>{ title }</h3></Col> }

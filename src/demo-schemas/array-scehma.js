@@ -87,10 +87,10 @@ export default {
     component: 'field-array',
     title: 'A list with a minimal number of items',
     validate: [{
+      type: 'required-validator'
+    }, {
       type: 'min-items-validator',
       treshold: 3,
-    }, {
-      type: 'required-validator'
     }],
     fields: [{
       label: 'name',

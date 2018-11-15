@@ -5,6 +5,7 @@ const memoize = (fn) => {
     const strigyfiedArgs = JSON.stringify(args);
     const result = cache[strigyfiedArgs] || fn(...args);
     // if no configuration is passed to validator it will call it imidiatelly
+    if (Array.isArray(args[0])) { return result(); }
     if (typeof args[0] !== 'object') { return result(); }
 
     return result;

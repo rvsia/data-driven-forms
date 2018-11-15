@@ -10,6 +10,7 @@ import { validationError } from '../helpers';
 import { __ } from '../global-functions';
 import MultipleChoiceList from './multiple-choice-list';
 import ComponentType from '../renderer-context';
+import Condition from '../shared-components/condition';
 
 const selectValue = option =>
   option.sort((a, b) => a.label.localeCompare(b.label, 'en', { sensitivity: 'base' })).map(item => item.value);
@@ -112,24 +113,6 @@ const fieldMapper = type => ({
   [components.TEXT_FIELD]: props => <FormGroupWrapper {...props} formField={FinalFormField} />,
   [components.SUB_FORM]: props => <NestedForm {...props} />,
 })[type];
-
-export const Condition = ({ when, is, children }) => {
-  const shouldRender = value => (Array.isArray(is) ? !!is.find(item => item === value) : value === is);
-  return (
-    <Field name={when} subscription={{ value: true }}>
-      { ({ input: { value } }) => (shouldRender(value) ? children : null) }
-    </Field>
-  );
-};
-
-Condition.propTypes = {
-  when: PropTypes.string.isRequired,
-  is: PropTypes.any,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-};
 
 const FormConditionWrapper = ({ condition, children }) => (condition ? (
   <Condition {...condition}>

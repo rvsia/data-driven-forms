@@ -13,6 +13,9 @@ export default {
       helperText: 'must be in email format',
       validate: [{
         type: 'required-validator',
+      }, {
+        type: 'min-items-validator',
+        treshold: 3,
       }],
       name: 'stringFormats.email',
       component: 'text-field',
