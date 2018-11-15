@@ -3,8 +3,6 @@ import { components } from '../constants';
 import { TextField, TextareaField, SelectField, CheckboxGroup, SubForm, RadioGroup } from './form-fields';
 import { renderArrayField } from '../shared-components/array-form-component';
 
-//import '@patternfly/react-core/dist/styles/base.css';
-
 const componentMapper = (componentType, formOptions) => ({
   [components.TEXT_FIELD]: props => <TextField {...props} />,
   [components.TEXTAREA_FIELD]: props => <TextareaField {...props} />,
