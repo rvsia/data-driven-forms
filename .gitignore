@@ -3,3 +3,5 @@ yarn.lock
 *.log
 dist
 coverage
+public/*
+!public/index.html

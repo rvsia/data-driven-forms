@@ -31,6 +31,7 @@
     "start": "webpack-dev-server --config ./config/webpack.dev.config.js --open --hot",
     "build": "webpack --config ./config/webpack.prod.config.js",
     "vendor": "webpack --config ./config/webpack.vendor.config.js",
+    "publish-demo": "webpack --config ./config/webpack.sandbox.config.js",
     "test": "jest --coverage",
     "test-ci": "jest && codecov"
   },
