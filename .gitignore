@@ -2,6 +2,7 @@ node_modules
 yarn.lock
 *.log
 dist
+!dist/index.js
 coverage
 public/*
 !public/index.html
