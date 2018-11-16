@@ -93,6 +93,7 @@
     "space-in-parens": "error",
     "space-infix-ops": "error",
     "wrap-iife": "error",
-    "yoda": ["error", "never"]
+    "yoda": ["error", "never"],
+    "jsx-a11y/href-no-hash": "off" 
   }
 }

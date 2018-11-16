@@ -1,26 +1,26 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const resolve = require('path').resolve;
 
 const prodConfig = {
-  mode: "production",
-  entry: "./src/vendor.js",
+  mode: 'production',
+  entry: './src/vendor.js',
   output: {
-      path: resolve('./public'),
-      filename: "vendor.js"
+    path: resolve('./public'),
+    filename: 'vendor.js'
   },
   module: {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader", "resolve-url-loader"]
+        use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', 'resolve-url-loader' ]
       },  {
         test: /\.(png|jpg|gif|svg|woff|ttf|eot)/,
-        loader: 'url-loader',
-      },
+        loader: 'url-loader'
+      }
     ]
   },
-  plugins: [new MiniCssExtractPlugin({filename: "vendor.css"})]
-}
+  plugins: [ new MiniCssExtractPlugin({ filename: 'vendor.css' }) ]
+};
 
-module.exports = prodConfig
+module.exports = prodConfig;
