@@ -25,6 +25,6 @@ git:
 deploy:
   email: "mmarosi@redhat.com"
   provider: surge
-  project: ./demo/
+  project: ./public/
   domain: data-driven-forms.surge.sh 
   skip_cleanup: true
