@@ -1,6 +1,6 @@
 {
   "name": "data-driven-forms",
-  "version": "0",
+  "version": "0.0.3",
   "description": "Data javascript driven form for ManageIQ and Insights platform.",
   "main": "index.js",
   "repository": "git@github.com:Hyperkid123/data-driven-forms.git",
@@ -18,7 +18,9 @@
       "!**/.{snap}*"
     ],
     "coverageReporters": [
-      "text", "html", "lcov"
+      "text",
+      "html",
+      "lcov"
     ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
@@ -29,6 +31,7 @@
     "start": "webpack-dev-server --config ./config/webpack.dev.config.js --open --hot",
     "build": "webpack --config ./config/webpack.prod.config.js",
     "vendor": "webpack --config ./config/webpack.vendor.config.js",
+    "publish-demo": "webpack --config ./config/webpack.sandbox.config.js",
     "test": "jest --coverage",
     "test-ci": "jest && codecov"
   },
@@ -46,12 +49,13 @@
     "enzyme-adapter-react-16": "^1.7.0",
     "enzyme-to-json": "^3.3.4",
     "eslint": "5.x",
+    "eslint-config-prettier": "^3.3.0",
     "eslint-config-react-app": "^3.0.5",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-flowtype": "2.x",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",
-    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react": "^7.11.1",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",

@@ -7,6 +7,11 @@ before_install:
   - yarn install
 install:
   - npm install -g codecov
+after_success:
+  - chmod ugo+x ./scripts/pr_deploy.sh
+  - bash ./scripts/pr_deploy.sh
+  - chmod ugo+x ./scripts/pr_comments.sh
+  - bash ./scripts/pr_comments.sh
 script:
   - yarn test-ci
   - yarn build
@@ -16,3 +21,10 @@ cache:
     - node_modules
 git:
   depth: 1
+
+deploy:
+  email: "mmarosi@redhat.com"
+  provider: surge
+  project: ./public/
+  domain: data-driven-forms.surge.sh 
+  skip_cleanup: true

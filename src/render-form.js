@@ -5,22 +5,22 @@ import { dataTypeValidator } from './validators/validators';
 import validatorMapper from './validators/validator-mapper';
 
 const renderSingleField = ({ component, ...rest }, formOptions) =>
-  <ComponentMapper key={rest.name || rest.key} component={component} formOptions={formOptions} componentProps={rest} />;
+  <ComponentMapper key={ rest.name || rest.key } component={ component } formOptions={ formOptions } componentProps={ rest } />;
 
 renderSingleField.propTypes = {
-  component: PropTypes.string.isRequired,
+  component: PropTypes.string.isRequired
 };
 
 const prepareFieldProps = field => ({
   ...field,
   dataType: undefined,
   validate: field.validate
-    ? [...field.validate.map(({ type, ...options }) => Object.keys(options).length === 0
+    ? [ ...field.validate.map(({ type, ...options }) => Object.keys(options).length === 0
       ? validatorMapper(type)
       : validatorMapper(type)(options)),
-    field.dataType && dataTypeValidator(field.dataType)(),
+    field.dataType && dataTypeValidator(field.dataType)()
     ]
-    : [],
+    : []
 });
 
 const renderForm = (fields, formOptions) => fields.map(field => (Array.isArray(field)

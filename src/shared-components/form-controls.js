@@ -12,20 +12,20 @@ const FormControls = ({
   onReset,
   submitLabel,
   cancelLabel,
-  resetLabel,
+  resetLabel
 }) => (
   <ComponentType.Consumer>
-    {({ commonComponents: { Col, FormGroup, Button, ButtonGroup } }) => (
-      <Col xs={12}>
+    { ({ commonComponents: { Col, FormGroup, Button, ButtonGroup }}) => (
+      <Col xs={ 12 }>
         <FormGroup>
           <ButtonGroup bsClass="pull-right">
-            <Button bsStyle="primary" type="button" onClick={onSubmit}>{submitLabel}</Button>
-            {onReset && <Button type="button" onClick={onReset}>{resetLabel}</Button>}
-            {onCancel && <Button type="button" onClick={onCancel}>{cancelLabel}</Button>}
+            <Button bsStyle="primary" type="button" onClick={ onSubmit }>{ submitLabel }</Button>
+            { onReset && <Button type="button" onClick={ onReset }>{ resetLabel }</Button> }
+            { onCancel && <Button type="button" onClick={ onCancel }>{ cancelLabel }</Button> }
           </ButtonGroup>
         </FormGroup>
       </Col>
-    )}
+    ) }
   </ComponentType.Consumer>
 );
 
@@ -35,13 +35,13 @@ FormControls.propTypes = {
   onReset: PropTypes.func,
   submitLabel: PropTypes.string,
   cancelLabel: PropTypes.string,
-  resetLabel: PropTypes.string,
+  resetLabel: PropTypes.string
 };
 
 FormControls.defaultProps = {
   submitLabel: __('Submit'),
   cancelLabel: __('Cancel'),
-  resetLabel: __('Reset'),
+  resetLabel: __('Reset')
 };
 
 export default FormControls;

@@ -8,6 +8,6 @@ import { composeValidators } from '../helpers';
 import './array-field-style.scss';
 
 const FormGroupWrapper = ({ validate, formField, ...props }) =>
-    <Field {...props} validate={composeValidators(...validate || [])} component={formField} />
+  <Field { ...props } validate={ composeValidators(...validate || []) } component={ formField } />;
 
 export default FormGroupWrapper;
