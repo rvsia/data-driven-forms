@@ -11,7 +11,7 @@ import {
   SelectOption,
   Checkbox,
   Radio,
-  GridItem
+  GridItem,
 } from '@patternfly/react-core';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
@@ -46,7 +46,7 @@ const selectComponent = ({ componentType, input, options, isReadOnly, isDisabled
       value={ !!input.value }
       onChange={ () => input.onChange(input.value) }
     />
-  )
+  ),
 })[componentType];
 
 const FinalFormField = ({
@@ -84,12 +84,12 @@ FinalFormField.propTypes = {
   isRequired: PropTypes.bool,
   helperText: PropTypes.string,
   meta: PropTypes.object.isRequired,
-  description: PropTypes.string
+  description: PropTypes.string,
 };
 
 FinalFormField.defaultProps = {
   isRequired: false,
-  description: undefined
+  description: undefined,
 };
 
 const SingleChoiceList = ({ validate, ...props }) => (
@@ -150,7 +150,7 @@ const fieldMapper = type => ({
   [components.TEXTAREA_FIELD]: props => <FormGroupWrapper componentType={ components.TEXTAREA_FIELD } formField={ FinalFormField } { ...props } />,
   [components.CHECKBOX]: props => <CheckboxGroupField { ...props }/>,
   [components.RADIO]: props => <SingleChoiceList { ...props }/>,
-  [components.SUB_FORM]: props => <NestedForm { ...props } />
+  [components.SUB_FORM]: props => <NestedForm { ...props } />,
 })[type];
 
 const FormConditionWrapper = ({ condition, children }) => (condition ? (
@@ -173,7 +173,7 @@ const FieldInterface = ({
       ...props,
       validate: Array.isArray(validate) ? validate : [ validate ],
       componentType,
-      id: props.id || props.name
+      id: props.id || props.name,
     }) }
   </FormConditionWrapper>
 );
@@ -182,7 +182,7 @@ FieldInterface.propTypes = {
   meta: PropTypes.object,
   condition: PropTypes.shape({
     when: PropTypes.string.isRequired,
-    is: PropTypes.oneOfType([ PropTypes.array, PropTypes.string ]).isRequired
+    is: PropTypes.oneOfType([ PropTypes.array, PropTypes.string ]).isRequired,
   }),
   validate: PropTypes.oneOfType([ PropTypes.array, PropTypes.func ]),
   componentType: PropTypes.oneOf([
@@ -191,12 +191,12 @@ FieldInterface.propTypes = {
     components.SELECT_COMPONENT,
     components.TEXTAREA_FIELD,
     components.TEXT_FIELD,
-    components.SUB_FORM
+    components.SUB_FORM,
   ]).isRequired,
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   dataType: PropTypes.any,
-  initialKey: PropTypes.any
+  initialKey: PropTypes.any,
 };
 
 export const TextField = props => <FieldInterface { ...props } componentType={ components.TEXT_FIELD }  />;

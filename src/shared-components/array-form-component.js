@@ -17,7 +17,7 @@ const ArrayItem = ({
   fieldKey,
   fieldIndex,
   name,
-  remove
+  remove,
 }) => (
   <ComponentType.Consumer>
     { ({ commonComponents: { Col, Button, ButtonGroup, Icon, Row }, formType }) => (
@@ -47,7 +47,7 @@ ArrayItem.propTypes = {
   name: PropTypes.string.isRequired,
   fieldIndex: PropTypes.number.isRequired,
   fields: PropTypes.arrayOf(PropTypes.object),
-  remove: PropTypes.func.isRequired
+  remove: PropTypes.func.isRequired,
 };
 
 const DynamicArray = ({
@@ -57,7 +57,7 @@ const DynamicArray = ({
   description,
   renderForm,
   fields,
-  itemDefault
+  itemDefault,
 }) => (
   <ComponentType.Consumer>
     { ({ commonComponents: { Col, FormGroup, Button, ButtonGroup, Icon, HelpBlock }}) => (
@@ -107,7 +107,7 @@ DynamicArray.propTypes = {
   description: PropTypes.string,
   renderForm: PropTypes.func.isRequired,
   fields: PropTypes.arrayOf(PropTypes.object),
-  itemDefault: PropTypes.any
+  itemDefault: PropTypes.any,
 };
 
 const FixedArrayField = ({ title, description, fields, renderForm, additionalItems }) => {
@@ -130,7 +130,7 @@ FixedArrayField.propTypes = {
   description: PropTypes.string,
   renderForm: PropTypes.func.isRequired,
   fields: PropTypes.arrayOf(PropTypes.object).isRequired,
-  additionalItems: PropTypes.object.isRequired
+  additionalItems: PropTypes.object.isRequired,
 };
 
 export const renderArrayField = (props, { hasFixedItems, renderForm }) => {
@@ -155,8 +155,8 @@ renderArrayField.propTypes = {
   description: PropTypes.string,
   fields: PropTypes.array.isRequired,
   validate: PropTypes.array,
-  itemDefault: PropTypes.any
+  itemDefault: PropTypes.any,
 };
 renderArrayField.defaultProps = {
-  validate: []
+  validate: [],
 };

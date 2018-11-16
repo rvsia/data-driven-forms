@@ -46,6 +46,7 @@ const miqParser = (inputSchema, neededFieldAttributes, componentMap) => {
             if (option[0] === null && field.required) {
               optionObject.disabled = true;
             }
+
             newField.options.push(optionObject);
           });
         }

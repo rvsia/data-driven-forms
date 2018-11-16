@@ -12,7 +12,7 @@ const componentMapper = (componentType, formOptions) => ({
   [components.FIELD_ARRAY]: props => renderArrayField(props, formOptions),
   [components.FIXED_LIST]: props => renderArrayField(props, { ...formOptions, hasFixedItems: true }),
   [components.SUB_FORM]: props =>
-    <SubForm key={ props.key } fieldKey={ props.key } { ...props } renderForm={ formOptions.renderForm } />
+    <SubForm key={ props.key } fieldKey={ props.key } { ...props } renderForm={ formOptions.renderForm } />,
 })[componentType];
 
 export default componentMapper;
