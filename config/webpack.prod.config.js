@@ -8,6 +8,8 @@ const prodConfig = {
     entry: "./src/index.js",
     output: {
         path: resolve('./dist'),
+        library: '[name]',
+        libraryTarget: 'umd',
         filename: "index.js"
     },
 }
