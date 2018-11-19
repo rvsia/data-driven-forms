@@ -34,7 +34,8 @@
     "publish-demo": "webpack --config ./config/webpack.sandbox.config.js",
     "test": "jest --coverage",
     "test-ci": "jest && codecov",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "eslint-fix": "eslint --fix src/"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",

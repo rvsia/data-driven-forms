@@ -8,5 +8,5 @@ export default validatorType => ({
   [validators.MIN_ITEMS_VALIDATOR]: minLength,
   [validators.PATTERN_VALIDATOR]: patternValidator,
   [validators.MAX_NUMBER_VALUE]: maxValue,
-  [validators.MIN_NUMBER_VALUE]: minValue
+  [validators.MIN_NUMBER_VALUE]: minValue,
 })[validatorType];

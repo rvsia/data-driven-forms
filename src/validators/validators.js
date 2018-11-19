@@ -22,11 +22,11 @@ const booleanValidator = memoize(({ message } = { message: 'Field value has to b
 export const patternValidator = memoize(({
   pattern = /^.*&/,
   message = 'Value must match pattern',
-  showPattern = true
+  showPattern = true,
 } = {
   pattern: /^.*&/,
   message: 'Value must match pattern',
-  showPattern: true
+  showPattern: true,
 }) => {
   const verifiedPattern = typeof pattern === 'string' ? new RegExp(pattern) : pattern;
   return value =>
@@ -38,12 +38,12 @@ export const patternValidator = memoize(({
 export const dataTypeValidator = type => ({
   string: options => stringValidator({ message: 'Field value has to be string', ...options }),
   integer: options => patternValidator({
-    pattern: /^\d*$/, message: 'Value must be integer', ...options, showPattern: false
+    pattern: /^\d*$/, message: 'Value must be integer', ...options, showPattern: false,
   }),
   boolean: options => booleanValidator({ message: 'Field value has to be boolean', ...options }),
   number: options => patternValidator({
-    pattern: /^\d*[.]{0,1}\d*$/, message: 'Values mut be number', ...options, showPattern: false
-  })
+    pattern: /^\d*[.]{0,1}\d*$/, message: 'Values mut be number', ...options, showPattern: false,
+  }),
 })[type];
 
 export const required = memoize(({ message } = { message: 'Required' }) => value => (value && value.length > 0 ? undefined : message));

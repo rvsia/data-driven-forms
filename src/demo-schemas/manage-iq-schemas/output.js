@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const output = {
   title: 'Testing dialog',
   description: 'Description of testing Dialog',

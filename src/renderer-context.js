@@ -15,12 +15,12 @@ const pf3Config = {
   Button,
   ButtonGroup,
   Icon,
-  HelpBlock
+  HelpBlock,
 };
 
 const mapPf4icons = name => ({
   close: props => <CloseIcon { ...props }/>,
-  plus: props => <PlusIcon { ...props }/>
+  plus: props => <PlusIcon { ...props }/>,
 })[name];
 
 const ColPf4 = ({ children, xs, md }) => <GridItem span={ xs || md }>{ children }</GridItem>;
@@ -30,8 +30,8 @@ ColPf4.propTypes = {
   md: PropTypes.number,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
+    PropTypes.node,
+  ]).isRequired,
 };
 
 const FormGroupPf4 = ({ children }) => <ActionGroup>{ children }</ActionGroup>;
@@ -39,8 +39,8 @@ const FormGroupPf4 = ({ children }) => <ActionGroup>{ children }</ActionGroup>;
 FormGroupPf4.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
+    PropTypes.node,
+  ]).isRequired,
 };
 
 const ButtonGroupPf4 = ({ children }) => <ToolbarGroup>{ children }</ToolbarGroup>;
@@ -48,8 +48,8 @@ const ButtonGroupPf4 = ({ children }) => <ToolbarGroup>{ children }</ToolbarGrou
 ButtonGroupPf4.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
+    PropTypes.node,
+  ]).isRequired,
 };
 
 const RowPf4 = ({ children }) => <Grid>{ children }</Grid>;
@@ -57,8 +57,8 @@ const RowPf4 = ({ children }) => <Grid>{ children }</Grid>;
 RowPf4.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
+    PropTypes.node,
+  ]).isRequired,
 };
 
 const HelpBlockPf4 = ({ children }) => <TextContent><Text component={ TextVariants.p }>{ children }</Text></TextContent>;
@@ -66,8 +66,8 @@ const HelpBlockPf4 = ({ children }) => <TextContent><Text component={ TextVarian
 HelpBlockPf4.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
+    PropTypes.node,
+  ]).isRequired,
 };
 
 const pf4Config = {
@@ -77,12 +77,12 @@ const pf4Config = {
   ButtonGroup: ButtonGroupPf4,
   Row: RowPf4,
   Icon: ({ name }) => mapPf4icons(name)(),
-  HelpBlock: HelpBlockPf4
+  HelpBlock: HelpBlockPf4,
 };
 
 const configMapper = formType => ({
   pf3: pf3Config,
-  pf4: pf4Config
+  pf4: pf4Config,
 })[formType];
 
 export const configureContext = (formType, customComponents = {}) => {
@@ -90,7 +90,7 @@ export const configureContext = (formType, customComponents = {}) => {
     formType,
     commonComponents: {
       ...(configMapper(formType)),
-      ...customComponents
-    }
+      ...customComponents,
+    },
   };
 };

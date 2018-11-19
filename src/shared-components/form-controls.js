@@ -12,7 +12,7 @@ const FormControls = ({
   onReset,
   submitLabel,
   cancelLabel,
-  resetLabel
+  resetLabel,
 }) => (
   <ComponentType.Consumer>
     { ({ commonComponents: { Col, FormGroup, Button, ButtonGroup }}) => (
@@ -35,13 +35,13 @@ FormControls.propTypes = {
   onReset: PropTypes.func,
   submitLabel: PropTypes.string,
   cancelLabel: PropTypes.string,
-  resetLabel: PropTypes.string
+  resetLabel: PropTypes.string,
 };
 
 FormControls.defaultProps = {
   submitLabel: __('Submit'),
   cancelLabel: __('Cancel'),
-  resetLabel: __('Reset')
+  resetLabel: __('Reset'),
 };
 
 export default FormControls;

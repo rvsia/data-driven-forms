@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const input = {
   href: 'http://localhost:3000/api/service_dialogs/57',
   id: '57',

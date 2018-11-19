@@ -54,7 +54,7 @@ const selectComponent = ({
       onChange={ option =>
         input.onChange(rest.multi ? selectValue(option) : option ? option.value : undefined) } // eslint-disable-line no-nested-ternary
       { ...rest }
-    />)
+    />),
 })[componentType];
 
 const renderHelperText = (error, helperText) => (error // eslint-disable-line no-nested-ternary
@@ -96,7 +96,7 @@ FinalFormField.propTypes = {
   label: PropTypes.string,
   helperText: PropTypes.string,
   description: PropTypes.string,
-  hideLabel: PropTypes.bool
+  hideLabel: PropTypes.bool,
 };
 
 const CheckboxGroupField = ({ options, ...rest }) =>
@@ -111,7 +111,7 @@ const fieldMapper = type => ({
   [components.SELECT_COMPONENT]: props => <FormGroupWrapper { ...props } formField={ FinalFormField } />,
   [components.TEXTAREA_FIELD]: props => <FormGroupWrapper { ...props } formField={ FinalFormField } />,
   [components.TEXT_FIELD]: props => <FormGroupWrapper { ...props } formField={ FinalFormField } />,
-  [components.SUB_FORM]: props => <NestedForm { ...props } />
+  [components.SUB_FORM]: props => <NestedForm { ...props } />,
 })[type];
 
 const FormConditionWrapper = ({ condition, children }) => (condition ? (
@@ -134,7 +134,7 @@ const FieldInterface = ({
       ...props,
       validate: Array.isArray(validate) ? validate : [ validate ],
       componentType,
-      id: props.id || props.name
+      id: props.id || props.name,
     }) }
   </FormConditionWrapper>
 );
@@ -143,7 +143,7 @@ FieldInterface.propTypes = {
   meta: PropTypes.object,
   condition: PropTypes.shape({
     when: PropTypes.string.isRequired,
-    is: PropTypes.oneOfType([ PropTypes.array, PropTypes.string ]).isRequired
+    is: PropTypes.oneOfType([ PropTypes.array, PropTypes.string ]).isRequired,
   }),
   validate: PropTypes.oneOfType([ PropTypes.array, PropTypes.func ]),
   componentType: PropTypes.oneOf([
@@ -152,12 +152,12 @@ FieldInterface.propTypes = {
     components.SELECT_COMPONENT,
     components.TEXTAREA_FIELD,
     components.TEXT_FIELD,
-    components.SUB_FORM
+    components.SUB_FORM,
   ]).isRequired,
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   dataType: PropTypes.any,
-  initialKey: PropTypes.any
+  initialKey: PropTypes.any,
 };
 
 export const TextField = props => <FieldInterface { ...props } componentType={ components.TEXT_FIELD } />;

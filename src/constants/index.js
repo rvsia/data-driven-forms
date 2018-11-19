@@ -6,7 +6,7 @@ export const components = {
   FIXED_LIST: 'fixed-list',
   CHECKBOX: 'checkbox-field',
   SUB_FORM: 'sub-form',
-  RADIO: 'radio-field'
+  RADIO: 'radio-field',
 };
 /** Validator functions placeholder */
 export const validators = {
@@ -30,5 +30,5 @@ export const validators = {
   /**
    * Regexp pattern validator
    */
-  PATTERN_VALIDATOR: 'pattern-validator'
+  PATTERN_VALIDATOR: 'pattern-validator',
 };

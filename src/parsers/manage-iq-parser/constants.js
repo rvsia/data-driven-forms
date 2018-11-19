@@ -14,10 +14,10 @@ export const componentMap = {
 export const neededAttributes = [
   'name',
   'label',
-  ['label', 'title'],
-  ['data_type', 'dataType'],
-  ['required', 'isRequired'],
-  ['visible', 'isVisible'],
-  ['read_only', 'isReadOnly'],
-  ['description', 'helperText'],
+  [ 'label', 'title' ],
+  [ 'data_type', 'dataType' ],
+  [ 'required', 'isRequired' ],
+  [ 'visible', 'isVisible' ],
+  [ 'read_only', 'isReadOnly' ],
+  [ 'description', 'helperText' ],
 ];

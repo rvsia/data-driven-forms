@@ -10,7 +10,7 @@ const SubForm = ({
   renderForm,
   fields,
   title,
-  description
+  description,
 }) => (
   <ComponentType.Consumer>
     { ({ commonComponents: { Col }}) => (
@@ -27,10 +27,10 @@ SubForm.propTypes = {
   renderForm: PropTypes.func.isRequired,
   fields: PropTypes.oneOfType([
     PropTypes.object,
-    PropTypes.array
+    PropTypes.array,
   ]).isRequired,
   title: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
 };
 
 export default SubForm;
