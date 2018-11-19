@@ -28,3 +28,5 @@ deploy:
   project: ./public/
   domain: data-driven-forms.surge.sh 
   skip_cleanup: true
+  script:
+  - npx semantic-release
