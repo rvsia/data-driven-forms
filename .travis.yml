@@ -23,10 +23,17 @@ git:
   depth: 1
 
 deploy:
-  email: "mmarosi@redhat.com"
-  provider: surge
-  project: ./public/
-  domain: data-driven-forms.surge.sh 
-  skip_cleanup: true
-  script:
-  - npx semantic-release
+  - provider: surge
+    email: "mmarosi@redhat.com"
+    project: ./public/
+    domain: data-driven-forms.surge.sh 
+    skip_cleanup: true
+    on:
+      branch: master
+  - provider: script
+    on:
+      branch: master
+    script:
+    - npx semantic-release
+    skip_cleanup: true
+    
