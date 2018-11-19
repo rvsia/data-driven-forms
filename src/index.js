@@ -20,7 +20,7 @@ const formWrapperMapper = componentType => ({
 const schemaMapper = type => ({
   mozilla: schema => mozillaParser(schema),
   miq: schema => miqParser(schema),
-  default: schema => schema,
+  default: schema => ({ schema }),
 })[type];
 
 const FormRenderer = ({
