@@ -1,0 +1,28 @@
+#V1 Roadmap
+- [x] render form from json
+- [ ] internal schema docs
+- [ ] add schema parsers
+  - [x] mozilla json schema
+  - [x] miq form schema
+  - [ ] ...?
+- [ ] missing compomemts
+  - [ ] support tabs
+  - [ ] support wizards
+  - [ ] datepicker
+  - [ ] timepicker
+  - [ ] tagging
+- [ ] designs for array fields
+- [ ] move component references to context
+  - [x] layout components
+  - [ ] controls components
+  - [ ] input components
+    - [ ] text-field
+    - [ ] select
+    - [ ] checkbox/radiobutton
+    - [ ] textarea
+    - [ ] w/e comes next
+- [ ] tests
+- [ ] create sandbox
+- [x] demo
+- [x] automatic release
+- [x] pr preview
