@@ -35,7 +35,8 @@
     "test": "jest --coverage",
     "test-ci": "jest && codecov",
     "semantic-release": "semantic-release",
-    "eslint-fix": "eslint --fix src/"
+    "eslint-fix": "eslint --fix src/",
+    "prettier": "find src/ -name '*.js' -exec prettier --write {} \\;"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -66,6 +67,7 @@
     "jest": "^23.6.0",
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.10.0",
+    "prettier": "1.15.2",
     "regenerator-runtime": "^0.12.1",
     "resolve-url-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
