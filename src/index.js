@@ -12,7 +12,7 @@ import './react-select.scss';
 
 const formWrapperMapper = componentType => ({
   pf3: ({ children, ...props }) => <Pf3Grid fluid><Row><Pf3Form { ...props }>{ children }</Pf3Form></Row></Pf3Grid>,
-  pf4: ({ children, ...props }) => <Grid><GridItem span={ 12 }><Pf4Form { ...props }>{ children }</Pf4Form></GridItem></Grid>
+  pf4: ({ children, ...props }) => <Grid><GridItem span={ 12 }><Pf4Form { ...props }>{ children }</Pf4Form></GridItem></Grid>,
 })[componentType];
 
 const FormRenderer = ({
@@ -20,7 +20,7 @@ const FormRenderer = ({
   onSubmit,
   onCancel,
   canReset,
-  schema
+  schema,
 }) => (
   <ComponentType.Provider value={ configureContext(formType) }>
     <Suspense fallback={ <div>Loading...</div> }>
@@ -35,7 +35,7 @@ const FormRenderer = ({
                 { renderForm(schema.fields, { push: mutators.push, change, pristine }) }
                 <FormControls onSubmit={ handleSubmit } onCancel={ onCancel } onReset={ canReset && reset } />
               </Fragment>
-            )
+            ),
           })
         ) }
       />
@@ -48,12 +48,12 @@ FormRenderer.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onCancel: PropTypes.func,
   canReset: PropTypes.bool,
-  schema: PropTypes.object.isRequired
+  schema: PropTypes.object.isRequired,
 };
 
 FormRenderer.defaultProps = {
   formType: 'pf3',
-  resetAble: false
+  resetAble: false,
 };
 
 export default FormRenderer;

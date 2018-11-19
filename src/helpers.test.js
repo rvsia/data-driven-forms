@@ -32,7 +32,7 @@ describe('Form helpers', () => {
     beforeEach(() => {
       meta = {
         error: undefined,
-        touched: false
+        touched: false,
       };
     });
 
