@@ -9,9 +9,19 @@ const chooseFormMapper = formType => ({
   pf4: pf4ComponentMapper,
 })[formType];
 
-const ComponentMapper = ({ component, formOptions, componentProps }) => (
+const chooseComponent = ({ formType, componentMapper, component, formOptions, componentProps }) => {
+  let result = componentMapper(component, formOptions);
+  if (!result) {
+    result = chooseFormMapper(formType)(component, formOptions);
+  }
+
+  return result({ ...componentProps, name: componentProps.name || componentProps.key });
+};
+
+const ComponentMapper = props => (
   <ComponentType.Consumer>
-    { ({ formType }) => chooseFormMapper(formType)(component, formOptions)({ ...componentProps, name: componentProps.name || componentProps.key }) }
+    { ({ formType, componentMapper }) =>
+      chooseComponent({ formType, componentMapper, ...props }) }
   </ComponentType.Consumer>
 );
 
