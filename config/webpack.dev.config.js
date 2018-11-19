@@ -16,14 +16,6 @@ const devConfig = {
     path: resolve('../dist'),
     filename: '[name].[hash].js',
   },
-  module: {
-    rules: [{
-      enforce: 'pre',
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      use: 'eslint-loader',
-    }],
-  },
   devtool: 'source-map',
   plugins: [ htmlPlugin ],
 };

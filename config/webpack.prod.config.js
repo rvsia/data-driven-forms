@@ -10,7 +10,7 @@ const prodConfig = {
         path: resolve('./dist'),
         library: '[name]',
         libraryTarget: 'umd',
-        filename: "[name].js"
+        filename: "index.js"
     },
 }
 
