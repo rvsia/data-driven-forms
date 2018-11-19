@@ -133,7 +133,7 @@ FixedArrayField.propTypes = {
   additionalItems: PropTypes.object.isRequired,
 };
 
-export const renderArrayField = (props, { hasFixedItems, renderForm }) => {
+const renderArrayField = (props, { hasFixedItems, renderForm }) => {
   const { key, validate, ...rest } = props;
   return (
     <Field name={ key } key={ key } subscription={{ pristine: true, error: true }}>
@@ -160,3 +160,5 @@ renderArrayField.propTypes = {
 renderArrayField.defaultProps = {
   validate: [],
 };
+
+export default renderArrayField;
