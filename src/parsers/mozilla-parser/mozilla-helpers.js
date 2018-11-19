@@ -16,16 +16,25 @@ export const validatorBuilder = ({ schema, fields = {}, key }) => {
   }
 
   if (fields[key] && fields[key].minLength) {
-    result.push({ type: validators.MIN_LENGTH, treshold: fields[key].minLength });
+    result.push({
+      type: validators.MIN_LENGTH,
+      treshold: fields[key].minLength,
+    });
     delete fields[key].minLength;
   }
 
   if (fields[key] && fields[key].pattern) {
-    result.push({ type: validators.PATTERN_VALIDATOR, pattern: fields[key].pattern });
+    result.push({
+      type: validators.PATTERN_VALIDATOR,
+      pattern: fields[key].pattern,
+    });
   }
 
   if (schema.minItems) {
-    result.push({ type: validators.MIN_ITEMS_VALIDATOR, treshold: schema.minItems });
+    result.push({
+      type: validators.MIN_ITEMS_VALIDATOR,
+      treshold: schema.minItems,
+    });
   }
 
   return result;
@@ -44,27 +53,49 @@ export const validatorBuilder = ({ schema, fields = {}, key }) => {
  * @param {string} dataType mozilla data type
  * @returns {ComponentDefinition}
  */
-export const componentMapper = (type, dataType) => ({
-  string: { component: components.TEXT_FIELD, type: 'text', dataType },
-  uri: { component: components.TEXT_FIELD, type: 'uri', dataType },
-  date: { component: components.TEXT_FIELD, type: 'date', dataType },
-  'date-time': { component: components.TEXT_FIELD, type: 'datetime-local', dataType },
-  color: { component: components.TEXT_FIELD, type: 'color', dataType },
-  hidden: { component: components.TEXT_FIELD, type: 'hidden', dataType },
-  tel: { component: components.TEXT_FIELD, type: 'tel', dataType },
-  email: { component: components.TEXT_FIELD, type: 'email', dataType },
-  password: { component: components.TEXT_FIELD, type: 'password', dataType },
-  integer: { component: components.TEXT_FIELD, type: 'number', step: 1, dataType },
-  updown: { component: components.TEXT_FIELD, type: 'number', dataType },
-  number: { component: components.TEXT_FIELD, type: 'number', dataType },
-  range: { component: components.TEXT_FIELD, type: 'range', dataType },
-  textarea: { component: components.TEXTAREA_FIELD, dataType },
-  select: { component: components.SELECT_COMPONENT, dataType },
-  boolean: { component: components.CHECKBOX, type: 'checkbox', dataType },
-  checkbox: { component: components.CHECKBOX, type: 'checkbox', dataType },
-  checkboxes: { component: components.CHECKBOX, type: 'checkbox', dataType },
-  radio: { component: components.RADIO, type: 'radio', dataType },
-})[type];
+export const componentMapper = (type, dataType) =>
+  ({
+    string: { component: components.TEXT_FIELD, type: 'text', dataType },
+    uri: { component: components.TEXT_FIELD, type: 'uri', dataType },
+    date: { component: components.TEXT_FIELD, type: 'date', dataType },
+    'date-time': {
+      component: components.TEXT_FIELD,
+      type: 'datetime-local',
+      dataType,
+    },
+    color: { component: components.TEXT_FIELD, type: 'color', dataType },
+    hidden: { component: components.TEXT_FIELD, type: 'hidden', dataType },
+    tel: { component: components.TEXT_FIELD, type: 'tel', dataType },
+    email: { component: components.TEXT_FIELD, type: 'email', dataType },
+    password: {
+      component: components.TEXT_FIELD,
+      type: 'password',
+      dataType,
+    },
+    integer: {
+      component: components.TEXT_FIELD,
+      type: 'number',
+      step: 1,
+      dataType,
+    },
+    updown: { component: components.TEXT_FIELD, type: 'number', dataType },
+    number: { component: components.TEXT_FIELD, type: 'number', dataType },
+    range: { component: components.TEXT_FIELD, type: 'range', dataType },
+    textarea: { component: components.TEXTAREA_FIELD, dataType },
+    select: { component: components.SELECT_COMPONENT, dataType },
+    boolean: { component: components.CHECKBOX, type: 'checkbox', dataType },
+    checkbox: {
+      component: components.CHECKBOX,
+      type: 'checkbox',
+      dataType,
+    },
+    checkboxes: {
+      component: components.CHECKBOX,
+      type: 'checkbox',
+      dataType,
+    },
+    radio: { component: components.RADIO, type: 'radio', dataType },
+  }[type]);
 
 /**
  * Maps mozilla input options to PF4 interface
@@ -81,16 +112,29 @@ export const createFieldOptions = (options = {}) => {
   return result;
 };
 
-export const isNestedReference = (fields, key) => fields[key] && fields[key].items && fields[key].items.$ref;
-export const isDefinedByReference = (fields, key) => fields[key] && fields[key].$ref;
+export const isNestedReference = (fields, key) =>
+  fields[key] && fields[key].items && fields[key].items.$ref;
+export const isDefinedByReference = (fields, key) =>
+  fields[key] && fields[key].$ref;
 export const isAddableSubForm = (fields, key) =>
-  fields[key] && fields[key].type === 'array' && fields[key].items && fields[key].items.type === 'object';
+  fields[key] &&
+    fields[key].type === 'array' &&
+    fields[key].items &&
+    fields[key].items.type === 'object';
 export const isAddableWithFixedFields = (fields, key) =>
-  fields[key] && fields[key].type === 'array' && Array.isArray(fields[key].items) && fields[key].additionalItems;
+  fields[key] &&
+    fields[key].type === 'array' &&
+    Array.isArray(fields[key].items) &&
+    fields[key].additionalItems;
 export const isAddableWithOneField = (fields, key) =>
-  fields[key] && fields[key].type === 'array' && fields[key].items && typeof fields[key].items === 'object';
+  fields[key] &&
+    fields[key].type === 'array' &&
+    fields[key].items &&
+    typeof fields[key].items === 'object';
 export const ifFullSubForm = (fields, key) =>
-  fields[key] && fields[key].properties && typeof fields[key].properties === 'object';
+  fields[key] &&
+    fields[key].properties &&
+    typeof fields[key].properties === 'object';
 
 /**
  * Replace object keys with mapped values
@@ -99,8 +143,9 @@ export const ifFullSubForm = (fields, key) =>
  * @returns {Object} with replaced keys
  */
 export const replaceKeys = (initialObject, replacements) =>
-  Object.keys(initialObject).map(key =>
-    ({ [replacements[key] || key]: initialObject[key] })).reduce((acc, curr) => ({ ...acc, ...curr }), {});
+  Object.keys(initialObject)
+  .map(key => ({ [replacements[key] || key]: initialObject[key] }))
+  .reduce((acc, curr) => ({ ...acc, ...curr }), {});
 
 /**
  * Function that will re order the schema fields based on explicit definition
@@ -119,7 +164,9 @@ export const orderSchema = (schema, order) => {
 
   const startingFields = [ ...order.slice(0, endingIndex) ];
   const endingFields = [ ...order.slice(endingIndex + 1) ];
-  const unOrdered = initialOrder.filter(item => !order.find(orderedItem => item === orderedItem));
+  const unOrdered = initialOrder.filter(
+    item => !order.find(orderedItem => item === orderedItem)
+  );
   /**
      * Order starting fields
      */
@@ -146,12 +193,26 @@ export const createDynamicListWithFixed = (schema, uiSchema, key) => [
   ...schema.items.map(({ type, title, ...rest }, index) => {
     let options;
     if (type === 'boolean') {
-      if (!(!rest.enum && uiSchema.items && !uiSchema.items[index] || !rest.enum && !uiSchema.items)) {
-        options = rest.enum || uiSchema.items && uiSchema.items[index]['ui:widget'] === 'select' ? [{
-          label: 'Please Choose',
-          value: undefined,
-          disabled: true,
-        }, { label: 'Yes', value: true }, { label: 'No', value: false }] : [ 'Yes', 'No' ];
+      if (
+        !(
+          (!rest.enum && uiSchema.items && !uiSchema.items[index]) ||
+                    (!rest.enum && !uiSchema.items)
+        )
+      ) {
+        options =
+                    rest.enum ||
+                    (uiSchema.items &&
+                        uiSchema.items[index]['ui:widget'] === 'select')
+                      ? [
+                        {
+                          label: 'Please Choose',
+                          value: undefined,
+                          disabled: true,
+                        },
+                        { label: 'Yes', value: true },
+                        { label: 'No', value: false },
+                      ]
+                      : [ 'Yes', 'No' ];
       }
     }
 
@@ -159,7 +220,10 @@ export const createDynamicListWithFixed = (schema, uiSchema, key) => [
       validate: validatorBuilder({ schema, key: `${key}` }),
       label: title,
       name: `${key}.items.${index}`,
-      ...componentMapper(uiSchema.items && uiSchema.items[index]['ui:widget'] || type, type),
+      ...componentMapper(
+        (uiSchema.items && uiSchema.items[index]['ui:widget']) || type,
+        type
+      ),
       options,
       ...rest,
     };
@@ -172,12 +236,19 @@ export const buildConditionalFields = (properties, dependencies, key) => ({
     const conditionValues = [ ...curr.properties[key].enum ];
     const newProperty = { ...curr.properties };
     delete newProperty[key];
-    const enhancedProperties = Object.keys(newProperty).reduce((accumulator, propertyKey) => ({
-      ...accumulator,
-      [propertyKey]: { ...newProperty[propertyKey], condition: {
-        when: key, is: conditionValues,
-      }},
-    }), {});
+    const enhancedProperties = Object.keys(newProperty).reduce(
+      (accumulator, propertyKey) => ({
+        ...accumulator,
+        [propertyKey]: {
+          ...newProperty[propertyKey],
+          condition: {
+            when: key,
+            is: conditionValues,
+          },
+        },
+      }),
+      {}
+    );
     return { ...acc, ...enhancedProperties };
   }, {}),
 });

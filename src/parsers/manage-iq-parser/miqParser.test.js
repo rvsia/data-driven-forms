@@ -1,6 +1,8 @@
 import miqParse from './miqParser';
 import inputJSON from '../../demo-schemas/manage-iq-schemas/input';
-import outputJSON, { defaultValues } from '../../demo-schemas/manage-iq-schemas/output';
+import outputJSON, {
+  defaultValues,
+} from '../../demo-schemas/manage-iq-schemas/output';
 import { neededAttributes, componentMap } from './constants';
 
 describe('miqParser', () => {

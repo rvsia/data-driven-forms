@@ -1,4 +1,11 @@
-import { required, minLength, minValue, maxValue, dataTypeValidator, patternValidator } from './validators';
+import {
+  required,
+  minLength,
+  minValue,
+  maxValue,
+  dataTypeValidator,
+  patternValidator,
+} from './validators';
 
 describe('Form validators', () => {
   describe('required validator', () => {
@@ -17,11 +24,15 @@ describe('Form validators', () => {
 
   describe('min length validator', () => {
     it('should pass the validation', () => {
-      expect(minLength({ treshold: 5 })('Some longer text')).toBeUndefined();
+      expect(
+        minLength({ treshold: 5 })('Some longer text')
+      ).toBeUndefined();
     });
 
     it('should return default error message', () => {
-      expect(minLength({ treshold: 99 })('Foo')).toEqual('Should be at least 99 long');
+      expect(minLength({ treshold: 99 })('Foo')).toEqual(
+        'Should be at least 99 long'
+      );
     });
   });
 
@@ -35,7 +46,9 @@ describe('Form validators', () => {
     });
 
     it('should not pass the validation', () => {
-      expect(minValue({ value: 99 })(1)).toEqual('Should be greater or equal to: 99');
+      expect(minValue({ value: 99 })(1)).toEqual(
+        'Should be greater or equal to: 99'
+      );
     });
 
     it('should not pass the validation and return custom message', () => {
@@ -52,11 +65,15 @@ describe('Form validators', () => {
       });
 
       it('should not pass the validation', () => {
-        expect(maxValue({ value: 99 })(123)).toEqual('Should be less or equal to: 99');
+        expect(maxValue({ value: 99 })(123)).toEqual(
+          'Should be less or equal to: 99'
+        );
       });
 
       it('should not pass the validation and return custom validation', () => {
-        expect(maxValue({ value: 99, message: 'Foo' })(123)).toEqual('Foo 99');
+        expect(maxValue({ value: 99, message: 'Foo' })(123)).toEqual(
+          'Foo 99'
+        );
       });
     });
   });
@@ -67,41 +84,70 @@ describe('Form validators', () => {
     });
 
     it('should pass pattern validation with configured regexp pattern', () => {
-      expect(patternValidator({ pattern: /^Foo$/ })('Foo')).toBeUndefined();
+      expect(
+        patternValidator({ pattern: /^Foo$/ })('Foo')
+      ).toBeUndefined();
     });
 
     it('should pass pattern validation with configured error message', () => {
-      expect(patternValidator({ message: 'Regexp pattern' })()).toBeUndefined();
+      expect(
+        patternValidator({ message: 'Regexp pattern' })()
+      ).toBeUndefined();
     });
 
     it('should fail pattern validation and return default message', () => {
-      expect(patternValidator({ pattern: /^Foo$/ })('Bar')).toEqual('Value must match pattern: /^Foo$/');
+      expect(patternValidator({ pattern: /^Foo$/ })('Bar')).toEqual(
+        'Value must match pattern: /^Foo$/'
+      );
     });
 
     it('should fail pattern validation and return custom message', () => {
-      expect(patternValidator({ pattern: /^Foo$/, message: 'Custom message' })('Bar')).toEqual('Custom message: /^Foo$/');
+      expect(
+        patternValidator({
+          pattern: /^Foo$/,
+          message: 'Custom message',
+        })('Bar')
+      ).toEqual('Custom message: /^Foo$/');
     });
 
     it('should fail pattern validation and return custom message but not show pattern', () => {
-      expect(patternValidator({ pattern: /^Foo$/, message: 'Custom message', showPattern: false })('Bar')).toEqual('Custom message');
+      expect(
+        patternValidator({
+          pattern: /^Foo$/,
+          message: 'Custom message',
+          showPattern: false,
+        })('Bar')
+      ).toEqual('Custom message');
     });
 
     it('should pass pattern validation with configured regexp pattern as string', () => {
-      expect(patternValidator({ pattern: '^Foo$' })('Foo')).toBeUndefined();
+      expect(
+        patternValidator({ pattern: '^Foo$' })('Foo')
+      ).toBeUndefined();
     });
   });
 
   describe('data type validator', () => {
     it('should return string validator and pass', () => {
-      expect(dataTypeValidator('string')({ message: 'String message' })('Foo')).toBeUndefined();
+      expect(
+        dataTypeValidator('string')({ message: 'String message' })(
+          'Foo'
+        )
+      ).toBeUndefined();
     });
 
     it('should return string validator and pass if no value is given', () => {
-      expect(dataTypeValidator('string')({ message: 'String message' })()).toBeUndefined();
+      expect(
+        dataTypeValidator('string')({ message: 'String message' })()
+      ).toBeUndefined();
     });
 
     it('should return string validator and fail', () => {
-      expect(dataTypeValidator('string')({ message: 'Should be string' })(123)).toEqual('Should be string');
+      expect(
+        dataTypeValidator('string')({ message: 'Should be string' })(
+          123
+        )
+      ).toEqual('Should be string');
     });
 
     it('should return integerValidator and pass', () => {
@@ -113,11 +159,19 @@ describe('Form validators', () => {
     });
 
     it('should return integerValidator and fail', () => {
-      expect(dataTypeValidator('integer')({ message: 'Should be integer' })('Foo')).toEqual('Should be integer');
+      expect(
+        dataTypeValidator('integer')({ message: 'Should be integer' })(
+          'Foo'
+        )
+      ).toEqual('Should be integer');
     });
 
     it('should return integerValidator and fail if decimal nuber given', () => {
-      expect(dataTypeValidator('integer')({ message: 'Should be integer' })(123.456)).toEqual('Should be integer');
+      expect(
+        dataTypeValidator('integer')({ message: 'Should be integer' })(
+          123.456
+        )
+      ).toEqual('Should be integer');
     });
 
     it('should return boolean validator and pass', () => {
@@ -129,7 +183,11 @@ describe('Form validators', () => {
     });
 
     it('should return boolean validator and pass fail', () => {
-      expect(dataTypeValidator('boolean')({ message: 'Value should be boolean' })('Foo')).toEqual('Value should be boolean');
+      expect(
+        dataTypeValidator('boolean')({
+          message: 'Value should be boolean',
+        })('Foo')
+      ).toEqual('Value should be boolean');
     });
 
     it('should return numberValidator and pass', () => {
@@ -141,7 +199,11 @@ describe('Form validators', () => {
     });
 
     it('should return numberValidator and fail', () => {
-      expect(dataTypeValidator('integer')({ message: 'Should be super interger' })('Foo')).toEqual('Should be super interger');
+      expect(
+        dataTypeValidator('integer')({
+          message: 'Should be super interger',
+        })('Foo')
+      ).toEqual('Should be super interger');
     });
   });
 });

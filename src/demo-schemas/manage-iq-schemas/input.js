@@ -31,7 +31,8 @@ const input = {
           position: 0,
           dialog_groups: [
             {
-              href: 'http://localhost:3000/api/service_dialogs/637',
+              href:
+                                'http://localhost:3000/api/service_dialogs/637',
               id: '637',
               description: null,
               display: null,
@@ -44,7 +45,8 @@ const input = {
               position: 0,
               dialog_fields: [
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4327',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4327',
                   id: '4327',
                   name: 'text_box_1',
                   description: '',
@@ -92,7 +94,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4328',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4328',
                   id: '4328',
                   name: 'text_box_2',
                   description: 'Helper text',
@@ -140,7 +143,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4329',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4329',
                   id: '4329',
                   name: 'text_box_3',
                   description: '',
@@ -188,7 +192,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4330',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4330',
                   id: '4330',
                   name: 'text_box_4',
                   description: '',
@@ -236,7 +241,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4331',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4331',
                   id: '4331',
                   name: 'text_box_5',
                   description: '',
@@ -284,7 +290,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4332',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4332',
                   id: '4332',
                   name: 'text_box_6',
                   description: '',
@@ -332,7 +339,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4333',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4333',
                   id: '4333',
                   name: 'text_box_7',
                   description: '',
@@ -380,7 +388,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4334',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4334',
                   id: '4334',
                   name: 'text_box_8',
                   description: '',
@@ -428,7 +437,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4335',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4335',
                   id: '4335',
                   name: 'text_box_9',
                   description: '',
@@ -478,7 +488,8 @@ const input = {
               ],
             },
             {
-              href: 'http://localhost:3000/api/service_dialogs/638',
+              href:
+                                'http://localhost:3000/api/service_dialogs/638',
               id: '638',
               description: '',
               display: 'edit',
@@ -491,7 +502,8 @@ const input = {
               position: 1,
               dialog_fields: [
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4336',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4336',
                   id: '4336',
                   name: 'textarea_box_1',
                   description: '',
@@ -556,7 +568,8 @@ const input = {
           position: 1,
           dialog_groups: [
             {
-              href: 'http://localhost:3000/api/service_dialogs/639',
+              href:
+                                'http://localhost:3000/api/service_dialogs/639',
               id: '639',
               description: '',
               display: 'edit',
@@ -569,7 +582,8 @@ const input = {
               position: 0,
               dialog_fields: [
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4337',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4337',
                   id: '4337',
                   name: 'check_box_1',
                   description: '',
@@ -617,7 +631,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4338',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4338',
                   id: '4338',
                   name: 'check_box_2',
                   description: '',
@@ -667,7 +682,8 @@ const input = {
               ],
             },
             {
-              href: 'http://localhost:3000/api/service_dialogs/640',
+              href:
+                                'http://localhost:3000/api/service_dialogs/640',
               id: '640',
               description: 'Description',
               display: 'edit',
@@ -680,7 +696,8 @@ const input = {
               position: 1,
               dialog_fields: [
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4339',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4339',
                   id: '4339',
                   name: 'radio_button_1',
                   description: '',
@@ -695,18 +712,9 @@ const input = {
                   required_method_options: {},
                   default_value: '',
                   values: [
-                    [
-                      '1',
-                      'One',
-                    ],
-                    [
-                      '2',
-                      'Two',
-                    ],
-                    [
-                      '3',
-                      'Three',
-                    ],
+                    [ '1', 'One' ],
+                    [ '2', 'Two' ],
+                    [ '3', 'Three' ],
                   ],
                   values_method: null,
                   values_method_options: {},
@@ -742,7 +750,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4340',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4340',
                   id: '4340',
                   name: 'radio_button_2',
                   description: '',
@@ -757,18 +766,9 @@ const input = {
                   required_method_options: {},
                   default_value: '',
                   values: [
-                    [
-                      '1',
-                      'One',
-                    ],
-                    [
-                      '2',
-                      'Two',
-                    ],
-                    [
-                      '3',
-                      'Three',
-                    ],
+                    [ '1', 'One' ],
+                    [ '2', 'Two' ],
+                    [ '3', 'Three' ],
                   ],
                   values_method: null,
                   values_method_options: {},
@@ -804,7 +804,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4341',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4341',
                   id: '4341',
                   name: 'radio_button_4',
                   description: '',
@@ -819,18 +820,9 @@ const input = {
                   required_method_options: {},
                   default_value: '2',
                   values: [
-                    [
-                      '1',
-                      'One',
-                    ],
-                    [
-                      '2',
-                      'Two',
-                    ],
-                    [
-                      '3',
-                      'Three',
-                    ],
+                    [ '1', 'One' ],
+                    [ '2', 'Two' ],
+                    [ '3', 'Three' ],
                   ],
                   values_method: null,
                   values_method_options: {},
@@ -883,7 +875,8 @@ const input = {
           position: 2,
           dialog_groups: [
             {
-              href: 'http://localhost:3000/api/service_dialogs/641',
+              href:
+                                'http://localhost:3000/api/service_dialogs/641',
               id: '641',
               description: 'Description',
               display: 'edit',
@@ -896,7 +889,8 @@ const input = {
               position: 0,
               dialog_fields: [
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4342',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4342',
                   id: '4342',
                   name: 'dropdown_list_1',
                   description: '',
@@ -911,22 +905,10 @@ const input = {
                   required_method_options: {},
                   default_value: '',
                   values: [
-                    [
-                      null,
-                      '<None>',
-                    ],
-                    [
-                      '1',
-                      'One',
-                    ],
-                    [
-                      '3',
-                      'Three',
-                    ],
-                    [
-                      '2',
-                      'Two',
-                    ],
+                    [ null, '<None>' ],
+                    [ '1', 'One' ],
+                    [ '3', 'Three' ],
+                    [ '2', 'Two' ],
                   ],
                   values_method: null,
                   values_method_options: {},
@@ -963,7 +945,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4343',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4343',
                   id: '4343',
                   name: 'dropdown_list_2',
                   description: '',
@@ -978,22 +961,10 @@ const input = {
                   required_method_options: {},
                   default_value: '2',
                   values: [
-                    [
-                      null,
-                      '<None>',
-                    ],
-                    [
-                      '1',
-                      'One',
-                    ],
-                    [
-                      '3',
-                      'Three',
-                    ],
-                    [
-                      '2',
-                      'Two',
-                    ],
+                    [ null, '<None>' ],
+                    [ '1', 'One' ],
+                    [ '3', 'Three' ],
+                    [ '2', 'Two' ],
                   ],
                   values_method: null,
                   values_method_options: {},
@@ -1030,7 +1001,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4344',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4344',
                   id: '4344',
                   name: 'dropdown_list_3',
                   description: '',
@@ -1045,22 +1017,10 @@ const input = {
                   required_method_options: {},
                   default_value: '',
                   values: [
-                    [
-                      null,
-                      '<None>',
-                    ],
-                    [
-                      '1',
-                      'One',
-                    ],
-                    [
-                      '3',
-                      'Three',
-                    ],
-                    [
-                      '2',
-                      'Two',
-                    ],
+                    [ null, '<None>' ],
+                    [ '1', 'One' ],
+                    [ '3', 'Three' ],
+                    [ '2', 'Two' ],
                   ],
                   values_method: null,
                   values_method_options: {},
@@ -1097,7 +1057,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4345',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4345',
                   id: '4345',
                   name: 'dropdown_list_4',
                   description: '',
@@ -1112,22 +1073,10 @@ const input = {
                   required_method_options: {},
                   default_value: '',
                   values: [
-                    [
-                      null,
-                      '<None>',
-                    ],
-                    [
-                      '1',
-                      'One',
-                    ],
-                    [
-                      '2',
-                      'Two',
-                    ],
-                    [
-                      '3',
-                      'Three',
-                    ],
+                    [ null, '<None>' ],
+                    [ '1', 'One' ],
+                    [ '2', 'Two' ],
+                    [ '3', 'Three' ],
                   ],
                   values_method: null,
                   values_method_options: {},
@@ -1181,7 +1130,8 @@ const input = {
           position: 3,
           dialog_groups: [
             {
-              href: 'http://localhost:3000/api/service_dialogs/642',
+              href:
+                                'http://localhost:3000/api/service_dialogs/642',
               id: '642',
               description: 'Description',
               display: 'edit',
@@ -1194,7 +1144,8 @@ const input = {
               position: 0,
               dialog_fields: [
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4346',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4346',
                   id: '4346',
                   name: 'date_control_1',
                   description: '',
@@ -1242,7 +1193,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4347',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4347',
                   id: '4347',
                   name: 'date_control_2',
                   description: '',
@@ -1292,7 +1244,8 @@ const input = {
               ],
             },
             {
-              href: 'http://localhost:3000/api/service_dialogs/643',
+              href:
+                                'http://localhost:3000/api/service_dialogs/643',
               id: '643',
               description: 'Description',
               display: 'edit',
@@ -1305,7 +1258,8 @@ const input = {
               position: 1,
               dialog_fields: [
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4348',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4348',
                   id: '4348',
                   name: 'date_time_control_1',
                   description: '',
@@ -1353,7 +1307,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4349',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4349',
                   id: '4349',
                   name: 'date_time_control_2',
                   description: '',
@@ -1418,7 +1373,8 @@ const input = {
           position: 4,
           dialog_groups: [
             {
-              href: 'http://localhost:3000/api/service_dialogs/644',
+              href:
+                                'http://localhost:3000/api/service_dialogs/644',
               id: '644',
               description: 'Description',
               display: 'edit',
@@ -1431,7 +1387,8 @@ const input = {
               position: 0,
               dialog_fields: [
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4350',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4350',
                   id: '4350',
                   name: 'tag_control_1',
                   description: '',
@@ -1482,7 +1439,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4351',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4351',
                   id: '4351',
                   name: 'tag_control_2',
                   description: '',
@@ -1533,7 +1491,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4352',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4352',
                   id: '4352',
                   name: 'tag_control_3',
                   description: '',
@@ -1625,7 +1584,8 @@ const input = {
           position: 5,
           dialog_groups: [
             {
-              href: 'http://localhost:3000/api/service_dialogs/645',
+              href:
+                                'http://localhost:3000/api/service_dialogs/645',
               id: '645',
               description: 'Description',
               display: 'edit',
@@ -1638,7 +1598,8 @@ const input = {
               position: 0,
               dialog_fields: [
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4353',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4353',
                   id: '4353',
                   name: 'text_box_10',
                   description: '',
@@ -1686,7 +1647,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4354',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4354',
                   id: '4354',
                   name: 'textarea_box_2',
                   description: '',
@@ -1734,7 +1696,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4355',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4355',
                   id: '4355',
                   name: 'check_box_3',
                   description: '',
@@ -1782,7 +1745,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4356',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4356',
                   id: '4356',
                   name: 'check_box_4',
                   description: '',
@@ -1830,7 +1794,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4357',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4357',
                   id: '4357',
                   name: 'dropdown_list_5',
                   description: '',
@@ -1845,22 +1810,10 @@ const input = {
                   required_method_options: {},
                   default_value: '',
                   values: [
-                    [
-                      null,
-                      '<None>',
-                    ],
-                    [
-                      '1',
-                      'One',
-                    ],
-                    [
-                      '3',
-                      'Three',
-                    ],
-                    [
-                      '2',
-                      'Two',
-                    ],
+                    [ null, '<None>' ],
+                    [ '1', 'One' ],
+                    [ '3', 'Three' ],
+                    [ '2', 'Two' ],
                   ],
                   values_method: null,
                   values_method_options: {},
@@ -1897,7 +1850,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4358',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4358',
                   id: '4358',
                   name: 'radio_button_3',
                   description: '',
@@ -1912,18 +1866,9 @@ const input = {
                   required_method_options: {},
                   default_value: '',
                   values: [
-                    [
-                      '1',
-                      'One',
-                    ],
-                    [
-                      '2',
-                      'Two',
-                    ],
-                    [
-                      '3',
-                      'Three',
-                    ],
+                    [ '1', 'One' ],
+                    [ '2', 'Two' ],
+                    [ '3', 'Three' ],
                   ],
                   values_method: null,
                   values_method_options: {},
@@ -1959,7 +1904,8 @@ const input = {
                   dialog_field_responders: [],
                 },
                 {
-                  href: 'http://localhost:3000/api/service_dialogs/4359',
+                  href:
+                                        'http://localhost:3000/api/service_dialogs/4359',
                   id: '4359',
                   name: 'date_time_control_3',
                   description: '',

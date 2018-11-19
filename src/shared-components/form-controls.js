@@ -19,9 +19,23 @@ const FormControls = ({
       <Col xs={ 12 }>
         <FormGroup>
           <ButtonGroup bsClass="pull-right">
-            <Button bsStyle="primary" type="button" onClick={ onSubmit }>{ submitLabel }</Button>
-            { onReset && <Button type="button" onClick={ onReset }>{ resetLabel }</Button> }
-            { onCancel && <Button type="button" onClick={ onCancel }>{ cancelLabel }</Button> }
+            <Button
+              bsStyle="primary"
+              type="button"
+              onClick={ onSubmit }
+            >
+              { submitLabel }
+            </Button>
+            { onReset && (
+              <Button type="button" onClick={ onReset }>
+                { resetLabel }
+              </Button>
+            ) }
+            { onCancel && (
+              <Button type="button" onClick={ onCancel }>
+                { cancelLabel }
+              </Button>
+            ) }
           </ButtonGroup>
         </FormGroup>
       </Col>

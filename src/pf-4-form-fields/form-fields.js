@@ -23,31 +23,45 @@ import { composeValidators } from '../helpers';
 import MultipleChoiceList from './multiple-choice-list';
 import NestedForm from '../shared-components/sub-form';
 
-const selectComponent = ({ componentType, input, options, isReadOnly, isDisabled, ...rest }) => ({
-  [components.TEXT_FIELD]: () => (
-    <TextInput
-      { ...input }
-      { ...rest }
-      isReadOnly={ isReadOnly }
-      isDisabled={ isDisabled }
-    />
-  ),
-  [components.TEXTAREA_FIELD]: () => <TextArea { ...input } { ...rest } />,
-  [components.SELECT_COMPONENT]: () => (
-    <Select { ...input } { ...rest }>
-      { options.map(props => (<SelectOption key={ props.value || props.label } { ...props } label={ props.label.toString() }/>)) }
-    </Select>
-  ),
-  [components.CHECKBOX]: () =>  <Checkbox { ...input } { ...rest }/>,
-  [components.RADIO]: () => (
-    <Radio
-      { ...input }
-      { ...rest }
-      value={ !!input.value }
-      onChange={ () => input.onChange(input.value) }
-    />
-  ),
-})[componentType];
+const selectComponent = ({
+  componentType,
+  input,
+  options,
+  isReadOnly,
+  isDisabled,
+  ...rest
+}) =>
+  ({
+    [components.TEXT_FIELD]: () => (
+      <TextInput
+        { ...input }
+        { ...rest }
+        isReadOnly={ isReadOnly }
+        isDisabled={ isDisabled }
+      />
+    ),
+    [components.TEXTAREA_FIELD]: () => <TextArea { ...input } { ...rest } />,
+    [components.SELECT_COMPONENT]: () => (
+      <Select { ...input } { ...rest }>
+        { options.map(props => (
+          <SelectOption
+            key={ props.value || props.label }
+            { ...props }
+            label={ props.label.toString() }
+          />
+        )) }
+      </Select>
+    ),
+    [components.CHECKBOX]: () => <Checkbox { ...input } { ...rest } />,
+    [components.RADIO]: () => (
+      <Radio
+        { ...input }
+        { ...rest }
+        value={ !!input.value }
+        onChange={ () => input.onChange(input.value) }
+      />
+    ),
+  }[componentType]);
 
 const FinalFormField = ({
   componentType,
@@ -71,8 +85,18 @@ const FinalFormField = ({
         helperText={ __(helperText) }
         helperTextInvalid={ __(meta.error) }
       >
-        { description && <TextContent><Text component={ TextVariants.small }>{ __(description) }</Text></TextContent> }
-        { selectComponent({ componentType, ...rest, isValid: !showError })() }
+        { description && (
+          <TextContent>
+            <Text component={ TextVariants.small }>
+              { __(description) }
+            </Text>
+          </TextContent>
+        ) }
+        { selectComponent({
+          componentType,
+          ...rest,
+          isValid: !showError,
+        })() }
       </FormGroup>
     </GridItem>
   );
@@ -95,8 +119,16 @@ FinalFormField.defaultProps = {
 const SingleChoiceList = ({ validate, ...props }) => (
   <Field
     { ...props }
-    validate={ composeValidators(...props.validate || []) }
-    render={ ({ input, meta, options, label, isRequired, helperText, ...rest }) => {
+    validate={ composeValidators(...(props.validate || [])) }
+    render={ ({
+      input,
+      meta,
+      options,
+      label,
+      isRequired,
+      helperText,
+      ...rest
+    }) => {
       const { error, touched } = meta;
       const showError = touched && error;
       return (
@@ -105,7 +137,7 @@ const SingleChoiceList = ({ validate, ...props }) => (
           isRequired={ isRequired }
           fieldId={ rest.id }
           helperText={ __(helperText) }
-          helperTextInvalid= { __(meta.error) }
+          helperTextInvalid={ __(meta.error) }
           isValid={ !showError }
         >
           { options.map(option => (
@@ -122,42 +154,57 @@ const SingleChoiceList = ({ validate, ...props }) => (
             />
           )) }
         </FormGroup>
-      );} } />);
+      );
+    } }
+  />
+);
 
 const SingleCheckboxField = ({ isReadOnly, helperText, ...props }) => (
   <Field
     { ...props }
-    validate={ composeValidators(...props.validate || []) }
+    validate={ composeValidators(...(props.validate || [])) }
     type="checkbox"
     render={ rest => selectComponent({ ...rest })() }
   />
 );
 
 const CheckboxGroupField = ({ options, ...rest }) =>
-  options ? <MultipleChoiceList options={ options } { ...rest }/>
-    : (
-      <SingleCheckboxField
-        aria-label={ rest['aria-label'] || rest.label }
-        { ...rest }
-        componentType={ components.CHECKBOX }
+  options ? (
+    <MultipleChoiceList options={ options } { ...rest } />
+  ) : (
+    <SingleCheckboxField
+      aria-label={ rest['aria-label'] || rest.label }
+      { ...rest }
+      componentType={ components.CHECKBOX }
+    />
+  );
+
+const fieldMapper = type =>
+  ({
+    [components.TEXT_FIELD]: props => (
+      <FormGroupWrapper { ...props } formField={ FinalFormField } />
+    ),
+    [components.SELECT_COMPONENT]: props => (
+      <FormGroupWrapper
+        componentType={ components.SELECT_COMPONENT }
+        formField={ FinalFormField }
+        { ...props }
       />
-    );
+    ),
+    [components.TEXTAREA_FIELD]: props => (
+      <FormGroupWrapper
+        componentType={ components.TEXTAREA_FIELD }
+        formField={ FinalFormField }
+        { ...props }
+      />
+    ),
+    [components.CHECKBOX]: props => <CheckboxGroupField { ...props } />,
+    [components.RADIO]: props => <SingleChoiceList { ...props } />,
+    [components.SUB_FORM]: props => <NestedForm { ...props } />,
+  }[type]);
 
-const fieldMapper = type => ({
-  [components.TEXT_FIELD]: props => <FormGroupWrapper { ...props } formField={ FinalFormField } />,
-  [components.SELECT_COMPONENT]: props =>
-    <FormGroupWrapper componentType={ components.SELECT_COMPONENT } formField={ FinalFormField } { ...props } />,
-  [components.TEXTAREA_FIELD]: props => <FormGroupWrapper componentType={ components.TEXTAREA_FIELD } formField={ FinalFormField } { ...props } />,
-  [components.CHECKBOX]: props => <CheckboxGroupField { ...props }/>,
-  [components.RADIO]: props => <SingleChoiceList { ...props }/>,
-  [components.SUB_FORM]: props => <NestedForm { ...props } />,
-})[type];
-
-const FormConditionWrapper = ({ condition, children }) => (condition ? (
-  <Condition { ...condition }>
-    { children }
-  </Condition>
-) : children);
+const FormConditionWrapper = ({ condition, children }) =>
+  condition ? <Condition { ...condition }>{ children }</Condition> : children;
 
 const FieldInterface = ({
   meta,
@@ -199,9 +246,21 @@ FieldInterface.propTypes = {
   initialKey: PropTypes.any,
 };
 
-export const TextField = props => <FieldInterface { ...props } componentType={ components.TEXT_FIELD }  />;
-export const TextareaField = props => <FieldInterface { ...props }  componentType={ components.TEXTAREA_FIELD } />;
-export const SelectField = props=> <FieldInterface { ...props } componentType={ components.SELECT_COMPONENT } />;
-export const CheckboxGroup = props => <FieldInterface { ...props } componentType={ components.CHECKBOX }/>;
-export const SubForm = props => <FieldInterface { ...props } componentType={ components.SUB_FORM } />;
-export const RadioGroup = props => <FieldInterface { ...props } componentType={ components.RADIO } />;
+export const TextField = props => (
+  <FieldInterface { ...props } componentType={ components.TEXT_FIELD } />
+);
+export const TextareaField = props => (
+  <FieldInterface { ...props } componentType={ components.TEXTAREA_FIELD } />
+);
+export const SelectField = props => (
+  <FieldInterface { ...props } componentType={ components.SELECT_COMPONENT } />
+);
+export const CheckboxGroup = props => (
+  <FieldInterface { ...props } componentType={ components.CHECKBOX } />
+);
+export const SubForm = props => (
+  <FieldInterface { ...props } componentType={ components.SUB_FORM } />
+);
+export const RadioGroup = props => (
+  <FieldInterface { ...props } componentType={ components.RADIO } />
+);

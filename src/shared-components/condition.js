@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
 
 const Condition = ({ when, is, children }) => {
-  const shouldRender = value => (Array.isArray(is) ? !!is.find(item => item === value) : value === is);
+  const shouldRender = value =>
+    Array.isArray(is) ? !!is.find(item => item === value) : value === is;
   return (
     <Field name={ when } subscription={{ value: true }}>
       { ({ input: { value }}) => (shouldRender(value) ? children : null) }

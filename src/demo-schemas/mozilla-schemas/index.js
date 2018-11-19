@@ -2,10 +2,7 @@ export const simple = {
   title: 'A registration form',
   description: 'A simple form example.',
   type: 'object',
-  required: [
-    'firstName',
-    'lastName',
-  ],
+  required: [ 'firstName', 'lastName' ],
   properties: {
     firstName: {
       type: 'string',
@@ -61,8 +58,8 @@ export const uiSchemaSimple = {
 };
 
 /**
-* Lauras form usecases
-*/
+ * Lauras form usecases
+ */
 
 export const lauraSchema1 = {
   type: 'object',
@@ -98,7 +95,6 @@ export const benchmarchUiSchema = {
   '0typnpcsapb': {
     'ui:widget': 'textarea',
   },
-
 };
 
 export const benchmark = {
@@ -182,9 +178,7 @@ export const benchmark = {
 export const nestedSchema = {
   title: 'A list of tasks',
   type: 'object',
-  required: [
-    'title',
-  ],
+  required: [ 'title' ],
   properties: {
     title: {
       type: 'string',
@@ -195,9 +189,7 @@ export const nestedSchema = {
       title: 'Tasks',
       items: {
         type: 'object',
-        required: [
-          'title',
-        ],
+        required: [ 'title' ],
         properties: {
           title: {
             type: 'string',
@@ -310,14 +302,8 @@ export const widgets = {
     selectWidgetOptions: {
       title: 'Custom select widget with options',
       type: 'string',
-      enum: [
-        'foo',
-        'bar',
-      ],
-      enumNames: [
-        'Foo',
-        'Bar',
-      ],
+      enum: [ 'foo', 'bar' ],
+      enumNames: [ 'Foo', 'Bar' ],
     },
   },
 };
@@ -438,12 +424,7 @@ export const arraySchema = {
       title: 'A multiple choices list',
       items: {
         type: 'string',
-        enum: [
-          'foo',
-          'bar',
-          'fuzz',
-          'qux',
-        ],
+        enum: [ 'foo', 'bar', 'fuzz', 'qux' ],
       },
       uniqueItems: true,
     },
@@ -478,11 +459,7 @@ export const arraySchema = {
       type: 'array',
       title: 'List and item level defaults',
       minItems: 5,
-      default: [
-        'carp',
-        'trout',
-        'bream',
-      ],
+      default: [ 'carp', 'trout', 'bream' ],
       items: {
         type: 'string',
         default: 'unidentified',
@@ -611,20 +588,12 @@ export const numberSchema = {
     numberEnum: {
       type: 'number',
       title: 'Number enum',
-      enum: [
-        1,
-        2,
-        3,
-      ],
+      enum: [ 1, 2, 3 ],
     },
     numberEnumRadio: {
       type: 'number',
       title: 'Number enum',
-      enum: [
-        1,
-        2,
-        3,
-      ],
+      enum: [ 1, 2, 3 ],
     },
     integerRange: {
       title: 'Integer range',
@@ -740,14 +709,8 @@ export const widgetSchema = {
     selectWidgetOptions: {
       title: 'Custom select widget with options',
       type: 'string',
-      enum: [
-        'foo',
-        'bar',
-      ],
-      enumNames: [
-        'Foo',
-        'Bar',
-      ],
+      enum: [ 'foo', 'bar' ],
+      enumNames: [ 'Foo', 'Bar' ],
     },
   },
 };
@@ -796,10 +759,7 @@ export const uiWidgetSchema = {
 export const orderingSchema = {
   title: 'A registration form',
   type: 'object',
-  required: [
-    'firstName',
-    'lastName',
-  ],
+  required: [ 'firstName', 'lastName' ],
   properties: {
     password: {
       type: 'string',
@@ -825,12 +785,7 @@ export const orderingSchema = {
 };
 
 export const uiOrderingSchema = {
-  'ui:order': [
-    'firstName',
-    'lastName',
-    '*',
-    'password',
-  ],
+  'ui:order': [ 'firstName', 'lastName', '*', 'password' ],
   age: {
     'ui:widget': 'updown',
   },
@@ -847,7 +802,8 @@ export const referencesSchema = {
     address: {
       type: 'object',
       properties: {
-        street_address: { // eslint-disable-line camelcase
+        street_address: {
+          // eslint-disable-line camelcase
           type: 'string',
         },
         city: {
@@ -857,20 +813,18 @@ export const referencesSchema = {
           type: 'string',
         },
       },
-      required: [
-        'street_address',
-        'city',
-        'state',
-      ],
+      required: [ 'street_address', 'city', 'state' ],
     },
   },
   type: 'object',
   properties: {
-    billing_address: { // eslint-disable-line camelcase
+    billing_address: {
+      // eslint-disable-line camelcase
       title: 'Billing address',
       $ref: '#/definitions/address',
     },
-    shipping_address: { // eslint-disable-line camelcase
+    shipping_address: {
+      // eslint-disable-line camelcase
       title: 'Shipping address',
       $ref: '#/definitions/address',
     },
@@ -878,16 +832,13 @@ export const referencesSchema = {
 };
 
 export const uiReferencesSchema = {
-  'ui:order': [
-    'shipping_address',
-    'billing_address',
-    'tree',
-  ],
+  'ui:order': [ 'shipping_address', 'billing_address', 'tree' ],
 };
 
 export const anyOfSelectSchema = {
   title: 'Web hook',
-  description: 'This web hook allows us to send a JSON object from the service portal',
+  description:
+        'This web hook allows us to send a JSON object from the service portal',
   type: 'object',
   definitions: {
     Authentications: {
@@ -896,23 +847,17 @@ export const anyOfSelectSchema = {
       anyOf: [
         {
           type: 'string',
-          enum: [
-            'oauth',
-          ],
+          enum: [ 'oauth' ],
           title: 'OAuth 2.0',
         },
         {
           type: 'string',
-          enum: [
-            'basic',
-          ],
+          enum: [ 'basic' ],
           title: 'Basic Authentication',
         },
         {
           type: 'string',
-          enum: [
-            'none',
-          ],
+          enum: [ 'none' ],
           title: 'No Authentication needed',
         },
       ],
@@ -924,17 +869,15 @@ export const anyOfSelectSchema = {
       title: 'Authentication',
       default: 'none',
     },
-
   },
 };
 
 export const conditionalSchema = {
   title: 'Web hook',
-  description: 'This web hook allows us to send a JSON object from the service portal',
+  description:
+        'This web hook allows us to send a JSON object from the service portal',
   type: 'object',
-  required: [
-    'url',
-  ],
+  required: [ 'url' ],
   definitions: {
     Authentications: {
       title: 'Authentications',
@@ -942,23 +885,17 @@ export const conditionalSchema = {
       anyOf: [
         {
           type: 'string',
-          enum: [
-            'oauth',
-          ],
+          enum: [ 'oauth' ],
           title: 'OAuth 2.0',
         },
         {
           type: 'string',
-          enum: [
-            'basic',
-          ],
+          enum: [ 'basic' ],
           title: 'Basic Authentication',
         },
         {
           type: 'string',
-          enum: [
-            'none',
-          ],
+          enum: [ 'none' ],
           title: 'No Authentication needed',
         },
       ],
@@ -971,7 +908,8 @@ export const conditionalSchema = {
       description: 'The URL which will be receving this request',
       pattern: '^(http|https)://*',
     },
-    verify_ssl: { // eslint-disable-line camelcase
+    verify_ssl: {
+      // eslint-disable-line camelcase
       type: 'boolean',
       default: true,
       title: 'Verify Server Certificate',
@@ -979,7 +917,8 @@ export const conditionalSchema = {
     secret: {
       type: 'string',
       title: 'Secret',
-          description: 'If specified we will create a HMAC signature of the body with the secret and include it in the HTTP Header X-Service-Portal-Signature' // eslint-disable-line
+      description:
+                'If specified we will create a HMAC signature of the body with the secret and include it in the HTTP Header X-Service-Portal-Signature' // eslint-disable-line
     },
     authentication: {
       $ref: '#/definitions/Authentications',
@@ -993,46 +932,41 @@ export const conditionalSchema = {
         {
           properties: {
             authentication: {
-              enum: [
-                'none',
-              ],
+              enum: [ 'none' ],
             },
           },
         },
         {
           properties: {
             authentication: {
-              enum: [
-                'oauth',
-              ],
+              enum: [ 'oauth' ],
             },
             token: {
               type: 'string',
               title: 'Bearer Token',
-              description: 'For OAuth 2.0 authentication please provide a token',
+              description:
+                                'For OAuth 2.0 authentication please provide a token',
             },
-
           },
         },
         {
           properties: {
             authentication: {
-              enum: [
-                'basic',
-              ],
+              enum: [ 'basic' ],
             },
             userid: {
               type: 'string',
               title: 'Username',
-              description: 'For basic authentication please provide a userid',
+              description:
+                                'For basic authentication please provide a userid',
             },
             password: {
               type: 'string',
               title: 'Password',
               format: 'password',
-              description: 'For basic authentication please provide a password',
+              description:
+                                'For basic authentication please provide a password',
             },
-
           },
         },
       ],

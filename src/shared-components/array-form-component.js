@@ -20,20 +20,39 @@ const ArrayItem = ({
   remove,
 }) => (
   <ComponentType.Consumer>
-    { ({ commonComponents: { Col, Button, ButtonGroup, Icon, Row }, formType }) => (
-      <div className={ formType === 'pf3' ? 'final-form-array-group' : 'final-form-array-grid' }>
+    { ({
+      commonComponents: { Col, Button, ButtonGroup, Icon, Row },
+      formType,
+    }) => (
+      <div
+        className={ formType === 'pf3'
+          ? 'final-form-array-group'
+          : 'final-form-array-grid' }
+      >
         <Col xs={ 11 } className="final-form-array-item">
-          { renderForm(fields.map((field) => {
-            const itemName = field.name
-              ? field.name.substring(field.name.lastIndexOf('.') + 1)
-              : `${fieldKey}[${fieldIndex}]`;
-            const fieldName = `${name}${itemName && itemName !== 'items' ? itemName : ''}`;
-            return { ...field, name: fieldName, key: name };
-          })) }
+          { renderForm(
+            fields.map(field => {
+              const itemName = field.name
+                ? field.name.substring(
+                  field.name.lastIndexOf('.') + 1
+                )
+                : `${fieldKey}[${fieldIndex}]`;
+              const fieldName = `${name}${
+                itemName && itemName !== 'items' ? itemName : ''
+              }`;
+              return { ...field, name: fieldName, key: name };
+            })
+          ) }
         </Col>
         <Col xs={ 1 } className="final-form-group-controls">
           <ButtonGroup className="pull-right">
-            <Button type="button" bsStyle="danger" onClick={ () => remove(fieldIndex) }><Icon name="close" /></Button>
+            <Button
+              type="button"
+              bsStyle="danger"
+              onClick={ () => remove(fieldIndex) }
+            >
+              <Icon name="close" />
+            </Button>
           </ButtonGroup>
         </Col>
       </div>
@@ -60,19 +79,49 @@ const DynamicArray = ({
   itemDefault,
 }) => (
   <ComponentType.Consumer>
-    { ({ commonComponents: { Col, FormGroup, Button, ButtonGroup, Icon, HelpBlock }}) => (
-      <FieldArray key={ fieldKey } validate={ value => {
-        let result = validate(value ? value.length > 0 ? value : undefined : undefined);
-        if (typeof result === 'function') {
-          result = result(value);
-        }
+    { ({
+      commonComponents: {
+        Col,
+        FormGroup,
+        Button,
+        ButtonGroup,
+        Icon,
+        HelpBlock,
+      },
+    }) => (
+      <FieldArray
+        key={ fieldKey }
+        validate={ value => {
+          let result = validate(
+            value
+              ? value.length > 0
+                ? value
+                : undefined
+              : undefined
+          );
+          if (typeof result === 'function') {
+            result = result(value);
+          }
 
-        return result;
-      } } name={ fieldKey }>
-        { ({ fields: { map, remove, push }, meta: { error, dirty, submitFailed }}) => (
+          return result;
+        } }
+        name={ fieldKey }
+      >
+        { ({
+          fields: { map, remove, push },
+          meta: { error, dirty, submitFailed },
+        }) => (
           <Fragment>
-            { title && <Col xs={ 12 }><h3>{ title }</h3></Col> }
-            { description && <Col xs={ 12 }><p>{ description }</p></Col> }
+            { title && (
+              <Col xs={ 12 }>
+                <h3>{ title }</h3>
+              </Col>
+            ) }
+            { description && (
+              <Col xs={ 12 }>
+                <p>{ description }</p>
+              </Col>
+            ) }
             { map((name, index) => (
               <ArrayItem
                 key={ `${name}-${index}` }
@@ -82,12 +131,23 @@ const DynamicArray = ({
                 fieldIndex={ index }
                 renderForm={ renderForm }
                 remove={ remove }
-              />)) }
-            <Col xs={ 11 }>{ (dirty || submitFailed) && error && typeof error === 'string' && <HelpBlock>{ error }</HelpBlock> }</Col>
+              />
+            )) }
+            <Col xs={ 11 }>
+              { (dirty || submitFailed) &&
+                                error &&
+                                typeof error === 'string' && (
+                <HelpBlock>{ error }</HelpBlock>
+              ) }
+            </Col>
             <Col xs={ 1 } className="final-form-array-add-container">
               <FormGroup>
                 <ButtonGroup className="pull-right">
-                  <Button type="button" variant="link" onClick={ () => push(itemDefault) }>
+                  <Button
+                    type="button"
+                    variant="link"
+                    onClick={ () => push(itemDefault) }
+                  >
                     <Icon type="fa" name="plus" />
                   </Button>
                 </ButtonGroup>
@@ -110,13 +170,27 @@ DynamicArray.propTypes = {
   itemDefault: PropTypes.any,
 };
 
-const FixedArrayField = ({ title, description, fields, renderForm, additionalItems }) => {
+const FixedArrayField = ({
+  title,
+  description,
+  fields,
+  renderForm,
+  additionalItems,
+}) => {
   return (
     <ComponentType.Consumer>
       { ({ commonComponents: { Col }}) => (
         <Fragment>
-          { title && <Col xs={ 12 }><h3>{ title }</h3></Col> }
-          { description && <Col xs={ 12 }><p>{ description }</p></Col> }
+          { title && (
+            <Col xs={ 12 }>
+              <h3>{ title }</h3>
+            </Col>
+          ) }
+          { description && (
+            <Col xs={ 12 }>
+              <p>{ description }</p>
+            </Col>
+          ) }
           { renderForm(fields) }
           { renderForm([ additionalItems ]) }
         </Fragment>
@@ -136,15 +210,22 @@ FixedArrayField.propTypes = {
 export const renderArrayField = (props, { hasFixedItems, renderForm }) => {
   const { key, validate, ...rest } = props;
   return (
-    <Field name={ key } key={ key } subscription={{ pristine: true, error: true }}>
-      { () => hasFixedItems ? <FixedArrayField { ...props } renderForm={ renderForm } /> : (
-        <DynamicArray
-          renderForm={ renderForm }
-          validate={ composeValidators(...validate || []) }
-          fieldKey={ key }
-          { ...rest }
-        />
-      ) }
+    <Field
+      name={ key }
+      key={ key }
+      subscription={{ pristine: true, error: true }}
+    >
+      { () =>
+        hasFixedItems ? (
+          <FixedArrayField { ...props } renderForm={ renderForm } />
+        ) : (
+          <DynamicArray
+            renderForm={ renderForm }
+            validate={ composeValidators(...(validate || [])) }
+            fieldKey={ key }
+            { ...rest }
+          />
+        ) }
     </Field>
   );
 };

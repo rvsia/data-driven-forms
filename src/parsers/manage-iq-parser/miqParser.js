@@ -7,26 +7,30 @@ const miqParser = (inputSchema, neededFieldAttributes, componentMap) => {
   const defaultValues = {};
   const { description } = inputSchema;
 
-  tabs.forEach((tab) => {
+  tabs.forEach(tab => {
     const groups = [];
-    tab.dialog_groups.forEach((group) => {
+    tab.dialog_groups.forEach(group => {
       const fieldsArray = [];
-      group.dialog_fields.forEach((field) => {
+      group.dialog_fields.forEach(field => {
         const newField = {};
 
-        neededFieldAttributes.forEach((info) => {
+        neededFieldAttributes.forEach(info => {
           const attribute = Array.isArray(info) ? info[0] : info;
-          const convertedAttribute = Array.isArray(info) ? info[1] : info;
+          const convertedAttribute = Array.isArray(info)
+            ? info[1]
+            : info;
           newField[convertedAttribute] = field[attribute];
         });
 
         newField.autofocus = false;
 
         if (field.validator_type) {
-          newField.validate = [{
-            type: validators.PATTERN_VALIDATOR,
-            pattern: field.validator_rule,
-          }];
+          newField.validate = [
+            {
+              type: validators.PATTERN_VALIDATOR,
+              pattern: field.validator_rule,
+            },
+          ];
         }
 
         newField.component = componentMap[field.type];
@@ -41,8 +45,11 @@ const miqParser = (inputSchema, neededFieldAttributes, componentMap) => {
 
         newField.options = [];
         if (Array.isArray(field.values)) {
-          field.values.forEach((option) => {
-            const optionObject = { label: option[1], value: option[0] };
+          field.values.forEach(option => {
+            const optionObject = {
+              label: option[1],
+              value: option[0],
+            };
             if (option[0] === null && field.required) {
               optionObject.disabled = true;
             }

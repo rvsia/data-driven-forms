@@ -30,7 +30,8 @@ describe('Should provide correct translation functions', () => {
     const mask = 'Some mask %d';
     const parameter = 10;
     const expectedResult = 'Some mask 10';
-    window.sprintf = (stringMaks, stringParameter) => stringMaks.replace('%d', stringParameter);
+    window.sprintf = (stringMaks, stringParameter) =>
+      stringMaks.replace('%d', stringParameter);
     expect(sprintf(mask, parameter)).toEqual(expectedResult);
     window.sprintf = undefined;
   });

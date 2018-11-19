@@ -13,7 +13,11 @@ import ComponentType from '../renderer-context';
 import Condition from '../shared-components/condition';
 
 const selectValue = option =>
-  option.sort((a, b) => a.label.localeCompare(b.label, 'en', { sensitivity: 'base' })).map(item => item.value);
+  option
+  .sort((a, b) =>
+    a.label.localeCompare(b.label, 'en', { sensitivity: 'base' })
+  )
+  .map(item => item.value);
 
 const selectComponent = ({
   componentType,
@@ -26,40 +30,76 @@ const selectComponent = ({
   isRequired,
   label,
   ...rest
-}) => ({
-  [components.TEXT_FIELD]: () => <FormControl { ...input } disabled={ isDisabled } readOnly={ isReadOnly } { ...rest } />,
-  [components.TEXTAREA_FIELD]: () =>
-    <FormControl { ...input } disabled={ isDisabled } readOnly={ isReadOnly } { ...rest } componentClass="textarea" />,
-  [components.CHECKBOX]: () => <Checkbox { ...input }>{ label }</Checkbox>,
-  [components.RADIO]: () => options.map(option => (
-    <Field
-      key={ `${input.name}-${option.value}` }
-      name={ input.name }
-      value={ !!option.value }
-      type="radio"
-      render={ ({ input }) => (
-        <Radio { ...input } onChange={ () => { input.onChange(option.value); } }>{ option.label }</Radio>) }
-    />
-  )),
-  [components.SELECT_COMPONENT]: () => (
-    <ReactSelect
-      className={ `${invalid ? 'has-error' : ''} final-form-select` }
-      optionClassName="final-form-select-option"
-      { ...input }
-      options={options.filter(option => option.hasOwnProperty('value'))} // eslint-disable-line
-      placeholder={ placeholder || __('Please choose') }
-      multi={ false }
-      searchable={ false }
-      clearable={ !isRequired }
-      onChange={ option =>
-        input.onChange(rest.multi ? selectValue(option) : option ? option.value : undefined) } // eslint-disable-line no-nested-ternary
-      { ...rest }
-    />),
-})[componentType];
+}) =>
+  ({
+    [components.TEXT_FIELD]: () => (
+      <FormControl
+        { ...input }
+        disabled={ isDisabled }
+        readOnly={ isReadOnly }
+        { ...rest }
+      />
+    ),
+    [components.TEXTAREA_FIELD]: () => (
+      <FormControl
+        { ...input }
+        disabled={ isDisabled }
+        readOnly={ isReadOnly }
+        { ...rest }
+        componentClass="textarea"
+      />
+    ),
+    [components.CHECKBOX]: () => <Checkbox { ...input }>{ label }</Checkbox>,
+    [components.RADIO]: () =>
+      options.map(option => (
+        <Field
+          key={ `${input.name}-${option.value}` }
+          name={ input.name }
+          value={ !!option.value }
+          type="radio"
+          render={ ({ input }) => (
+            <Radio
+              { ...input }
+              onChange={ () => {
+                input.onChange(option.value);
+              } }
+            >
+              { option.label }
+            </Radio>
+          ) }
+        />
+      )),
+    [components.SELECT_COMPONENT]: () => (
+      <ReactSelect
+        className={ `${invalid ? 'has-error' : ''} final-form-select` }
+        optionClassName="final-form-select-option"
+        { ...input }
+        options={ options.filter(option =>
+          option.hasOwnProperty('value')
+                )} // eslint-disable-line
+        placeholder={ placeholder || __('Please choose') }
+        multi={ false }
+        searchable={ false }
+        clearable={ !isRequired }
+        onChange={ option =>
+          input.onChange(
+            rest.multi
+              ? selectValue(option)
+              : option
+                ? option.value
+                : undefined
+          ) } // eslint-disable-line no-nested-ternary
+        { ...rest }
+      />
+    ),
+  }[componentType]);
 
-const renderHelperText = (error, helperText) => (error // eslint-disable-line no-nested-ternary
-  ? <HelpBlock>{ __(error) }</HelpBlock>
-  : helperText ? <HelpBlock>{ __(helperText) }</HelpBlock> : null);
+const renderHelperText = (error, helperText) =>
+  error ? ( // eslint-disable-line no-nested-ternary
+    <HelpBlock>{ __(error) }</HelpBlock>
+  ) : helperText ? (
+    <HelpBlock>{ __(helperText) }</HelpBlock>
+  ) : null;
 
 const FinalFormField = ({
   meta,
@@ -75,13 +115,22 @@ const FinalFormField = ({
     <ComponentType.Consumer>
       { ({ commonComponents: { Col, FormGroup }}) => (
         <FormGroup validationState={ invalid ? 'error' : null }>
-          { label &&
-          <Col md={ 12 } componentClass="label" className="control-label">
-            { !hideLabel && __(label) }
-          </Col> }
+          { label && (
+            <Col
+              md={ 12 }
+              componentClass="label"
+              className="control-label"
+            >
+              { !hideLabel && __(label) }
+            </Col>
+          ) }
           <Col md={ 12 }>
             { selectComponent({ ...rest, invalid, label })() }
-            { description && <HelpBlock style={{ color: '#767676' }}>{ description }</HelpBlock> }
+            { description && (
+              <HelpBlock style={{ color: '#767676' }}>
+                { description }
+              </HelpBlock>
+            ) }
             { renderHelperText(invalid && meta.error, helperText) }
           </Col>
         </FormGroup>
@@ -100,25 +149,37 @@ FinalFormField.propTypes = {
 };
 
 const CheckboxGroupField = ({ options, ...rest }) =>
-  (options ? <MultipleChoiceList options={ options } { ...rest } />
-    : (
-      <FormGroupWrapper { ...rest } type="checkbox" formField={ FinalFormField } componentType={ components.CHECKBOX } />
-    ));
+  options ? (
+    <MultipleChoiceList options={ options } { ...rest } />
+  ) : (
+    <FormGroupWrapper
+      { ...rest }
+      type="checkbox"
+      formField={ FinalFormField }
+      componentType={ components.CHECKBOX }
+    />
+  );
 
-const fieldMapper = type => ({
-  [components.RADIO]: props => <FormGroupWrapper { ...props } formField={ FinalFormField } />,
-  [components.CHECKBOX]: props => <CheckboxGroupField { ...props } />,
-  [components.SELECT_COMPONENT]: props => <FormGroupWrapper { ...props } formField={ FinalFormField } />,
-  [components.TEXTAREA_FIELD]: props => <FormGroupWrapper { ...props } formField={ FinalFormField } />,
-  [components.TEXT_FIELD]: props => <FormGroupWrapper { ...props } formField={ FinalFormField } />,
-  [components.SUB_FORM]: props => <NestedForm { ...props } />,
-})[type];
+const fieldMapper = type =>
+  ({
+    [components.RADIO]: props => (
+      <FormGroupWrapper { ...props } formField={ FinalFormField } />
+    ),
+    [components.CHECKBOX]: props => <CheckboxGroupField { ...props } />,
+    [components.SELECT_COMPONENT]: props => (
+      <FormGroupWrapper { ...props } formField={ FinalFormField } />
+    ),
+    [components.TEXTAREA_FIELD]: props => (
+      <FormGroupWrapper { ...props } formField={ FinalFormField } />
+    ),
+    [components.TEXT_FIELD]: props => (
+      <FormGroupWrapper { ...props } formField={ FinalFormField } />
+    ),
+    [components.SUB_FORM]: props => <NestedForm { ...props } />,
+  }[type]);
 
-const FormConditionWrapper = ({ condition, children }) => (condition ? (
-  <Condition { ...condition }>
-    { children }
-  </Condition>
-) : children);
+const FormConditionWrapper = ({ condition, children }) =>
+  condition ? <Condition { ...condition }>{ children }</Condition> : children;
 
 const FieldInterface = ({
   meta,
@@ -160,9 +221,21 @@ FieldInterface.propTypes = {
   initialKey: PropTypes.any,
 };
 
-export const TextField = props => <FieldInterface { ...props } componentType={ components.TEXT_FIELD } />;
-export const TextareaField = props => <FieldInterface { ...props } componentType={ components.TEXTAREA_FIELD } />;
-export const SelectField = props => <FieldInterface { ...props } componentType={ components.SELECT_COMPONENT } />;
-export const RadioGroup = props => <FieldInterface { ...props } componentType={ components.RADIO } />;
-export const CheckboxGroup = props => <FieldInterface { ...props } componentType={ components.CHECKBOX } />;
-export const SubForm = props => <FieldInterface { ...props } componentType={ components.SUB_FORM } />;
+export const TextField = props => (
+  <FieldInterface { ...props } componentType={ components.TEXT_FIELD } />
+);
+export const TextareaField = props => (
+  <FieldInterface { ...props } componentType={ components.TEXTAREA_FIELD } />
+);
+export const SelectField = props => (
+  <FieldInterface { ...props } componentType={ components.SELECT_COMPONENT } />
+);
+export const RadioGroup = props => (
+  <FieldInterface { ...props } componentType={ components.RADIO } />
+);
+export const CheckboxGroup = props => (
+  <FieldInterface { ...props } componentType={ components.CHECKBOX } />
+);
+export const SubForm = props => (
+  <FieldInterface { ...props } componentType={ components.SUB_FORM } />
+);

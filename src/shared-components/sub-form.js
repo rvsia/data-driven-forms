@@ -6,12 +6,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ComponentType from '../renderer-context';
 
-const SubForm = ({
-  renderForm,
-  fields,
-  title,
-  description,
-}) => (
+const SubForm = ({ renderForm, fields, title, description }) => (
   <ComponentType.Consumer>
     { ({ commonComponents: { Col }}) => (
       <Col xs={ 12 }>
@@ -25,10 +20,7 @@ const SubForm = ({
 
 SubForm.propTypes = {
   renderForm: PropTypes.func.isRequired,
-  fields: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array,
-  ]).isRequired,
+  fields: PropTypes.oneOfType([ PropTypes.object, PropTypes.array ]).isRequired,
   title: PropTypes.string,
   description: PropTypes.string,
 };
