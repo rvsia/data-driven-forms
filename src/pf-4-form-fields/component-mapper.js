@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { components } from '../constants';
-import { TextField, TextareaField, SelectField, CheckboxGroup, SubForm, RadioGroup } from './form-fields';
-import { renderArrayField } from '../shared-components/array-form-component';
+
+const renderArrayField = lazy(() => import('../shared-components/array-form-component'));
+const TextField = lazy(() => import('./text-field-lazy'));
+const TextareaField = lazy(() => import('./textarea-lazy'));
+const CheckboxGroup = lazy(() => import('./checkbox-lazy'));
+const RadioGroup = lazy(() => import('./radio-lazy'));
+const SelectField = lazy(() => import('./select-field-lazy'));
+const SubForm = lazy(() => import('./sub-form-lazy'));
 
 const componentMapper = (componentType, formOptions) => ({
   [components.TEXT_FIELD]: props => <TextField { ...props } />,
