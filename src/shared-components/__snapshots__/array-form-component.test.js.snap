@@ -1,0 +1,546 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderArrayForm component should render array field with fixed items 1`] = `
+<ReactFinalForm
+  onSubmit={[MockFunction]}
+>
+  <Field
+    format={[Function]}
+    parse={[Function]}
+    subscription={
+      Object {
+        "error": true,
+        "pristine": true,
+      }
+    }
+  >
+    <FixedArrayField
+      additionalItems={
+        Object {
+          "field": Array [],
+        }
+      }
+      description="bar"
+      fields={Array []}
+      renderForm={[Function]}
+      title="Foo"
+    >
+      <Col
+        bsClass="col"
+        componentClass="div"
+        xs={12}
+      >
+        <div
+          className="col-xs-12"
+        >
+          <h3>
+            Foo
+          </h3>
+        </div>
+      </Col>
+      <Col
+        bsClass="col"
+        componentClass="div"
+        xs={12}
+      >
+        <div
+          className="col-xs-12"
+        >
+          <p>
+            bar
+          </p>
+        </div>
+      </Col>
+      <div>
+        Dynamic part
+      </div>
+      <div>
+        Dynamic part
+      </div>
+    </FixedArrayField>
+  </Field>
+</ReactFinalForm>
+`;
+
+exports[`renderArrayForm component should render array field without fixed items 1`] = `
+<ReactFinalForm
+  mutators={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "shift": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+      "update": [Function],
+    }
+  }
+  onSubmit={[MockFunction]}
+>
+  <Field
+    format={[Function]}
+    parse={[Function]}
+    subscription={
+      Object {
+        "error": true,
+        "pristine": true,
+      }
+    }
+  >
+    <DynamicArray
+      additionalItems={
+        Object {
+          "field": Array [],
+        }
+      }
+      description="bar"
+      fields={Array []}
+      renderForm={[Function]}
+      title="Foo"
+      validate={[Function]}
+    >
+      <ReactFinalFormFieldArray(4.8.1)(1.0.6)
+        validate={[Function]}
+      >
+        <Col
+          bsClass="col"
+          componentClass="div"
+          xs={12}
+        >
+          <div
+            className="col-xs-12"
+          >
+            <h3>
+              Foo
+            </h3>
+          </div>
+        </Col>
+        <Col
+          bsClass="col"
+          componentClass="div"
+          xs={12}
+        >
+          <div
+            className="col-xs-12"
+          >
+            <p>
+              bar
+            </p>
+          </div>
+        </Col>
+        <Col
+          bsClass="col"
+          componentClass="div"
+          xs={11}
+        >
+          <div
+            className="col-xs-11"
+          />
+        </Col>
+        <Col
+          bsClass="col"
+          className="final-form-array-add-container"
+          componentClass="div"
+          xs={1}
+        >
+          <div
+            className="final-form-array-add-container col-xs-1"
+          >
+            <FormGroup
+              bsClass="form-group"
+            >
+              <div
+                className="form-group"
+              >
+                <ButtonGroup
+                  block={false}
+                  bsClass="btn-group"
+                  className="pull-right"
+                  justified={false}
+                  vertical={false}
+                >
+                  <div
+                    className="pull-right btn-group"
+                  >
+                    <Button
+                      active={false}
+                      block={false}
+                      bsClass="btn"
+                      bsStyle="default"
+                      disabled={false}
+                      onClick={[Function]}
+                      type="button"
+                      variant="link"
+                    >
+                      <button
+                        className="btn btn-default"
+                        disabled={false}
+                        onClick={[Function]}
+                        type="button"
+                        variant="link"
+                      >
+                        <Icon
+                          name="plus"
+                          type="fa"
+                        >
+                          <FontAwesome
+                            name="plus"
+                          >
+                            <span
+                              aria-hidden={true}
+                              className="fa fa-plus"
+                            />
+                          </FontAwesome>
+                        </Icon>
+                      </button>
+                    </Button>
+                  </div>
+                </ButtonGroup>
+              </div>
+            </FormGroup>
+          </div>
+        </Col>
+      </ReactFinalFormFieldArray(4.8.1)(1.0.6)>
+    </DynamicArray>
+  </Field>
+</ReactFinalForm>
+`;
+
+exports[`renderArrayForm component should render items from initial values 1`] = `
+<ReactFinalForm
+  initialValues={
+    Object {
+      "Foo": Array [
+        "bar",
+        "quax",
+      ],
+    }
+  }
+  mutators={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "shift": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+      "update": [Function],
+    }
+  }
+  onSubmit={[MockFunction]}
+>
+  <Field
+    format={[Function]}
+    key="Foo"
+    name="Foo"
+    parse={[Function]}
+    subscription={
+      Object {
+        "error": true,
+        "pristine": true,
+      }
+    }
+  >
+    <DynamicArray
+      description="bar"
+      fieldKey="Foo"
+      fields={
+        Array [
+          Object {
+            "component": "text-field",
+            "name": "innerItem",
+          },
+        ]
+      }
+      renderForm={[Function]}
+      title="Foo"
+      validate={[Function]}
+    >
+      <ReactFinalFormFieldArray(4.8.1)(1.0.6)
+        key="Foo"
+        name="Foo"
+        validate={[Function]}
+      >
+        <Col
+          bsClass="col"
+          componentClass="div"
+          xs={12}
+        >
+          <div
+            className="col-xs-12"
+          >
+            <h3>
+              Foo
+            </h3>
+          </div>
+        </Col>
+        <Col
+          bsClass="col"
+          componentClass="div"
+          xs={12}
+        >
+          <div
+            className="col-xs-12"
+          >
+            <p>
+              bar
+            </p>
+          </div>
+        </Col>
+        <ArrayItem
+          fieldIndex={0}
+          fieldKey="Foo"
+          fields={
+            Array [
+              Object {
+                "component": "text-field",
+                "name": "innerItem",
+              },
+            ]
+          }
+          key="Foo[0]-0"
+          name="Foo[0]"
+          remove={[Function]}
+          renderForm={[Function]}
+        >
+          <div
+            className="final-form-array-group"
+          >
+            <Col
+              bsClass="col"
+              className="final-form-array-item"
+              componentClass="div"
+              xs={11}
+            >
+              <div
+                className="final-form-array-item col-xs-11"
+              >
+                <div>
+                  Dynamic part
+                </div>
+              </div>
+            </Col>
+            <Col
+              bsClass="col"
+              className="final-form-group-controls"
+              componentClass="div"
+              xs={1}
+            >
+              <div
+                className="final-form-group-controls col-xs-1"
+              >
+                <ButtonGroup
+                  block={false}
+                  bsClass="btn-group"
+                  className="pull-right"
+                  justified={false}
+                  vertical={false}
+                >
+                  <div
+                    className="pull-right btn-group"
+                  >
+                    <Button
+                      active={false}
+                      block={false}
+                      bsClass="btn"
+                      bsStyle="danger"
+                      disabled={false}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      <button
+                        className="btn btn-danger"
+                        disabled={false}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        <Icon
+                          name="close"
+                          type="fa"
+                        >
+                          <FontAwesome
+                            name="close"
+                          >
+                            <span
+                              aria-hidden={true}
+                              className="fa fa-close"
+                            />
+                          </FontAwesome>
+                        </Icon>
+                      </button>
+                    </Button>
+                  </div>
+                </ButtonGroup>
+              </div>
+            </Col>
+          </div>
+        </ArrayItem>
+        <ArrayItem
+          fieldIndex={1}
+          fieldKey="Foo"
+          fields={
+            Array [
+              Object {
+                "component": "text-field",
+                "name": "innerItem",
+              },
+            ]
+          }
+          key="Foo[1]-1"
+          name="Foo[1]"
+          remove={[Function]}
+          renderForm={[Function]}
+        >
+          <div
+            className="final-form-array-group"
+          >
+            <Col
+              bsClass="col"
+              className="final-form-array-item"
+              componentClass="div"
+              xs={11}
+            >
+              <div
+                className="final-form-array-item col-xs-11"
+              >
+                <div>
+                  Dynamic part
+                </div>
+              </div>
+            </Col>
+            <Col
+              bsClass="col"
+              className="final-form-group-controls"
+              componentClass="div"
+              xs={1}
+            >
+              <div
+                className="final-form-group-controls col-xs-1"
+              >
+                <ButtonGroup
+                  block={false}
+                  bsClass="btn-group"
+                  className="pull-right"
+                  justified={false}
+                  vertical={false}
+                >
+                  <div
+                    className="pull-right btn-group"
+                  >
+                    <Button
+                      active={false}
+                      block={false}
+                      bsClass="btn"
+                      bsStyle="danger"
+                      disabled={false}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      <button
+                        className="btn btn-danger"
+                        disabled={false}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        <Icon
+                          name="close"
+                          type="fa"
+                        >
+                          <FontAwesome
+                            name="close"
+                          >
+                            <span
+                              aria-hidden={true}
+                              className="fa fa-close"
+                            />
+                          </FontAwesome>
+                        </Icon>
+                      </button>
+                    </Button>
+                  </div>
+                </ButtonGroup>
+              </div>
+            </Col>
+          </div>
+        </ArrayItem>
+        <Col
+          bsClass="col"
+          componentClass="div"
+          xs={11}
+        >
+          <div
+            className="col-xs-11"
+          />
+        </Col>
+        <Col
+          bsClass="col"
+          className="final-form-array-add-container"
+          componentClass="div"
+          xs={1}
+        >
+          <div
+            className="final-form-array-add-container col-xs-1"
+          >
+            <FormGroup
+              bsClass="form-group"
+            >
+              <div
+                className="form-group"
+              >
+                <ButtonGroup
+                  block={false}
+                  bsClass="btn-group"
+                  className="pull-right"
+                  justified={false}
+                  vertical={false}
+                >
+                  <div
+                    className="pull-right btn-group"
+                  >
+                    <Button
+                      active={false}
+                      block={false}
+                      bsClass="btn"
+                      bsStyle="default"
+                      disabled={false}
+                      onClick={[Function]}
+                      type="button"
+                      variant="link"
+                    >
+                      <button
+                        className="btn btn-default"
+                        disabled={false}
+                        onClick={[Function]}
+                        type="button"
+                        variant="link"
+                      >
+                        <Icon
+                          name="plus"
+                          type="fa"
+                        >
+                          <FontAwesome
+                            name="plus"
+                          >
+                            <span
+                              aria-hidden={true}
+                              className="fa fa-plus"
+                            />
+                          </FontAwesome>
+                        </Icon>
+                      </button>
+                    </Button>
+                  </div>
+                </ButtonGroup>
+              </div>
+            </FormGroup>
+          </div>
+        </Col>
+      </ReactFinalFormFieldArray(4.8.1)(1.0.6)>
+    </DynamicArray>
+  </Field>
+</ReactFinalForm>
+`;
