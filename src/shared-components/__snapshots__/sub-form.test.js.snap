@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SubForm /> should render only with fields 1`] = `
+<SubForm
+  fields={Array []}
+  renderForm={[Function]}
+>
+  <Col
+    bsClass="col"
+    componentClass="div"
+    xs={12}
+  >
+    <div
+      className="col-xs-12"
+    >
+      <div>
+        Foo
+      </div>
+    </div>
+  </Col>
+</SubForm>
+`;
+
+exports[`<SubForm /> should render with description 1`] = `
+<SubForm
+  description="Bar"
+  fields={Array []}
+  renderForm={[Function]}
+>
+  <Col
+    bsClass="col"
+    componentClass="div"
+    xs={12}
+  >
+    <div
+      className="col-xs-12"
+    >
+      <p>
+        Bar
+      </p>
+      <div>
+        Foo
+      </div>
+    </div>
+  </Col>
+</SubForm>
+`;
+
+exports[`<SubForm /> should render with title 1`] = `
+<SubForm
+  fields={Array []}
+  renderForm={[Function]}
+  title="Foo"
+>
+  <Col
+    bsClass="col"
+    componentClass="div"
+    xs={12}
+  >
+    <div
+      className="col-xs-12"
+    >
+      <h3>
+        Foo
+      </h3>
+      <div>
+        Foo
+      </div>
+    </div>
+  </Col>
+</SubForm>
+`;
+
+exports[`<SubForm /> should render with title and description 1`] = `
+<SubForm
+  description="Bar"
+  fields={Array []}
+  renderForm={[Function]}
+  title="Foo"
+>
+  <Col
+    bsClass="col"
+    componentClass="div"
+    xs={12}
+  >
+    <div
+      className="col-xs-12"
+    >
+      <h3>
+        Foo
+      </h3>
+      <p>
+        Bar
+      </p>
+      <div>
+        Foo
+      </div>
+    </div>
+  </Col>
+</SubForm>
+`;
