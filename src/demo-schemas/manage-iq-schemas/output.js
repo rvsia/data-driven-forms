@@ -1,4 +1,6 @@
 /* eslint-disable camelcase */
+import { components } from '../../constants/';
+
 const output = {
   title: 'Testing dialog',
   description: 'Description of testing Dialog',
@@ -23,7 +25,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'text-field',
+                component: components.TEXT_FIELD,
                 options: [
 
                 ],
@@ -38,7 +40,7 @@ const output = {
                 isReadOnly: false,
                 helperText: 'Helper text',
                 autofocus: false,
-                component: 'text-field',
+                component: components.TEXT_FIELD,
                 options: [
 
                 ],
@@ -53,7 +55,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'text-field',
+                component: components.TEXT_FIELD,
                 options: [
 
                 ],
@@ -68,7 +70,7 @@ const output = {
                 isReadOnly: true,
                 helperText: '',
                 autofocus: false,
-                component: 'text-field',
+                component: components.TEXT_FIELD,
                 options: [
 
                 ],
@@ -83,7 +85,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'text-field',
+                component: components.TEXT_FIELD,
                 options: [
 
                 ],
@@ -98,7 +100,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'text-field',
+                component: components.TEXT_FIELD,
                 options: [
 
                 ],
@@ -113,7 +115,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'text-field',
+                component: components.TEXT_FIELD,
                 options: [
 
                 ],
@@ -128,7 +130,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'text-field',
+                component: components.TEXT_FIELD,
                 options: [
 
                 ],
@@ -143,13 +145,13 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'text-field',
+                component: components.TEXT_FIELD,
                 options: [
 
                 ],
               },
             ],
-            component: 'sub-form',
+            component: components.SUB_FORM,
           },
           {
             title: 'Text areas',
@@ -165,16 +167,16 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'textarea-field',
+                component: components.TEXTAREA_FIELD,
                 options: [
 
                 ],
               },
             ],
-            component: 'sub-form',
+            component: components.SUB_FORM,
           },
         ],
-        component: 'tab-item',
+        component: components.TAB_ITEM,
       },
       {
         title: 'Tab 2',
@@ -195,7 +197,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'checkbox-field',
+                component: components.CHECKBOX,
                 options: [
 
                 ],
@@ -210,13 +212,13 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'checkbox-field',
+                component: components.CHECKBOX,
                 options: [
 
                 ],
               },
             ],
-            component: 'sub-form',
+            component: components.SUB_FORM,
           },
           {
             title: 'Radios',
@@ -232,7 +234,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'radio-field',
+                component: components.RADIO,
                 options: [
                   {
                     label: 'One',
@@ -258,7 +260,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'radio-field',
+                component: components.RADIO,
                 options: [
                   {
                     label: 'One',
@@ -284,7 +286,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'radio-field',
+                component: components.RADIO,
                 options: [
                   {
                     label: 'One',
@@ -301,10 +303,10 @@ const output = {
                 ],
               },
             ],
-            component: 'sub-form',
+            component: components.SUB_FORM,
           },
         ],
-        component: 'tab-item',
+        component: components.TAB_ITEM,
       },
       {
         title: 'Tab 3',
@@ -325,7 +327,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'select-field',
+                component: components.SELECT_COMPONENT,
                 options: [
                   {
                     label: '<None>',
@@ -355,7 +357,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'select-field',
+                component: components.SELECT_COMPONENT,
                 options: [
                   {
                     label: '<None>',
@@ -385,7 +387,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'select-field',
+                component: components.SELECT_COMPONENT,
                 options: [
                   {
                     label: '<None>',
@@ -415,7 +417,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'select-field',
+                component: components.SELECT_COMPONENT,
                 options: [
                   {
                     label: '<None>',
@@ -436,10 +438,10 @@ const output = {
                 ],
               },
             ],
-            component: 'sub-form',
+            component: components.SUB_FORM,
           },
         ],
-        component: 'tab-item',
+        component: components.TAB_ITEM,
       },
       {
         title: 'Tab 4',
@@ -460,7 +462,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'date-picker',
+                component: components.DATE_PICKER,
                 options: [
 
                 ],
@@ -475,13 +477,13 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'date-picker',
+                component: components.DATE_PICKER,
                 options: [
 
                 ],
               },
             ],
-            component: 'sub-form',
+            component: components.SUB_FORM,
           },
           {
             title: 'Timepickers',
@@ -497,7 +499,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'time-picker',
+                component: components.TIME_PICKER,
                 options: [
 
                 ],
@@ -512,16 +514,16 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'time-picker',
+                component: components.TIME_PICKER,
                 options: [
 
                 ],
               },
             ],
-            component: 'sub-form',
+            component: components.SUB_FORM,
           },
         ],
-        component: 'tab-item',
+        component: components.TAB_ITEM,
       },
       {
         title: 'Tab 5',
@@ -542,7 +544,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'tag-control',
+                component: components.TAG_CONTROL,
                 options: [
 
                 ],
@@ -557,7 +559,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'tag-control',
+                component: components.TAG_CONTROL,
                 options: [
 
                 ],
@@ -572,7 +574,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'tag-control',
+                component: components.TAG_CONTROL,
                 options: [
                   {
 
@@ -589,10 +591,10 @@ const output = {
                 ],
               },
             ],
-            component: 'sub-form',
+            component: components.SUB_FORM,
           },
         ],
-        component: 'tab-item',
+        component: components.TAB_ITEM,
       },
       {
         title: 'Mixed',
@@ -613,7 +615,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'text-field',
+                component: components.TEXT_FIELD,
                 options: [
 
                 ],
@@ -628,7 +630,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'textarea-field',
+                component: components.TEXTAREA_FIELD,
                 options: [
 
                 ],
@@ -643,7 +645,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'checkbox-field',
+                component: components.CHECKBOX,
                 options: [
 
                 ],
@@ -658,7 +660,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'checkbox-field',
+                component: components.CHECKBOX,
                 options: [
 
                 ],
@@ -673,7 +675,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'select-field',
+                component: components.SELECT_COMPONENT,
                 options: [
                   {
                     label: '<None>',
@@ -703,7 +705,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'radio-field',
+                component: components.RADIO,
                 options: [
                   {
                     label: 'One',
@@ -729,19 +731,19 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'time-picker',
+                component: components.TIME_PICKER,
                 options: [
 
                 ],
               },
             ],
-            component: 'sub-form',
+            component: components.SUB_FORM,
           },
         ],
-        component: 'tab-item',
+        component: components.TAB_ITEM,
       },
     ],
-    component: 'tabs',
+    component: components.TABS,
     key: '57',
   },
 };
