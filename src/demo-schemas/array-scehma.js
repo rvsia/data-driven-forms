@@ -1,12 +1,14 @@
+import { components } from '../constants/';
+
 export default {
   fields: [{
     title: 'A list of strings',
     key: 'listOfStrings',
-    component: 'field-array',
+    component: components.FIELD_ARRAY,
     itemDefault: 'bazinga',
     validate: [],
     fields: [{
-      component: 'text-field',
+      component: components.TEXT_FIELD,
       dataType: 'string',
       type: 'text',
       validate: [],
@@ -20,7 +22,7 @@ export default {
     title: 'A multiple choices list',
     name: 'multipleChoicesList',
     label: 'A multiple choices list',
-    component: 'checkbox-field',
+    component: components.CHECKBOX,
     dataType: 'string',
     validate: [],
     options: [{
@@ -41,12 +43,12 @@ export default {
   }, {
     key: 'fixedItemsList',
     title: 'A list of fixed items',
-    component: 'fixed-list',
+    component: components.FIXED_LIST,
     fields: [{
       name: 'fixedItemsList.items.0',
       dataType: 'string',
       label: 'A string value',
-      component: 'textarea-field',
+      component: components.TEXTAREA_FIELD,
       default: 'lorem ipsum',
       validate: [],
     }, {
@@ -54,7 +56,7 @@ export default {
       dataType: 'boolean',
       label: 'a boolean value',
       validate: [],
-      component: 'select-field',
+      component: components.SELECT_COMPONENT,
       options: [{
         disabled: true,
         label: 'Please Choose',
@@ -69,12 +71,12 @@ export default {
     additionalItems: {
       key: 'fixedItemsList.additionalItems',
       validate: [],
-      component: 'field-array',
+      component: components.FIELD_ARRAY,
       fields: [{
         initialKey: 'items',
         dataType: 'number',
         label: 'Additional item',
-        component: 'text-field',
+        component: components.TEXT_FIELD,
         type: 'number',
         validate: [],
         autoFocus: false,
@@ -84,7 +86,7 @@ export default {
     },
   }, {
     key: 'minItemsList',
-    component: 'field-array',
+    component: components.FIELD_ARRAY,
     title: 'A list with a minimal number of items',
     validate: [{
       type: 'required-validator',
@@ -98,7 +100,7 @@ export default {
       name: 'minItemsList.name',
       dataType: 'string',
       default: 'Default name',
-      component: 'text-field',
+      component: components.TEXT_FIELD,
       type: 'text',
       validate: [],
       autoFocus: false,
@@ -108,7 +110,7 @@ export default {
     },
   }, {
     key: 'defaultsAndMinItems',
-    component: 'field-array',
+    component: components.FIELD_ARRAY,
     title: 'List and item level defaults',
     itemDefault: 'unidentified',
     validate: [{
@@ -117,7 +119,7 @@ export default {
     }],
     fields: [{
       dataType: 'string',
-      component: 'text-field',
+      component: components.TEXT_FIELD,
       type: 'text',
       validate: [],
       initialKey: 'items',
@@ -129,15 +131,15 @@ export default {
     key: 'nestedList',
     name: 'nestedList',
     title: 'Nested list',
-    component: 'field-array',
+    component: components.FIELD_ARRAY,
     fields: [{
       title: 'Inner list',
-      component: 'field-array',
+      component: components.FIELD_ARRAY,
       validate: [],
       key: 'nestedList',
       fields: [{
         dataType: 'string',
-        component: 'text-field',
+        component: components.TEXT_FIELD,
         validate: [],
         type: 'text',
         initialKey: 'items',
@@ -147,13 +149,13 @@ export default {
       }],
     }],
   }, {
-    component: 'field-array',
+    component: components.FIELD_ARRAY,
     key: 'unorderable',
     title: 'Unorderable items',
     validate: [],
     fields: [{
       dataType: 'string',
-      component: 'text-field',
+      component: components.TEXT_FIELD,
       type: 'text',
       validate: [],
       initialKey: 'items',
@@ -165,11 +167,11 @@ export default {
   }, {
     key: 'unremovable',
     title: 'Unremovable items',
-    component: 'field-array',
+    component: components.FIELD_ARRAY,
     validate: [],
     fields: [{
       dataType: 'string',
-      component: 'text-field',
+      component: components.TEXT_FIELD,
       type: 'text',
       validate: [],
       name: 'unremovable.items',
@@ -181,11 +183,11 @@ export default {
   }, {
     key: 'noToolbar',
     title: 'No add, remove and order buttons',
-    component: 'field-array',
+    component: components.FIELD_ARRAY,
     validate: [],
     fields: [{
       dataType: 'string',
-      component: 'text-field',
+      component: components.TEXT_FIELD,
       type: 'text',
       validate: [],
       name: 'noToolbar.items',
@@ -197,31 +199,31 @@ export default {
   }, {
     key: 'fixedNoToolbar',
     title: 'Fixed array without buttons',
-    component: 'fixed-list',
+    component: components.FIXED_LIST,
     fields: [{
       dataType: 'number',
       name: 'fixedNoToolbar.items.0',
       label: 'A number',
       default: 42,
-      component: 'text-field',
+      component: components.TEXT_FIELD,
       type: 'number',
       validate: [],
     }, {
       name: 'fixedNoToolbar.items.1',
       dataType: 'boolean',
       label: 'A boolean',
-      component: 'checkbox-field',
+      component: components.CHECKBOX,
       type: 'checkbox',
       validate: [],
       default: false,
     }],
     additionalItems: {
-      component: 'field-array',
+      component: components.FIELD_ARRAY,
       key: 'fixedNoToolbar.additionalItems',
       validate: [],
       fields: [{
         dataType: 'string',
-        component: 'text-field',
+        component: components.TEXT_FIELD,
         label: 'A string',
         title: 'A string',
         initialKey: 'items',

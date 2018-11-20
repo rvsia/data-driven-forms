@@ -6,9 +6,9 @@ export const componentMap = {
   DialogFieldCheckBox: components.CHECKBOX,
   DialogFieldTextAreaBox: components.TEXTAREA_FIELD,
   DialogFieldDropDownList: components.SELECT_COMPONENT,
-  DialogFieldDateControl: 'datepicker',
-  DialogFieldDateTimeControl: 'timepicker',
-  DialogFieldTagControl: 'tagcontrol',
+  DialogFieldDateControl: components.DATE_PICKER,
+  DialogFieldDateTimeControl: components.TIME_PICKER,
+  DialogFieldTagControl: components.TAG_CONTROL,
 };
 
 export const neededAttributes = [

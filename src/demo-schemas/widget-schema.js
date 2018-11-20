@@ -1,3 +1,5 @@
+import { components } from '../constants/';
+
 export default {
   title: 'Widgets',
   fields: [{
@@ -6,7 +8,7 @@ export default {
     validate: [],
     key: 'stringFormats',
     title: 'String formats',
-    component: 'sub-form',
+    component: components.SUB_FORM,
     fields: [{
       initialKey: 'email',
       description: 'Insert your email address',
@@ -18,7 +20,7 @@ export default {
         treshold: 3,
       }],
       name: 'stringFormats.email',
-      component: 'text-field',
+      component: components.TEXT_FIELD,
       type: 'email',
       label: 'email',
       dataType: 'string',
@@ -27,7 +29,7 @@ export default {
       name: 'stringFormats.uri',
       label: 'uri',
       initialKey: 'uri',
-      component: 'text-field',
+      component: components.TEXT_FIELD,
       type: 'uri',
       dataType: 'string',
       validate: [],
@@ -39,7 +41,7 @@ export default {
     title: 'Boolean field',
     validate: [],
     key: 'boolean',
-    component: 'sub-form',
+    component: components.SUB_FORM,
     fields: [{
       name: 'boolean.default',
       initialKey: 'default',
@@ -48,7 +50,7 @@ export default {
       validate: [],
       autoFocus: false,
       description: 'This is the checkbox-description',
-      component: 'checkbox-field',
+      component: components.CHECKBOX,
       type: 'checkbox',
       dataType: 'boolean',
     }, {
@@ -59,7 +61,7 @@ export default {
       validate: [],
       autoFocus: false,
       description: 'This is the radio-description',
-      component: 'radio-field',
+      component: components.RADIO,
       type: 'radio',
       dataType: 'boolean',
       options: [{
@@ -75,7 +77,7 @@ export default {
       initialKey: 'select',
       title: 'select box',
       label: 'select box',
-      component: 'select-field',
+      component: components.SELECT_COMPONENT,
       type: 'boolean',
       dataType: 'boolean',
       validate: [{
@@ -98,7 +100,7 @@ export default {
     name: 'string',
     title: 'String field',
     validate: [],
-    component: 'sub-form',
+    component: components.SUB_FORM,
     key: 'string',
     fields: [{
       autoFocus: false,
@@ -107,7 +109,7 @@ export default {
       initialKey: 'default',
       type: 'text',
       dataType: 'string',
-      component: 'text-field',
+      component: components.TEXT_FIELD,
       title: 'text input (default)',
       label: 'text input (default)',
     }, {
@@ -118,7 +120,7 @@ export default {
       rows: 5,
       type: 'string',
       dataType: 'string',
-      component: 'textarea-field',
+      component: components.TEXTAREA_FIELD,
       title: 'textarea',
       label: 'textarea',
     }, {
@@ -128,7 +130,7 @@ export default {
       initialKey: 'color',
       type: 'color',
       dataType: 'string',
-      component: 'text-field',
+      component: components.TEXT_FIELD,
       title: 'color picker',
       label: 'color picker',
       default: '#151ce6',
@@ -138,7 +140,7 @@ export default {
     name: 'secret',
     type: 'hidden',
     dataType: 'string',
-    component: 'text-field',
+    component: components.TEXT_FIELD,
     default: 'I\'m a hidden string.',
   }, {
     autoFocus: false,
@@ -146,7 +148,7 @@ export default {
     name: 'disabled',
     type: 'text',
     dataType: 'string',
-    component: 'text-field',
+    component: components.TEXT_FIELD,
     title: 'A disabled field',
     label: 'A disabled field',
     default: 'I am disabled.',
@@ -157,7 +159,7 @@ export default {
     name: 'readonly',
     type: 'text',
     dataType: 'string',
-    component: 'text-field',
+    component: components.TEXT_FIELD,
     title: 'A readonly field',
     label: 'A readonly field',
     default: 'I am read-only.',
@@ -168,7 +170,7 @@ export default {
     name: 'widgetOptions',
     type: 'text',
     dataType: 'string',
-    component: 'text-field',
+    component: components.TEXT_FIELD,
     title: 'Custom widget with options',
     label: 'Custom widget with options',
     default: 'I am yellow',
@@ -178,7 +180,7 @@ export default {
     name: 'selectWidgetOptions',
     type: 'string',
     dataType: 'string',
-    component: 'select-field',
+    component: components.SELECT_COMPONENT,
     title: 'Custom select widget with options',
     label: 'Custom select widget with options',
     options: [{
