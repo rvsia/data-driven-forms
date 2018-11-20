@@ -33,7 +33,7 @@ const FormRenderer = ({
 }) => {
   const inputSchema = schemaMapper(schemaType)(schema);
   return (
-    <ComponentType.Provider value={ configureContext(formType) }>
+    <ComponentType.Provider value={ configureContext({ formType }) }>
       <Suspense fallback={ <div>Loading...</div> }>
         <Form
           onSubmit={ onSubmit }
