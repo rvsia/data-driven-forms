@@ -460,7 +460,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'datepicker',
+                component: 'date-picker',
                 options: [
 
                 ],
@@ -475,7 +475,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'datepicker',
+                component: 'date-picker',
                 options: [
 
                 ],
@@ -497,7 +497,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'timepicker',
+                component: 'time-picker',
                 options: [
 
                 ],
@@ -512,7 +512,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'timepicker',
+                component: 'time-picker',
                 options: [
 
                 ],
@@ -542,7 +542,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'tagcontrol',
+                component: 'tag-control',
                 options: [
 
                 ],
@@ -557,7 +557,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'tagcontrol',
+                component: 'tag-control',
                 options: [
 
                 ],
@@ -572,7 +572,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'tagcontrol',
+                component: 'tag-control',
                 options: [
                   {
 
@@ -729,7 +729,7 @@ const output = {
                 isReadOnly: false,
                 helperText: '',
                 autofocus: false,
-                component: 'timepicker',
+                component: 'time-picker',
                 options: [
 
                 ],

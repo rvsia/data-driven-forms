@@ -9,6 +9,9 @@ export const components = {
   RADIO: 'radio-field',
   TABS: 'tabs',
   TAB_ITEM: 'tab-item',
+  DATE_PICKER: 'date-picker',
+  TIME_PICKER: 'time-picker',
+  TAG_CONTROL: 'tag-control',
 };
 /** Validator functions placeholder */
 export const validators = {

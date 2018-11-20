@@ -33,7 +33,7 @@ const miqParser = (inputSchema, neededFieldAttributes, componentMap) => {
         newField.component = componentMap[field.type];
 
         if (field.default_value) {
-          if (newField.component === 'checkbox-field') {
+          if (newField.component === components.CHECKBOX) {
             defaultValues[field.name] = 'true';
           } else {
             defaultValues[field.name] = field.default_value;
