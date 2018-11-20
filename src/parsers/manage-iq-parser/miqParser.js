@@ -1,6 +1,7 @@
 import { components, validators } from '../../constants';
+import { neededAttributes, componentMap } from './constants';
 
-const miqParser = (inputSchema, neededFieldAttributes, componentMap) => {
+const miqParser = (inputSchema, neededFieldAttributes = neededAttributes, componentsMap = componentMap) => {
   const title = inputSchema.label;
   const key = inputSchema.id;
   const tabs = inputSchema.content[0].dialog_tabs;
@@ -30,7 +31,7 @@ const miqParser = (inputSchema, neededFieldAttributes, componentMap) => {
           }];
         }
 
-        newField.component = componentMap[field.type];
+        newField.component = componentsMap[field.type];
 
         if (field.default_value) {
           if (newField.component === components.CHECKBOX) {
