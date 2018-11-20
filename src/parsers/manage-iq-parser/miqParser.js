@@ -2,6 +2,7 @@ import { components, validators } from '../../constants';
 
 const miqParser = (inputSchema, neededFieldAttributes, componentMap) => {
   const title = inputSchema.label;
+  const key = inputSchema.id;
   const tabs = inputSchema.content[0].dialog_tabs;
   const formTabs = [];
   const defaultValues = {};
@@ -63,16 +64,19 @@ const miqParser = (inputSchema, neededFieldAttributes, componentMap) => {
     formTabs.push({
       title: tab.label,
       description: tab.description,
+      key: tab.id,
       fields: groups,
-      component: 'tabs',
+      component: components.TAB_ITEM,
     });
   });
 
   const schema = {
     title,
     description,
-    fields: formTabs,
-    component: 'tabs',
+    fields: {
+      fields: formTabs,
+      component: components.TABS,
+      key },
   };
   return {
     schema,
