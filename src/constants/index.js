@@ -7,6 +7,8 @@ export const components = {
   CHECKBOX: 'checkbox-field',
   SUB_FORM: 'sub-form',
   RADIO: 'radio-field',
+  TABS: 'tabs',
+  TAB_ITEM: 'tab-item',
 };
 /** Validator functions placeholder */
 export const validators = {
