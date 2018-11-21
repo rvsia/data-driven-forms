@@ -14,7 +14,6 @@
 - [ ] move component references to context
   - [x] layout components
   - [ ] controls components
-- [x] form components lazy loading
 - [x] enable custom component mapper
 - [ ] tests
 - [ ] create sandbox
