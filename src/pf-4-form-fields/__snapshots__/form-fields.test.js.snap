@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pf3 form fields <RadioGroup /> should render correctly 1`] = `null`;
+
+exports[`Pf3 form fields <SelectField /> should render correctly in error state 1`] = `null`;
+
+exports[`Pf3 form fields <SelectField /> should render correctly in valid state 1`] = `null`;
+
+exports[`Pf3 form fields <SelectField /> should render correctly in valid state with helper text and description 1`] = `null`;
+
+exports[`Pf3 form fields <SubForm /> should render subForm component with TextField 1`] = `
+<SubForm
+  description="SubForm description"
+  fields={
+    Array [
+      Object {
+        "component": "text-field",
+        "name": "nested-field",
+      },
+    ]
+  }
+  name="sub-form"
+  renderForm={[Function]}
+  title="SubForm title"
+>
+  <FieldInterface
+    componentType="sub-form"
+    description="SubForm description"
+    fields={
+      Array [
+        Object {
+          "component": "text-field",
+          "name": "nested-field",
+        },
+      ]
+    }
+    name="sub-form"
+    renderForm={[Function]}
+    title="SubForm title"
+  >
+    <FormConditionWrapper>
+      <SubForm
+        componentType="sub-form"
+        description="SubForm description"
+        fields={
+          Array [
+            Object {
+              "component": "text-field",
+              "name": "nested-field",
+            },
+          ]
+        }
+        id="sub-form"
+        name="sub-form"
+        renderForm={[Function]}
+        title="SubForm title"
+        validate={
+          Array [
+            undefined,
+          ]
+        }
+      >
+        <ColPf4
+          xs={12}
+        >
+          <GridItem
+            className=""
+            lg={null}
+            lgOffset={null}
+            lgRowSpan={null}
+            md={null}
+            mdOffset={null}
+            mdRowSpan={null}
+            offset={null}
+            rowSpan={null}
+            sm={null}
+            smOffset={null}
+            smRowSpan={null}
+            span={12}
+            xl={null}
+            xlOffset={null}
+            xlRowSpan={null}
+          >
+            <div
+              className="pf-l-grid__item pf-m-12-col"
+            >
+              <h3>
+                SubForm title
+              </h3>
+              <p>
+                SubForm description
+              </p>
+              <div
+                id="nested-item"
+              >
+                Foo
+              </div>
+            </div>
+          </GridItem>
+        </ColPf4>
+      </SubForm>
+    </FormConditionWrapper>
+  </FieldInterface>
+</SubForm>
+`;
+
+exports[`Pf3 form fields <TextField /> should render correctly in error state 1`] = `null`;
+
+exports[`Pf3 form fields <TextField /> should render correctly in valid state 1`] = `null`;
+
+exports[`Pf3 form fields <TextField /> should render correctly in valid state with helper text and description 1`] = `null`;
+
+exports[`Pf3 form fields <TextareaField /> should render correctly in error state 1`] = `null`;
+
+exports[`Pf3 form fields <TextareaField /> should render correctly in valid state 1`] = `null`;
+
+exports[`Pf3 form fields <TextareaField /> should render correctly in valid state with helper text and description 1`] = `null`;
