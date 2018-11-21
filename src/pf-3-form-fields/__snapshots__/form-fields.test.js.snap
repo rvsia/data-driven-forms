@@ -1,0 +1,969 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pf3 form fields <RadioGroup /> should render correctly 1`] = `
+<FormGroup
+  bsClass="form-group"
+  validationState={null}
+>
+  <div
+    className="form-group"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={12}
+    >
+      <div
+        className="col-md-12"
+      >
+        <Field
+          format={[Function]}
+          key="radio-field-foo"
+          name="radio-field"
+          parse={[Function]}
+          render={[Function]}
+          type="radio"
+          value="foo"
+        >
+          <Radio
+            bsClass="radio"
+            checked={false}
+            disabled={false}
+            inline={false}
+            name="radio-field"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            title=""
+            value="foo"
+          >
+            <div
+              className="radio"
+            >
+              <label
+                title=""
+              >
+                <input
+                  checked={false}
+                  disabled={false}
+                  name="radio-field"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="radio"
+                  value="foo"
+                />
+                foo
+              </label>
+            </div>
+          </Radio>
+        </Field>
+        <Field
+          format={[Function]}
+          key="radio-field-bar"
+          name="radio-field"
+          parse={[Function]}
+          render={[Function]}
+          type="radio"
+          value="bar"
+        >
+          <Radio
+            bsClass="radio"
+            checked={false}
+            disabled={false}
+            inline={false}
+            name="radio-field"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            title=""
+            value="bar"
+          >
+            <div
+              className="radio"
+            >
+              <label
+                title=""
+              >
+                <input
+                  checked={false}
+                  disabled={false}
+                  name="radio-field"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="radio"
+                  value="bar"
+                />
+                bar
+              </label>
+            </div>
+          </Radio>
+        </Field>
+      </div>
+    </Col>
+  </div>
+</FormGroup>
+`;
+
+exports[`Pf3 form fields <SelectField /> should render correctly in error state 1`] = `
+<FormGroup
+  bsClass="form-group"
+  validationState="error"
+>
+  <div
+    className="form-group has-error"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={12}
+    >
+      <div
+        className="col-md-12"
+      >
+        <Select
+          arrowRenderer={[Function]}
+          autosize={true}
+          backspaceRemoves={true}
+          backspaceToRemoveMessage="Press backspace to remove {label}"
+          className="has-error final-form-select"
+          clearAllText="Clear all"
+          clearRenderer={[Function]}
+          clearValueText="Clear value"
+          clearable={true}
+          closeOnSelect={true}
+          deleteRemoves={true}
+          delimiter=","
+          disabled={false}
+          escapeClearsValue={true}
+          filterOptions={[Function]}
+          id="select-field"
+          ignoreAccents={true}
+          ignoreCase={true}
+          inputProps={Object {}}
+          isLoading={false}
+          joinValues={false}
+          labelKey="label"
+          matchPos="any"
+          matchProp="any"
+          menuBuffer={0}
+          menuRenderer={[Function]}
+          multi={false}
+          name="select-field"
+          noResultsText="No results found"
+          onBlur={[Function]}
+          onBlurResetsInput={true}
+          onChange={[Function]}
+          onCloseResetsInput={true}
+          onFocus={[Function]}
+          onSelectResetsInput={true}
+          openOnClick={true}
+          optionClassName="final-form-select-option"
+          optionComponent={[Function]}
+          options={
+            Array [
+              Object {
+                "label": "foo",
+                "value": "foo",
+              },
+              Object {
+                "label": "bar",
+                "value": "bar",
+              },
+            ]
+          }
+          pageSize={5}
+          placeholder="Please choose"
+          removeSelected={true}
+          required={false}
+          rtl={false}
+          scrollMenuIntoView={true}
+          searchable={false}
+          simpleValue={false}
+          tabSelectsValue={true}
+          trimFilter={true}
+          value=""
+          valueComponent={[Function]}
+          valueKey="value"
+        >
+          <div
+            className="Select has-error final-form-select is-clearable Select--single"
+          >
+            <div
+              className="Select-control"
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+            >
+              <div
+                className="Select-multi-value-wrapper"
+                id="react-select-3--value"
+              >
+                <div
+                  className="Select-placeholder"
+                >
+                  Please choose
+                </div>
+                <div
+                  aria-activedescendant="react-select-3--value"
+                  aria-disabled="false"
+                  aria-expanded={false}
+                  aria-owns=""
+                  className="Select-input"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  role="combobox"
+                  style={
+                    Object {
+                      "border": 0,
+                      "display": "inline-block",
+                      "width": 1,
+                    }
+                  }
+                  tabIndex={0}
+                />
+              </div>
+              <span
+                className="Select-arrow-zone"
+                onMouseDown={[Function]}
+              >
+                <span
+                  className="Select-arrow"
+                  onMouseDown={[Function]}
+                />
+              </span>
+            </div>
+          </div>
+        </Select>
+        <HelpBlock
+          bsClass="help-block"
+        >
+          <span
+            className="help-block"
+          >
+            Has some error
+          </span>
+        </HelpBlock>
+      </div>
+    </Col>
+  </div>
+</FormGroup>
+`;
+
+exports[`Pf3 form fields <SelectField /> should render correctly in valid state 1`] = `
+<FormGroup
+  bsClass="form-group"
+  validationState={null}
+>
+  <div
+    className="form-group"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={12}
+    >
+      <div
+        className="col-md-12"
+      >
+        <Select
+          arrowRenderer={[Function]}
+          autosize={true}
+          backspaceRemoves={true}
+          backspaceToRemoveMessage="Press backspace to remove {label}"
+          className=" final-form-select"
+          clearAllText="Clear all"
+          clearRenderer={[Function]}
+          clearValueText="Clear value"
+          clearable={true}
+          closeOnSelect={true}
+          deleteRemoves={true}
+          delimiter=","
+          disabled={false}
+          escapeClearsValue={true}
+          filterOptions={[Function]}
+          id="select-field"
+          ignoreAccents={true}
+          ignoreCase={true}
+          inputProps={Object {}}
+          isLoading={false}
+          joinValues={false}
+          labelKey="label"
+          matchPos="any"
+          matchProp="any"
+          menuBuffer={0}
+          menuRenderer={[Function]}
+          multi={false}
+          name="select-field"
+          noResultsText="No results found"
+          onBlur={[Function]}
+          onBlurResetsInput={true}
+          onChange={[Function]}
+          onCloseResetsInput={true}
+          onFocus={[Function]}
+          onSelectResetsInput={true}
+          openOnClick={true}
+          optionClassName="final-form-select-option"
+          optionComponent={[Function]}
+          options={
+            Array [
+              Object {
+                "label": "foo",
+                "value": "foo",
+              },
+              Object {
+                "label": "bar",
+                "value": "bar",
+              },
+            ]
+          }
+          pageSize={5}
+          placeholder="Please choose"
+          removeSelected={true}
+          required={false}
+          rtl={false}
+          scrollMenuIntoView={true}
+          searchable={false}
+          simpleValue={false}
+          tabSelectsValue={true}
+          trimFilter={true}
+          value=""
+          valueComponent={[Function]}
+          valueKey="value"
+        >
+          <div
+            className="Select  final-form-select is-clearable Select--single"
+          >
+            <div
+              className="Select-control"
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+            >
+              <div
+                className="Select-multi-value-wrapper"
+                id="react-select-2--value"
+              >
+                <div
+                  className="Select-placeholder"
+                >
+                  Please choose
+                </div>
+                <div
+                  aria-activedescendant="react-select-2--value"
+                  aria-disabled="false"
+                  aria-expanded={false}
+                  aria-owns=""
+                  className="Select-input"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  role="combobox"
+                  style={
+                    Object {
+                      "border": 0,
+                      "display": "inline-block",
+                      "width": 1,
+                    }
+                  }
+                  tabIndex={0}
+                />
+              </div>
+              <span
+                className="Select-arrow-zone"
+                onMouseDown={[Function]}
+              >
+                <span
+                  className="Select-arrow"
+                  onMouseDown={[Function]}
+                />
+              </span>
+            </div>
+          </div>
+        </Select>
+      </div>
+    </Col>
+  </div>
+</FormGroup>
+`;
+
+exports[`Pf3 form fields <SelectField /> should render correctly in valid state with helper text and description 1`] = `
+<FormGroup
+  bsClass="form-group"
+  validationState={null}
+>
+  <div
+    className="form-group"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={12}
+    >
+      <div
+        className="col-md-12"
+      >
+        <Select
+          arrowRenderer={[Function]}
+          autosize={true}
+          backspaceRemoves={true}
+          backspaceToRemoveMessage="Press backspace to remove {label}"
+          className=" final-form-select"
+          clearAllText="Clear all"
+          clearRenderer={[Function]}
+          clearValueText="Clear value"
+          clearable={true}
+          closeOnSelect={true}
+          deleteRemoves={true}
+          delimiter=","
+          disabled={false}
+          escapeClearsValue={true}
+          filterOptions={[Function]}
+          id="select-field"
+          ignoreAccents={true}
+          ignoreCase={true}
+          inputProps={Object {}}
+          isLoading={false}
+          joinValues={false}
+          labelKey="label"
+          matchPos="any"
+          matchProp="any"
+          menuBuffer={0}
+          menuRenderer={[Function]}
+          multi={false}
+          name="select-field"
+          noResultsText="No results found"
+          onBlur={[Function]}
+          onBlurResetsInput={true}
+          onChange={[Function]}
+          onCloseResetsInput={true}
+          onFocus={[Function]}
+          onSelectResetsInput={true}
+          openOnClick={true}
+          optionClassName="final-form-select-option"
+          optionComponent={[Function]}
+          options={
+            Array [
+              Object {
+                "label": "foo",
+                "value": "foo",
+              },
+              Object {
+                "label": "bar",
+                "value": "bar",
+              },
+            ]
+          }
+          pageSize={5}
+          placeholder="Please choose"
+          removeSelected={true}
+          required={false}
+          rtl={false}
+          scrollMenuIntoView={true}
+          searchable={false}
+          simpleValue={false}
+          tabSelectsValue={true}
+          trimFilter={true}
+          value=""
+          valueComponent={[Function]}
+          valueKey="value"
+        >
+          <div
+            className="Select  final-form-select is-clearable Select--single"
+          >
+            <div
+              className="Select-control"
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+            >
+              <div
+                className="Select-multi-value-wrapper"
+                id="react-select-4--value"
+              >
+                <div
+                  className="Select-placeholder"
+                >
+                  Please choose
+                </div>
+                <div
+                  aria-activedescendant="react-select-4--value"
+                  aria-disabled="false"
+                  aria-expanded={false}
+                  aria-owns=""
+                  className="Select-input"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  role="combobox"
+                  style={
+                    Object {
+                      "border": 0,
+                      "display": "inline-block",
+                      "width": 1,
+                    }
+                  }
+                  tabIndex={0}
+                />
+              </div>
+              <span
+                className="Select-arrow-zone"
+                onMouseDown={[Function]}
+              >
+                <span
+                  className="Select-arrow"
+                  onMouseDown={[Function]}
+                />
+              </span>
+            </div>
+          </div>
+        </Select>
+        <HelpBlock
+          bsClass="help-block"
+          style={
+            Object {
+              "color": "#767676",
+            }
+          }
+        >
+          <span
+            className="help-block"
+            style={
+              Object {
+                "color": "#767676",
+              }
+            }
+          >
+            i am description
+          </span>
+        </HelpBlock>
+        <HelpBlock
+          bsClass="help-block"
+        >
+          <span
+            className="help-block"
+          >
+            i am helper text
+          </span>
+        </HelpBlock>
+      </div>
+    </Col>
+  </div>
+</FormGroup>
+`;
+
+exports[`Pf3 form fields <SubForm /> should render subForm component with TextField 1`] = `
+<SubForm
+  description="SubForm description"
+  fields={
+    Array [
+      Object {
+        "component": "text-field",
+        "name": "nested-field",
+      },
+    ]
+  }
+  name="sub-form"
+  renderForm={[Function]}
+  title="SubForm title"
+>
+  <FieldInterface
+    componentType="sub-form"
+    description="SubForm description"
+    fields={
+      Array [
+        Object {
+          "component": "text-field",
+          "name": "nested-field",
+        },
+      ]
+    }
+    name="sub-form"
+    renderForm={[Function]}
+    title="SubForm title"
+  >
+    <FormConditionWrapper>
+      <SubForm
+        componentType="sub-form"
+        description="SubForm description"
+        fields={
+          Array [
+            Object {
+              "component": "text-field",
+              "name": "nested-field",
+            },
+          ]
+        }
+        id="sub-form"
+        name="sub-form"
+        renderForm={[Function]}
+        title="SubForm title"
+        validate={
+          Array [
+            undefined,
+          ]
+        }
+      >
+        <Col
+          bsClass="col"
+          componentClass="div"
+          xs={12}
+        >
+          <div
+            className="col-xs-12"
+          >
+            <h3>
+              SubForm title
+            </h3>
+            <p>
+              SubForm description
+            </p>
+            <div
+              id="nested-item"
+            >
+              Foo
+            </div>
+          </div>
+        </Col>
+      </SubForm>
+    </FormConditionWrapper>
+  </FieldInterface>
+</SubForm>
+`;
+
+exports[`Pf3 form fields <TextField /> should render correctly in error state 1`] = `
+<FormGroup
+  bsClass="form-group"
+  validationState="error"
+>
+  <div
+    className="form-group has-error"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={12}
+    >
+      <div
+        className="col-md-12"
+      >
+        <FormControl
+          bsClass="form-control"
+          componentClass="input"
+          id="text-field"
+          name="text-field"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="text"
+          value=""
+        >
+          <input
+            className="form-control"
+            id="text-field"
+            name="text-field"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="text"
+            value=""
+          />
+        </FormControl>
+        <HelpBlock
+          bsClass="help-block"
+        >
+          <span
+            className="help-block"
+          >
+            Has some error
+          </span>
+        </HelpBlock>
+      </div>
+    </Col>
+  </div>
+</FormGroup>
+`;
+
+exports[`Pf3 form fields <TextField /> should render correctly in valid state 1`] = `
+<FormGroup
+  bsClass="form-group"
+  validationState={null}
+>
+  <div
+    className="form-group"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={12}
+    >
+      <div
+        className="col-md-12"
+      >
+        <FormControl
+          bsClass="form-control"
+          componentClass="input"
+          id="text-field"
+          name="text-field"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="text"
+          value=""
+        >
+          <input
+            className="form-control"
+            id="text-field"
+            name="text-field"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="text"
+            value=""
+          />
+        </FormControl>
+      </div>
+    </Col>
+  </div>
+</FormGroup>
+`;
+
+exports[`Pf3 form fields <TextField /> should render correctly in valid state with helper text and description 1`] = `
+<FormGroup
+  bsClass="form-group"
+  validationState={null}
+>
+  <div
+    className="form-group"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={12}
+    >
+      <div
+        className="col-md-12"
+      >
+        <FormControl
+          bsClass="form-control"
+          componentClass="input"
+          id="text-field"
+          name="text-field"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="text"
+          value=""
+        >
+          <input
+            className="form-control"
+            id="text-field"
+            name="text-field"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="text"
+            value=""
+          />
+        </FormControl>
+        <HelpBlock
+          bsClass="help-block"
+          style={
+            Object {
+              "color": "#767676",
+            }
+          }
+        >
+          <span
+            className="help-block"
+            style={
+              Object {
+                "color": "#767676",
+              }
+            }
+          >
+            i am description
+          </span>
+        </HelpBlock>
+        <HelpBlock
+          bsClass="help-block"
+        >
+          <span
+            className="help-block"
+          >
+            i am helper text
+          </span>
+        </HelpBlock>
+      </div>
+    </Col>
+  </div>
+</FormGroup>
+`;
+
+exports[`Pf3 form fields <TextareaField /> should render correctly in error state 1`] = `
+<FormGroup
+  bsClass="form-group"
+  validationState="error"
+>
+  <div
+    className="form-group has-error"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={12}
+    >
+      <div
+        className="col-md-12"
+      >
+        <FormControl
+          bsClass="form-control"
+          componentClass="textarea"
+          id="textarea-field"
+          name="textarea-field"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          value=""
+        >
+          <textarea
+            className="form-control"
+            id="textarea-field"
+            name="textarea-field"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            value=""
+          />
+        </FormControl>
+        <HelpBlock
+          bsClass="help-block"
+        >
+          <span
+            className="help-block"
+          >
+            Has some error
+          </span>
+        </HelpBlock>
+      </div>
+    </Col>
+  </div>
+</FormGroup>
+`;
+
+exports[`Pf3 form fields <TextareaField /> should render correctly in valid state 1`] = `
+<FormGroup
+  bsClass="form-group"
+  validationState={null}
+>
+  <div
+    className="form-group"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={12}
+    >
+      <div
+        className="col-md-12"
+      >
+        <FormControl
+          bsClass="form-control"
+          componentClass="textarea"
+          id="textarea-field"
+          name="textarea-field"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          value=""
+        >
+          <textarea
+            className="form-control"
+            id="textarea-field"
+            name="textarea-field"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            value=""
+          />
+        </FormControl>
+      </div>
+    </Col>
+  </div>
+</FormGroup>
+`;
+
+exports[`Pf3 form fields <TextareaField /> should render correctly in valid state with helper text and description 1`] = `
+<FormGroup
+  bsClass="form-group"
+  validationState={null}
+>
+  <div
+    className="form-group"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={12}
+    >
+      <div
+        className="col-md-12"
+      >
+        <FormControl
+          bsClass="form-control"
+          componentClass="textarea"
+          id="textarea-field"
+          name="textarea-field"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          value=""
+        >
+          <textarea
+            className="form-control"
+            id="textarea-field"
+            name="textarea-field"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            value=""
+          />
+        </FormControl>
+        <HelpBlock
+          bsClass="help-block"
+          style={
+            Object {
+              "color": "#767676",
+            }
+          }
+        >
+          <span
+            className="help-block"
+            style={
+              Object {
+                "color": "#767676",
+              }
+            }
+          >
+            i am description
+          </span>
+        </HelpBlock>
+        <HelpBlock
+          bsClass="help-block"
+        >
+          <span
+            className="help-block"
+          >
+            i am helper text
+          </span>
+        </HelpBlock>
+      </div>
+    </Col>
+  </div>
+</FormGroup>
+`;

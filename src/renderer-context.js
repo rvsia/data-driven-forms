@@ -85,7 +85,7 @@ const configMapper = formType => ({
   pf4: pf4Config,
 })[formType];
 
-export const configureContext = (formType, customComponents = {}, customComponentMapper = () => undefined) => {
+export const configureContext = ({ formType, customComponents = {}, customComponentMapper = () => undefined }) => {
   return {
     formType,
     commonComponents: {

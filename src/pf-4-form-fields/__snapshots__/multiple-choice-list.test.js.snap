@@ -1,0 +1,627 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pf4 <MultipleChoiceList /> should render correctly 1`] = `
+<FormWrapper>
+  <ReactFinalForm
+    onSubmit={[MockFunction]}
+  >
+    <MultipleChoiceList
+      component="checkbox-field"
+      dataType="string"
+      id="foo-id"
+      key="multipleChoicesList"
+      label="A multiple choices list"
+      name="multipleChoicesList"
+      options={
+        Array [
+          Object {
+            "label": "foo",
+            "value": "foo",
+          },
+          Object {
+            "label": "bar",
+            "value": "bar",
+          },
+          Object {
+            "label": "fuzz",
+            "value": "fuzz",
+          },
+          Object {
+            "label": "qux",
+            "value": "qux",
+          },
+        ]
+      }
+      title="A multiple choices list"
+      type="checkbox"
+      validate={Array []}
+    >
+      <Field
+        component="checkbox-field"
+        dataType="string"
+        format={[Function]}
+        id="foo-id"
+        label="A multiple choices list"
+        name="multipleChoicesList"
+        options={
+          Array [
+            Object {
+              "label": "foo",
+              "value": "foo",
+            },
+            Object {
+              "label": "bar",
+              "value": "bar",
+            },
+            Object {
+              "label": "fuzz",
+              "value": "fuzz",
+            },
+            Object {
+              "label": "qux",
+              "value": "qux",
+            },
+          ]
+        }
+        parse={[Function]}
+        title="A multiple choices list"
+        type="checkbox"
+        validate={[Function]}
+      >
+        <GridItem
+          className=""
+          lg={null}
+          lgOffset={null}
+          lgRowSpan={null}
+          md={null}
+          mdOffset={null}
+          mdRowSpan={null}
+          offset={null}
+          rowSpan={null}
+          sm={null}
+          smOffset={null}
+          smRowSpan={null}
+          span={12}
+          xl={null}
+          xlOffset={null}
+          xlRowSpan={null}
+        >
+          <div
+            className="pf-l-grid__item pf-m-12-col"
+          >
+            <FormGroup
+              className=""
+              fieldId="foo-id"
+              isInline={false}
+              isRequired={false}
+              isValid={true}
+              label="A multiple choices list"
+            >
+              <div
+                className="pf-c-form__group"
+              >
+                <label
+                  className="pf-c-form__label"
+                  htmlFor="foo-id"
+                >
+                  A multiple choices list
+                </label>
+                <Field
+                  format={[Function]}
+                  id="foo-id-foo"
+                  key="foo"
+                  label="foo"
+                  name="multipleChoicesList"
+                  parse={[Function]}
+                  render={[Function]}
+                  type="checkbox"
+                  value="foo"
+                >
+                  <Checkbox
+                    aria-label="foo"
+                    checked={false}
+                    className=""
+                    id="foo-id-foo"
+                    isChecked={null}
+                    isDisabled={false}
+                    isValid={true}
+                    label="foo"
+                    name="multipleChoicesList"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="checkbox"
+                    value="foo"
+                  >
+                    <div
+                      className="pf-c-check"
+                    >
+                      <input
+                        aria-invalid={false}
+                        aria-label="foo"
+                        checked={false}
+                        className="pf-c-check__input"
+                        disabled={false}
+                        id="foo-id-foo"
+                        name="multipleChoicesList"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="checkbox"
+                        value="foo"
+                      />
+                      <label
+                        className="pf-c-check__label"
+                        htmlFor="foo-id-foo"
+                      >
+                        foo
+                      </label>
+                    </div>
+                  </Checkbox>
+                </Field>
+                <Field
+                  format={[Function]}
+                  id="foo-id-bar"
+                  key="bar"
+                  label="bar"
+                  name="multipleChoicesList"
+                  parse={[Function]}
+                  render={[Function]}
+                  type="checkbox"
+                  value="bar"
+                >
+                  <Checkbox
+                    aria-label="bar"
+                    checked={false}
+                    className=""
+                    id="foo-id-bar"
+                    isChecked={null}
+                    isDisabled={false}
+                    isValid={true}
+                    label="bar"
+                    name="multipleChoicesList"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="checkbox"
+                    value="bar"
+                  >
+                    <div
+                      className="pf-c-check"
+                    >
+                      <input
+                        aria-invalid={false}
+                        aria-label="bar"
+                        checked={false}
+                        className="pf-c-check__input"
+                        disabled={false}
+                        id="foo-id-bar"
+                        name="multipleChoicesList"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="checkbox"
+                        value="bar"
+                      />
+                      <label
+                        className="pf-c-check__label"
+                        htmlFor="foo-id-bar"
+                      >
+                        bar
+                      </label>
+                    </div>
+                  </Checkbox>
+                </Field>
+                <Field
+                  format={[Function]}
+                  id="foo-id-fuzz"
+                  key="fuzz"
+                  label="fuzz"
+                  name="multipleChoicesList"
+                  parse={[Function]}
+                  render={[Function]}
+                  type="checkbox"
+                  value="fuzz"
+                >
+                  <Checkbox
+                    aria-label="fuzz"
+                    checked={false}
+                    className=""
+                    id="foo-id-fuzz"
+                    isChecked={null}
+                    isDisabled={false}
+                    isValid={true}
+                    label="fuzz"
+                    name="multipleChoicesList"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="checkbox"
+                    value="fuzz"
+                  >
+                    <div
+                      className="pf-c-check"
+                    >
+                      <input
+                        aria-invalid={false}
+                        aria-label="fuzz"
+                        checked={false}
+                        className="pf-c-check__input"
+                        disabled={false}
+                        id="foo-id-fuzz"
+                        name="multipleChoicesList"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="checkbox"
+                        value="fuzz"
+                      />
+                      <label
+                        className="pf-c-check__label"
+                        htmlFor="foo-id-fuzz"
+                      >
+                        fuzz
+                      </label>
+                    </div>
+                  </Checkbox>
+                </Field>
+                <Field
+                  format={[Function]}
+                  id="foo-id-qux"
+                  key="qux"
+                  label="qux"
+                  name="multipleChoicesList"
+                  parse={[Function]}
+                  render={[Function]}
+                  type="checkbox"
+                  value="qux"
+                >
+                  <Checkbox
+                    aria-label="qux"
+                    checked={false}
+                    className=""
+                    id="foo-id-qux"
+                    isChecked={null}
+                    isDisabled={false}
+                    isValid={true}
+                    label="qux"
+                    name="multipleChoicesList"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="checkbox"
+                    value="qux"
+                  >
+                    <div
+                      className="pf-c-check"
+                    >
+                      <input
+                        aria-invalid={false}
+                        aria-label="qux"
+                        checked={false}
+                        className="pf-c-check__input"
+                        disabled={false}
+                        id="foo-id-qux"
+                        name="multipleChoicesList"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="checkbox"
+                        value="qux"
+                      />
+                      <label
+                        className="pf-c-check__label"
+                        htmlFor="foo-id-qux"
+                      >
+                        qux
+                      </label>
+                    </div>
+                  </Checkbox>
+                </Field>
+              </div>
+            </FormGroup>
+          </div>
+        </GridItem>
+      </Field>
+    </MultipleChoiceList>
+  </ReactFinalForm>
+</FormWrapper>
+`;
+
+exports[`Pf4 <MultipleChoiceList /> should render correctly with error message 1`] = `
+<Field
+  component="checkbox-field"
+  dataType="string"
+  format={[Function]}
+  id="foo-id"
+  label="A multiple choices list"
+  name="multipleChoicesList"
+  options={
+    Array [
+      Object {
+        "label": "foo",
+        "value": "foo",
+      },
+      Object {
+        "label": "bar",
+        "value": "bar",
+      },
+      Object {
+        "label": "fuzz",
+        "value": "fuzz",
+      },
+      Object {
+        "label": "qux",
+        "value": "qux",
+      },
+    ]
+  }
+  parse={[Function]}
+  title="A multiple choices list"
+  type="checkbox"
+  validate={[Function]}
+>
+  <GridItem
+    className=""
+    lg={null}
+    lgOffset={null}
+    lgRowSpan={null}
+    md={null}
+    mdOffset={null}
+    mdRowSpan={null}
+    offset={null}
+    rowSpan={null}
+    sm={null}
+    smOffset={null}
+    smRowSpan={null}
+    span={12}
+    xl={null}
+    xlOffset={null}
+    xlRowSpan={null}
+  >
+    <div
+      className="pf-l-grid__item pf-m-12-col"
+    >
+      <FormGroup
+        className=""
+        fieldId="foo-id"
+        helperTextInvalid="Has some error"
+        isInline={false}
+        isRequired={false}
+        isValid={false}
+        label="A multiple choices list"
+      >
+        <div
+          className="pf-c-form__group"
+        >
+          <label
+            className="pf-c-form__label"
+            htmlFor="foo-id"
+          >
+            A multiple choices list
+          </label>
+          <Field
+            format={[Function]}
+            id="foo-id-foo"
+            key="foo"
+            label="foo"
+            name="multipleChoicesList"
+            parse={[Function]}
+            render={[Function]}
+            type="checkbox"
+            value="foo"
+          >
+            <Checkbox
+              aria-label="foo"
+              checked={false}
+              className=""
+              id="foo-id-foo"
+              isChecked={null}
+              isDisabled={false}
+              isValid={true}
+              label="foo"
+              name="multipleChoicesList"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="checkbox"
+              value="foo"
+            >
+              <div
+                className="pf-c-check"
+              >
+                <input
+                  aria-invalid={false}
+                  aria-label="foo"
+                  checked={false}
+                  className="pf-c-check__input"
+                  disabled={false}
+                  id="foo-id-foo"
+                  name="multipleChoicesList"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="checkbox"
+                  value="foo"
+                />
+                <label
+                  className="pf-c-check__label"
+                  htmlFor="foo-id-foo"
+                >
+                  foo
+                </label>
+              </div>
+            </Checkbox>
+          </Field>
+          <Field
+            format={[Function]}
+            id="foo-id-bar"
+            key="bar"
+            label="bar"
+            name="multipleChoicesList"
+            parse={[Function]}
+            render={[Function]}
+            type="checkbox"
+            value="bar"
+          >
+            <Checkbox
+              aria-label="bar"
+              checked={false}
+              className=""
+              id="foo-id-bar"
+              isChecked={null}
+              isDisabled={false}
+              isValid={true}
+              label="bar"
+              name="multipleChoicesList"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="checkbox"
+              value="bar"
+            >
+              <div
+                className="pf-c-check"
+              >
+                <input
+                  aria-invalid={false}
+                  aria-label="bar"
+                  checked={false}
+                  className="pf-c-check__input"
+                  disabled={false}
+                  id="foo-id-bar"
+                  name="multipleChoicesList"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="checkbox"
+                  value="bar"
+                />
+                <label
+                  className="pf-c-check__label"
+                  htmlFor="foo-id-bar"
+                >
+                  bar
+                </label>
+              </div>
+            </Checkbox>
+          </Field>
+          <Field
+            format={[Function]}
+            id="foo-id-fuzz"
+            key="fuzz"
+            label="fuzz"
+            name="multipleChoicesList"
+            parse={[Function]}
+            render={[Function]}
+            type="checkbox"
+            value="fuzz"
+          >
+            <Checkbox
+              aria-label="fuzz"
+              checked={false}
+              className=""
+              id="foo-id-fuzz"
+              isChecked={null}
+              isDisabled={false}
+              isValid={true}
+              label="fuzz"
+              name="multipleChoicesList"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="checkbox"
+              value="fuzz"
+            >
+              <div
+                className="pf-c-check"
+              >
+                <input
+                  aria-invalid={false}
+                  aria-label="fuzz"
+                  checked={false}
+                  className="pf-c-check__input"
+                  disabled={false}
+                  id="foo-id-fuzz"
+                  name="multipleChoicesList"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="checkbox"
+                  value="fuzz"
+                />
+                <label
+                  className="pf-c-check__label"
+                  htmlFor="foo-id-fuzz"
+                >
+                  fuzz
+                </label>
+              </div>
+            </Checkbox>
+          </Field>
+          <Field
+            format={[Function]}
+            id="foo-id-qux"
+            key="qux"
+            label="qux"
+            name="multipleChoicesList"
+            parse={[Function]}
+            render={[Function]}
+            type="checkbox"
+            value="qux"
+          >
+            <Checkbox
+              aria-label="qux"
+              checked={false}
+              className=""
+              id="foo-id-qux"
+              isChecked={null}
+              isDisabled={false}
+              isValid={true}
+              label="qux"
+              name="multipleChoicesList"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="checkbox"
+              value="qux"
+            >
+              <div
+                className="pf-c-check"
+              >
+                <input
+                  aria-invalid={false}
+                  aria-label="qux"
+                  checked={false}
+                  className="pf-c-check__input"
+                  disabled={false}
+                  id="foo-id-qux"
+                  name="multipleChoicesList"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  type="checkbox"
+                  value="qux"
+                />
+                <label
+                  className="pf-c-check__label"
+                  htmlFor="foo-id-qux"
+                >
+                  qux
+                </label>
+              </div>
+            </Checkbox>
+          </Field>
+          <div
+            aria-live="polite"
+            className="pf-c-form__helper-text pf-m-error"
+            id="foo-id-helper"
+          >
+            Has some error
+          </div>
+        </div>
+      </FormGroup>
+    </div>
+  </GridItem>
+</Field>
+`;

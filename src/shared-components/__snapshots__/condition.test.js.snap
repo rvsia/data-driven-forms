@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Condition /> should not render children if condition is not met 1`] = `
+<ReactFinalForm
+  onSubmit={[MockFunction]}
+>
+  <Condition
+    is="bar"
+    when="foo"
+  >
+    <Field
+      format={[Function]}
+      name="foo"
+      parse={[Function]}
+      subscription={
+        Object {
+          "value": true,
+        }
+      }
+    />
+  </Condition>
+</ReactFinalForm>
+`;
+
+exports[`<Condition /> should not render children if value is not in array 1`] = `
+<ReactFinalForm
+  initialValues={
+    Object {
+      "foo": "pox",
+    }
+  }
+  onSubmit={[MockFunction]}
+>
+  <Condition
+    is={
+      Array [
+        "bar",
+        "fux",
+        "quax",
+      ]
+    }
+    when="foo"
+  >
+    <Field
+      format={[Function]}
+      name="foo"
+      parse={[Function]}
+      subscription={
+        Object {
+          "value": true,
+        }
+      }
+    />
+  </Condition>
+</ReactFinalForm>
+`;
+
+exports[`<Condition /> should render children if condition is met 1`] = `
+<ReactFinalForm
+  initialValues={
+    Object {
+      "foo": "bar",
+    }
+  }
+  onSubmit={[MockFunction]}
+>
+  <Condition
+    is="bar"
+    when="foo"
+  >
+    <Field
+      format={[Function]}
+      name="foo"
+      parse={[Function]}
+      subscription={
+        Object {
+          "value": true,
+        }
+      }
+    >
+      <div
+        id="condition-child"
+      />
+    </Field>
+  </Condition>
+</ReactFinalForm>
+`;
+
+exports[`<Condition /> should render children if value is in array 1`] = `
+<ReactFinalForm
+  initialValues={
+    Object {
+      "foo": "bar",
+    }
+  }
+  onSubmit={[MockFunction]}
+>
+  <Condition
+    is={
+      Array [
+        "bar",
+        "fux",
+        "quax",
+      ]
+    }
+    when="foo"
+  >
+    <Field
+      format={[Function]}
+      name="foo"
+      parse={[Function]}
+      subscription={
+        Object {
+          "value": true,
+        }
+      }
+    >
+      <div
+        id="condition-child"
+      />
+    </Field>
+  </Condition>
+</ReactFinalForm>
+`;
