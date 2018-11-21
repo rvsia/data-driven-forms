@@ -15,7 +15,8 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!**/node_modules/**",
-      "!**/.{snap}*"
+      "!**/.{snap}*",
+      "!src/vendor.js"
     ],
     "coverageReporters": [
       "text",

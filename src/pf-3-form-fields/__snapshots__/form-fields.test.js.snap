@@ -23,7 +23,7 @@ exports[`Pf3 form fields <RadioGroup /> should render correctly 1`] = `
           parse={[Function]}
           render={[Function]}
           type="radio"
-          value={true}
+          value="foo"
         >
           <Radio
             bsClass="radio"
@@ -35,7 +35,7 @@ exports[`Pf3 form fields <RadioGroup /> should render correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             title=""
-            value={true}
+            value="foo"
           >
             <div
               className="radio"
@@ -51,7 +51,7 @@ exports[`Pf3 form fields <RadioGroup /> should render correctly 1`] = `
                   onChange={[Function]}
                   onFocus={[Function]}
                   type="radio"
-                  value={true}
+                  value="foo"
                 />
                 foo
               </label>
@@ -65,7 +65,7 @@ exports[`Pf3 form fields <RadioGroup /> should render correctly 1`] = `
           parse={[Function]}
           render={[Function]}
           type="radio"
-          value={true}
+          value="bar"
         >
           <Radio
             bsClass="radio"
@@ -77,7 +77,7 @@ exports[`Pf3 form fields <RadioGroup /> should render correctly 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             title=""
-            value={true}
+            value="bar"
           >
             <div
               className="radio"
@@ -93,7 +93,7 @@ exports[`Pf3 form fields <RadioGroup /> should render correctly 1`] = `
                   onChange={[Function]}
                   onFocus={[Function]}
                   type="radio"
-                  value={true}
+                  value="bar"
                 />
                 bar
               </label>
