@@ -35,7 +35,7 @@ const selectComponent = ({
     <Field
       key={ `${input.name}-${option.value}` }
       name={ input.name }
-      value={ !!option.value }
+      value={ option.value }
       type="radio"
       render={ ({ input }) => (
         <Radio { ...input } onChange={ () => { input.onChange(option.value); } }>{ option.label }</Radio>) }
@@ -68,6 +68,7 @@ const FinalFormField = ({
   helperText,
   description,
   hideLabel,
+  isVisible,
   ...rest
 }) => {
   const invalid = validationError(meta, validateOnMount);
@@ -97,6 +98,7 @@ FinalFormField.propTypes = {
   helperText: PropTypes.string,
   description: PropTypes.string,
   hideLabel: PropTypes.bool,
+  isVisible: PropTypes.bool,
 };
 
 const CheckboxGroupField = ({ options, ...rest }) =>

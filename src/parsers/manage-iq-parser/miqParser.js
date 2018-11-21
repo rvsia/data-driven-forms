@@ -22,7 +22,7 @@ const miqParser = (inputSchema, neededFieldAttributes = neededAttributes, compon
           newField[convertedAttribute] = field[attribute];
         });
 
-        newField.autofocus = false;
+        newField.autoFocus = false;
 
         if (field.validator_type) {
           newField.validate = [{
@@ -74,10 +74,11 @@ const miqParser = (inputSchema, neededFieldAttributes = neededAttributes, compon
   const schema = {
     title,
     description,
-    fields: {
+    fields: [{
       fields: formTabs,
       component: components.TABS,
-      key },
+      key,
+    }],
   };
   return {
     schema,
