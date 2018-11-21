@@ -2,6 +2,8 @@
 
 exports[`<FormControls /> should render all form controls with custom labels 1`] = `
 <FormControls
+  canReset={false}
+  canSubmit={false}
   cancelLabel="Bar"
   onCancel={[MockFunction]}
   onReset={[MockFunction]}
@@ -37,35 +39,17 @@ exports[`<FormControls /> should render all form controls with custom labels 1`]
                 block={false}
                 bsClass="btn"
                 bsStyle="primary"
-                disabled={false}
+                disabled={true}
                 onClick={[MockFunction]}
                 type="button"
               >
                 <button
                   className="btn btn-primary"
-                  disabled={false}
+                  disabled={true}
                   onClick={[MockFunction]}
                   type="button"
                 >
                   Foo
-                </button>
-              </Button>
-              <Button
-                active={false}
-                block={false}
-                bsClass="btn"
-                bsStyle="default"
-                disabled={false}
-                onClick={[MockFunction]}
-                type="button"
-              >
-                <button
-                  className="btn btn-default"
-                  disabled={false}
-                  onClick={[MockFunction]}
-                  type="button"
-                >
-                  quax
                 </button>
               </Button>
               <Button

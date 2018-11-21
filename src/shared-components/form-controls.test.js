@@ -18,7 +18,7 @@ describe('<FormControls />', () => {
   it('should render all pf3 form controls', () => {
     const wrapper = mount(
       <ComponentType.Provider value={ configureContext({ formType: 'pf3' }) }>
-        <FormControls { ...initialProps } />
+        <FormControls { ...initialProps } canReset />
       </ComponentType.Provider>
     );
     const buttons = wrapper.find(Pf3Button);
@@ -42,7 +42,7 @@ describe('<FormControls />', () => {
   it('should render all pf4 form controls', () => {
     const wrapper = mount(
       <ComponentType.Provider value={ configureContext({ formType: 'pf4' }) }>
-        <FormControls { ...initialProps } />
+        <FormControls { ...initialProps } canReset />
       </ComponentType.Provider>
     );
     const buttons = wrapper.find(Pf4Button);
