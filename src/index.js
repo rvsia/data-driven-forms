@@ -28,8 +28,12 @@ const FormRenderer = ({
   onSubmit,
   onCancel,
   canReset,
+  onReset,
   schema,
   schemaType,
+  buttonsLabels,
+  disableSubmit,
+  initialValues,
 }) => {
   const inputSchema = schemaMapper(schemaType)(schema);
   return (
@@ -38,15 +42,32 @@ const FormRenderer = ({
         <Form
           onSubmit={ onSubmit }
           mutators={{ ...arrayMutators }}
-          initialValues={ inputSchema.defaultValues }
+          initialValues={{
+            ...inputSchema.defaultValues,
+            ...initialValues,
+          }}
           subscription={{ pristine: true, submitting: true }}
-          render={ ({ handleSubmit, pristine, form: { reset, mutators, change }}) => (
+          render={ ({ handleSubmit, pristine, valid, form: { reset, mutators, change }}) => (
             formWrapperMapper(formType)({
               children: (
                 <Fragment>
-                  <div>Form renderer of type: { formType }</div>
-                  { renderForm(inputSchema.schema.fields, { push: mutators.push, change, pristine }) }
-                  <FormControls onSubmit={ handleSubmit } onCancel={ onCancel } onReset={ canReset && reset } />
+                  <div className="data-driven-form">
+                    { renderForm(inputSchema.schema.fields, { push: mutators.push, change, pristine }) }
+                    <FormControls
+                      onSubmit={ handleSubmit }
+                      onCancel={ onCancel }
+                      canReset={ canReset }
+                      onReset={ () => {
+                        if (canReset) {
+                          onReset();
+                          reset();
+                        }
+                      } }
+                      pristine={ pristine }
+                      canSubmit={ disableSubmit ? !pristine && !valid : !pristine }
+                      { ...buttonsLabels }
+                    />
+                  </div>
                 </Fragment>
               ),
             })
@@ -63,12 +84,18 @@ FormRenderer.propTypes = {
   canReset: PropTypes.bool,
   schema: PropTypes.object.isRequired,
   schemaType: PropTypes.oneOf([ 'mozilla', 'miq', 'default' ]),
+  buttonsLabels: PropTypes.object,
+  disableSubmit: PropTypes.bool,
+  initialValues: PropTypes.object,
 };
 
 FormRenderer.defaultProps = {
   formType: 'pf3',
   resetAble: false,
   schemaType: 'default',
+  buttonsLabels: {},
+  disableSubmit: false,
+  initialValues: {},
 };
 
 export default FormRenderer;
