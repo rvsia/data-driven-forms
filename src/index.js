@@ -39,6 +39,7 @@ const FormRenderer = ({
           onSubmit={ onSubmit }
           mutators={{ ...arrayMutators }}
           initialValues={ inputSchema.defaultValues }
+          subscription={{ pristine: true, submitting: true }}
           render={ ({ handleSubmit, pristine, form: { reset, mutators, change }}) => (
             formWrapperMapper(formType)({
               children: (
