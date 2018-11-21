@@ -11,13 +11,18 @@ export const componentMap = {
   DialogFieldTagControl: components.TAG_CONTROL,
 };
 
+// for true values
 export const neededAttributes = [
   'name',
   'label',
   [ 'label', 'title' ],
   [ 'data_type', 'dataType' ],
   [ 'required', 'isRequired' ],
-  [ 'visible', 'isVisible' ],
   [ 'read_only', 'isReadOnly' ],
   [ 'description', 'helperText' ],
+];
+
+// for false values
+export const neededFalseAttributes = [
+  [ 'visible', 'isVisible' ],
 ];

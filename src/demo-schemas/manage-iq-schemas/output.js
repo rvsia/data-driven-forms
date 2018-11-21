@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { components } from '../../constants/';
+import { components, validators } from '../../constants/';
 
 const output = {
   title: 'Testing dialog',
@@ -20,136 +20,71 @@ const output = {
                   name: 'text_box_1',
                   label: 'Text Box',
                   title: 'Text Box',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TEXT_FIELD,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'text_box_2',
                   label: 'Text Box with help',
                   title: 'Text Box with help',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
                   helperText: 'Helper text',
-                  autoFocus: false,
                   component: components.TEXT_FIELD,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'text_box_3',
                   label: 'Text Box required',
                   title: 'Text Box required',
-                  dataType: null,
                   isRequired: true,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TEXT_FIELD,
-                  options: [
-
+                  validate: [
+                    { type: validators.REQUIRED },
                   ],
                 },
                 {
                   name: 'text_box_4',
                   label: 'Text Box readonly',
                   title: 'Text Box readonly',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
                   isReadOnly: true,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TEXT_FIELD,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'text_box_5',
                   label: 'Text Box default',
                   title: 'Text Box default',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TEXT_FIELD,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'text_box_6',
                   label: 'Text Box unvisible',
                   title: 'Text Box unvisible',
-                  dataType: null,
-                  isRequired: false,
                   isVisible: false,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TEXT_FIELD,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'text_box_7',
                   label: 'Text Box with validator',
                   title: 'Text Box with validator',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
-                  component: components.TEXT_FIELD,
-                  options: [
-
+                  validate: [
+                    {
+                      type: validators.PATTERN_VALIDATOR,
+                      pattern: '[0-9]',
+                    },
                   ],
+                  component: components.TEXT_FIELD,
                 },
                 {
                   name: 'text_box_8',
                   label: 'Text Box integer value',
                   title: 'Text Box integer value',
                   dataType: 'integer',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TEXT_FIELD,
-                  options: [
-
-                  ],
+                  type: 'number',
                 },
                 {
                   name: 'text_box_9',
                   label: 'Text Box string value',
                   title: 'Text Box string value',
                   dataType: 'string',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TEXT_FIELD,
-                  options: [
-
-                  ],
                 },
               ],
               component: components.SUB_FORM,
@@ -162,16 +97,7 @@ const output = {
                   name: 'textarea_box_1',
                   label: 'Text Area',
                   title: 'Text Area',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TEXTAREA_FIELD,
-                  options: [
-
-                  ],
                 },
               ],
               component: components.SUB_FORM,
@@ -192,31 +118,13 @@ const output = {
                   name: 'check_box_1',
                   label: 'Check Box',
                   title: 'Check Box',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.CHECKBOX,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'check_box_2',
                   label: 'Check Box checked',
                   title: 'Check Box checked',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.CHECKBOX,
-                  options: [
-
-                  ],
                 },
               ],
               component: components.SUB_FORM,
@@ -230,11 +138,6 @@ const output = {
                   label: 'Radio Button',
                   title: 'Radio Button',
                   dataType: 'string',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.RADIO,
                   options: [
                     {
@@ -256,11 +159,6 @@ const output = {
                   label: 'Radio Button sorted by',
                   title: 'Radio Button sorted by',
                   dataType: 'string',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.RADIO,
                   options: [
                     {
@@ -282,11 +180,6 @@ const output = {
                   label: 'Radio Button default',
                   title: 'Radio Button default',
                   dataType: 'string',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.RADIO,
                   options: [
                     {
@@ -323,11 +216,6 @@ const output = {
                   label: 'Dropdown',
                   title: 'Dropdown',
                   dataType: 'string',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.SELECT_COMPONENT,
                   options: [
                     {
@@ -353,11 +241,6 @@ const output = {
                   label: 'Dropdown default value',
                   title: 'Dropdown default value',
                   dataType: 'string',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.SELECT_COMPONENT,
                   options: [
                     {
@@ -383,12 +266,8 @@ const output = {
                   label: 'Dropdown multiselect',
                   title: 'Dropdown multiselect',
                   dataType: 'string',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.SELECT_COMPONENT,
+                  multi: true,
                   options: [
                     {
                       label: '<None>',
@@ -413,11 +292,6 @@ const output = {
                   label: 'Dropdown sort by value',
                   title: 'Dropdown sort by value',
                   dataType: 'string',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.SELECT_COMPONENT,
                   options: [
                     {
@@ -457,31 +331,13 @@ const output = {
                   name: 'date_control_1',
                   label: 'Datepicker',
                   title: 'Datepicker',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.DATE_PICKER,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'date_control_2',
                   label: 'Datepicker with past days',
                   title: 'Datepicker with past days',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.DATE_PICKER,
-                  options: [
-
-                  ],
                 },
               ],
               component: components.SUB_FORM,
@@ -494,31 +350,13 @@ const output = {
                   name: 'date_time_control_1',
                   label: 'Timepicker',
                   title: 'Timepicker',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TIME_PICKER,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'date_time_control_2',
                   label: 'Timepicker with past days',
                   title: 'Timepicker with past days',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TIME_PICKER,
-                  options: [
-
-                  ],
                 },
               ],
               component: components.SUB_FORM,
@@ -540,41 +378,20 @@ const output = {
                   label: 'Tag Control',
                   title: 'Tag Control',
                   dataType: 'string',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TAG_CONTROL,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'tag_control_2',
                   label: 'Tag Control single value',
                   title: 'Tag Control single value',
                   dataType: 'string',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TAG_CONTROL,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'tag_control_3',
                   label: 'Tag Control category',
                   title: 'Tag Control category',
                   dataType: 'string',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TAG_CONTROL,
                   options: [
                     {
@@ -610,72 +427,31 @@ const output = {
                   name: 'text_box_10',
                   label: 'Text Box',
                   title: 'Text Box',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TEXT_FIELD,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'textarea_box_2',
                   label: 'Text Area',
                   title: 'Text Area',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TEXTAREA_FIELD,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'check_box_3',
                   label: 'Check Box',
                   title: 'Check Box',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.CHECKBOX,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'check_box_4',
                   label: 'Check Box',
                   title: 'Check Box',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.CHECKBOX,
-                  options: [
-
-                  ],
                 },
                 {
                   name: 'dropdown_list_5',
                   label: 'Dropdown',
                   title: 'Dropdown',
                   dataType: 'string',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.SELECT_COMPONENT,
                   options: [
                     {
@@ -701,11 +477,6 @@ const output = {
                   label: 'Radio Button',
                   title: 'Radio Button',
                   dataType: 'string',
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.RADIO,
                   options: [
                     {
@@ -726,16 +497,7 @@ const output = {
                   name: 'date_time_control_3',
                   label: 'Timepicker',
                   title: 'Timepicker',
-                  dataType: null,
-                  isRequired: false,
-                  isVisible: true,
-                  isReadOnly: false,
-                  helperText: '',
-                  autoFocus: false,
                   component: components.TIME_PICKER,
-                  options: [
-
-                  ],
                 },
               ],
               component: components.SUB_FORM,
@@ -746,7 +508,8 @@ const output = {
       ],
       component: components.TABS,
       key: '57',
-    }],
+    },
+  ],
 };
 
 export const defaultValues = {

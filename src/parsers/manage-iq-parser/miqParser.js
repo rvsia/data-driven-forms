@@ -1,7 +1,22 @@
 import { components, validators } from '../../constants';
-import { neededAttributes, componentMap } from './constants';
+import { neededAttributes, neededFalseAttributes, componentMap } from './constants';
 
-const miqParser = (inputSchema, neededFieldAttributes = neededAttributes, componentsMap = componentMap) => {
+const getAttributes = (field, newField, attributes, boolValue) => {
+  attributes.forEach((info) => {
+    const attribute = Array.isArray(info) ? info[0] : info;
+    const convertedAttribute = Array.isArray(info) ? info[1] : info;
+    if (field[attribute] !== '' && field[attribute] !== null && field[attribute] !== !boolValue){
+      newField[convertedAttribute] = field[attribute];
+    }
+  });
+};
+
+const miqParser = (
+  inputSchema,
+  neededFieldAttributes = neededAttributes,
+  neededFieldFalseAttributes = neededFalseAttributes,
+  componentsMap = componentMap,
+) => {
   const title = inputSchema.label;
   const key = inputSchema.id;
   const tabs = inputSchema.content[0].dialog_tabs;
@@ -16,19 +31,21 @@ const miqParser = (inputSchema, neededFieldAttributes = neededAttributes, compon
       group.dialog_fields.forEach((field) => {
         const newField = {};
 
-        neededFieldAttributes.forEach((info) => {
-          const attribute = Array.isArray(info) ? info[0] : info;
-          const convertedAttribute = Array.isArray(info) ? info[1] : info;
-          newField[convertedAttribute] = field[attribute];
-        });
+        getAttributes(field, newField, neededFieldAttributes, true);
+        getAttributes(field, newField, neededFieldFalseAttributes, false);
 
-        newField.autoFocus = false;
-
-        if (field.validator_type) {
+        if (field.validator_rule) {
           newField.validate = [{
             type: validators.PATTERN_VALIDATOR,
             pattern: field.validator_rule,
           }];
+        }
+
+        if (field.required) {
+          newField.validate = newField.validate || [];
+          newField.validate.push({
+            type: validators.REQUIRED,
+          });
         }
 
         newField.component = componentsMap[field.type];
@@ -41,7 +58,7 @@ const miqParser = (inputSchema, neededFieldAttributes = neededAttributes, compon
           }
         }
 
-        newField.options = [];
+        const options = [];
         if (Array.isArray(field.values)) {
           field.values.forEach((option) => {
             const optionObject = { label: option[1], value: option[0] };
@@ -49,8 +66,20 @@ const miqParser = (inputSchema, neededFieldAttributes = neededAttributes, compon
               optionObject.disabled = true;
             }
 
-            newField.options.push(optionObject);
+            options.push(optionObject);
           });
+        }
+
+        if (field.options.force_multi_value) {
+          newField.multi = true;
+        }
+
+        if (options.length !== 0) {
+          newField.options = options;
+        }
+
+        if (field.data_type === 'integer') {
+          newField.type = 'number';
         }
 
         fieldsArray.push(newField);
@@ -80,6 +109,7 @@ const miqParser = (inputSchema, neededFieldAttributes = neededAttributes, compon
       key,
     }],
   };
+
   return {
     schema,
     defaultValues,
