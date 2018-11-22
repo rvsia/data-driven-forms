@@ -77,10 +77,10 @@ const FinalFormField = ({
       { ({ commonComponents: { Col, FormGroup }}) => (
         <FormGroup validationState={ invalid ? 'error' : null }>
           { label &&
-          <Col md={ 12 } componentClass="label" className="control-label">
+          <Col md={ 2 } componentClass="label" className="control-label">
             { !hideLabel && __(label) }
           </Col> }
-          <Col md={ 12 }>
+          <Col md={ 10 }>
             { selectComponent({ ...rest, invalid, label })() }
             { description && <HelpBlock style={{ color: '#767676' }}>{ description }</HelpBlock> }
             { renderHelperText(invalid && meta.error, helperText) }
