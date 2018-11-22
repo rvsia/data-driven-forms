@@ -22,10 +22,10 @@ const MultipleChoiceList = ({ validate, ...props }) => (
         <ComponentType.Consumer>
           { ({ commonComponents: { Col, FormGroup }}) => (
             <FormGroup validationState={ showError ? 'error' : null }>
-              <Col md={ 12 } componentClass="label" className="control-label">
+              <Col md={ 2 } componentClass="label" className="control-label">
                 { __(label) }
               </Col>
-              <Col md={ 12 }>
+              <Col md={ 10 }>
                 { options.map(option =>
                   (<Field
                     id={ `${rest.id}-${option.value}` }

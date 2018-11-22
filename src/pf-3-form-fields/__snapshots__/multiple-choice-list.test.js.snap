@@ -77,10 +77,10 @@ exports[`Pf3 <MultipleChoiceList /> should render correctly 1`] = `
               bsClass="col"
               className="control-label"
               componentClass="label"
-              md={12}
+              md={2}
             >
               <label
-                className="control-label col-md-12"
+                className="control-label col-md-2"
               >
                 A multiple choices list
               </label>
@@ -88,10 +88,10 @@ exports[`Pf3 <MultipleChoiceList /> should render correctly 1`] = `
             <Col
               bsClass="col"
               componentClass="div"
-              md={12}
+              md={10}
             >
               <div
-                className="col-md-12"
+                className="col-md-10"
               >
                 <Field
                   format={[Function]}
@@ -350,10 +350,10 @@ exports[`Pf3 <MultipleChoiceList /> should render correctly with error message 1
         bsClass="col"
         className="control-label"
         componentClass="label"
-        md={12}
+        md={2}
       >
         <label
-          className="control-label col-md-12"
+          className="control-label col-md-2"
         >
           A multiple choices list
         </label>
@@ -361,10 +361,10 @@ exports[`Pf3 <MultipleChoiceList /> should render correctly with error message 1
       <Col
         bsClass="col"
         componentClass="div"
-        md={12}
+        md={10}
       >
         <div
-          className="col-md-12"
+          className="col-md-10"
         >
           <Field
             format={[Function]}

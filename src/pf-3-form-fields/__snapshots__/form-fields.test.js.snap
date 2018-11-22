@@ -11,10 +11,10 @@ exports[`Pf3 form fields <RadioGroup /> should render correctly 1`] = `
     <Col
       bsClass="col"
       componentClass="div"
-      md={12}
+      md={10}
     >
       <div
-        className="col-md-12"
+        className="col-md-10"
       >
         <Field
           format={[Function]}
@@ -117,10 +117,10 @@ exports[`Pf3 form fields <SelectField /> should render correctly in error state 
     <Col
       bsClass="col"
       componentClass="div"
-      md={12}
+      md={10}
     >
       <div
-        className="col-md-12"
+        className="col-md-10"
       >
         <Select
           arrowRenderer={[Function]}
@@ -264,10 +264,10 @@ exports[`Pf3 form fields <SelectField /> should render correctly in valid state 
     <Col
       bsClass="col"
       componentClass="div"
-      md={12}
+      md={10}
     >
       <div
-        className="col-md-12"
+        className="col-md-10"
       >
         <Select
           arrowRenderer={[Function]}
@@ -402,10 +402,10 @@ exports[`Pf3 form fields <SelectField /> should render correctly in valid state 
     <Col
       bsClass="col"
       componentClass="div"
-      md={12}
+      md={10}
     >
       <div
-        className="col-md-12"
+        className="col-md-10"
       >
         <Select
           arrowRenderer={[Function]}
@@ -647,10 +647,10 @@ exports[`Pf3 form fields <TextField /> should render correctly in error state 1`
     <Col
       bsClass="col"
       componentClass="div"
-      md={12}
+      md={10}
     >
       <div
-        className="col-md-12"
+        className="col-md-10"
       >
         <FormControl
           bsClass="form-control"
@@ -700,10 +700,10 @@ exports[`Pf3 form fields <TextField /> should render correctly in valid state 1`
     <Col
       bsClass="col"
       componentClass="div"
-      md={12}
+      md={10}
     >
       <div
-        className="col-md-12"
+        className="col-md-10"
       >
         <FormControl
           bsClass="form-control"
@@ -744,10 +744,10 @@ exports[`Pf3 form fields <TextField /> should render correctly in valid state wi
     <Col
       bsClass="col"
       componentClass="div"
-      md={12}
+      md={10}
     >
       <div
-        className="col-md-12"
+        className="col-md-10"
       >
         <FormControl
           bsClass="form-control"
@@ -816,10 +816,10 @@ exports[`Pf3 form fields <TextareaField /> should render correctly in error stat
     <Col
       bsClass="col"
       componentClass="div"
-      md={12}
+      md={10}
     >
       <div
-        className="col-md-12"
+        className="col-md-10"
       >
         <FormControl
           bsClass="form-control"
@@ -867,10 +867,10 @@ exports[`Pf3 form fields <TextareaField /> should render correctly in valid stat
     <Col
       bsClass="col"
       componentClass="div"
-      md={12}
+      md={10}
     >
       <div
-        className="col-md-12"
+        className="col-md-10"
       >
         <FormControl
           bsClass="form-control"
@@ -909,10 +909,10 @@ exports[`Pf3 form fields <TextareaField /> should render correctly in valid stat
     <Col
       bsClass="col"
       componentClass="div"
-      md={12}
+      md={10}
     >
       <div
-        className="col-md-12"
+        className="col-md-10"
       >
         <FormControl
           bsClass="form-control"
