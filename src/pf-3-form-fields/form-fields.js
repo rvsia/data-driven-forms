@@ -12,6 +12,7 @@ import MultipleChoiceList from './multiple-choice-list';
 import ComponentType from '../renderer-context';
 import Condition from '../shared-components/condition';
 import customStyles from './select-styles';
+import requiredLabel from './required-label';
 
 const selectValue = option =>
   option.sort((a, b) => a.label.localeCompare(b.label, 'en', { sensitivity: 'base' })).map(item => item.value);
@@ -80,7 +81,7 @@ const FinalFormField = ({
         <FormGroup validationState={ invalid ? 'error' : null }>
           { label &&
           <Col md={ 2 } componentClass="label" className="control-label">
-            { !hideLabel && __(label) }
+            { !hideLabel && (rest.isRequired ? requiredLabel(__(label)) : __(label)) }
           </Col> }
           <Col md={ 10 }>
             { selectComponent({ ...rest, invalid, label })() }

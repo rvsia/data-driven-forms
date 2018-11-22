@@ -4,6 +4,7 @@ import { Checkbox } from 'patternfly-react';
 import { composeValidators } from '../helpers';
 import { __ } from '../global-functions';
 import ComponentType from '../renderer-context';
+import requiredLabel from './required-label';
 
 const MultipleChoiceList = ({ validate, ...props }) => (
   <Field { ...props } validate={ composeValidators(...props.validate || []) }>
@@ -23,7 +24,7 @@ const MultipleChoiceList = ({ validate, ...props }) => (
           { ({ commonComponents: { Col, FormGroup }}) => (
             <FormGroup validationState={ showError ? 'error' : null }>
               <Col md={ 2 } componentClass="label" className="control-label">
-                { __(label) }
+                { (isRequired ? requiredLabel(__(label)) : __(label)) }
               </Col>
               <Col md={ 10 }>
                 { options.map(option =>
