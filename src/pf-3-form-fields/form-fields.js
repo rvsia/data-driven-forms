@@ -11,6 +11,7 @@ import { __ } from '../global-functions';
 import MultipleChoiceList from './multiple-choice-list';
 import ComponentType from '../renderer-context';
 import Condition from '../shared-components/condition';
+import customStyles from './select-styles';
 
 const selectValue = option =>
   option.sort((a, b) => a.label.localeCompare(b.label, 'en', { sensitivity: 'base' })).map(item => item.value);
@@ -43,14 +44,15 @@ const selectComponent = ({
   )),
   [components.SELECT_COMPONENT]: () => (
     <ReactSelect
-      className={ `${invalid ? 'has-error' : ''} final-form-select` }
-      optionClassName="final-form-select-option"
+      className={ `final-form-select ${invalid ? 'has-error' : ''}` }
+      styles={ customStyles }
       { ...input }
       options={options.filter(option => option.hasOwnProperty('value'))} // eslint-disable-line
       placeholder={ placeholder || __('Please choose') }
+      value={ options.filter(({ value }) => value === input.value) }
       multi={ false }
-      searchable={ false }
-      clearable={ !isRequired }
+      isSearchable={ false }
+      isClearable={ !isRequired }
       onChange={ option =>
         input.onChange(rest.multi ? selectValue(option) : option ? option.value : undefined) } // eslint-disable-line no-nested-ternary
       { ...rest }

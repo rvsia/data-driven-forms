@@ -90,7 +90,7 @@
     "final-form-arrays": "^1.1.0",
     "react-final-form": "^3.6.7",
     "react-final-form-arrays": "^1.1.0",
-    "react-select": "^1.2.0"
+    "react-select": "^2.1.2"
   },
   "peerDependencies": {
     "patternfly-react": "^2.23.1",
