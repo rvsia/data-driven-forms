@@ -13,7 +13,7 @@ import miqParser from './parsers/manage-iq-parser/miqParser';
 import './react-select.scss';
 
 const formWrapperMapper = componentType => ({
-  pf3: ({ children, ...props }) => <Pf3Grid fluid><Row><Pf3Form { ...props }>{ children }</Pf3Form></Row></Pf3Grid>,
+  pf3: ({ children, ...props }) => <Pf3Grid fluid><Row><Pf3Form { ...props } horizontal>{ children }</Pf3Form></Row></Pf3Grid>,
   pf4: ({ children, ...props }) => <Grid><GridItem span={ 12 }><Pf4Form { ...props }>{ children }</Pf4Form></GridItem></Grid>,
 })[componentType];
 
