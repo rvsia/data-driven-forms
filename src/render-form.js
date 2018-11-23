@@ -20,7 +20,7 @@ const prepareFieldProps = field => ({
       : validatorMapper(type)(options)),
     field.dataType && dataTypeValidator(field.dataType)(),
     ]
-    : [],
+    : [ field.dataType && dataTypeValidator(field.dataType)() ],
 });
 
 const renderForm = (fields, formOptions) => fields.map(field => (Array.isArray(field)
