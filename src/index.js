@@ -18,7 +18,7 @@ const formWrapperMapper = componentType => ({
 })[componentType];
 
 const schemaMapper = type => ({
-  mozilla: schema => mozillaParser(schema),
+  mozilla: (schema, uiSchema) => mozillaParser(schema, uiSchema),
   miq: schema => miqParser(schema),
   default: schema => ({ schema }),
 })[type];
@@ -34,8 +34,9 @@ const FormRenderer = ({
   buttonsLabels,
   disableSubmit,
   initialValues,
+  uiSchema,
 }) => {
-  const inputSchema = schemaMapper(schemaType)(schema);
+  const inputSchema = schemaMapper(schemaType)(schema, uiSchema);
   return (
     <ComponentType.Provider value={ configureContext({ formType }) }>
       <Suspense fallback={ <div>Loading...</div> }>
@@ -87,6 +88,7 @@ FormRenderer.propTypes = {
   buttonsLabels: PropTypes.object,
   disableSubmit: PropTypes.bool,
   initialValues: PropTypes.object,
+  uiSchema: PropTypes.object,
 };
 
 FormRenderer.defaultProps = {
@@ -96,6 +98,7 @@ FormRenderer.defaultProps = {
   buttonsLabels: {},
   disableSubmit: false,
   initialValues: {},
+  uiSchema: {},
 };
 
 export default FormRenderer;
